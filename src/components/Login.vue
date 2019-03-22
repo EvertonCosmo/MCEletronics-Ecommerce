@@ -5,18 +5,18 @@
   
     <b-button id="btn-cadastrar" class="float-right"  href="#" variant="outline-primary">Cadastrar</b-button>
                      
-                        <b-button href="" block variant="outline-info"> <i class="fab fa-google"></i>   Login via Google</b-button>
-                        <b-button href="" block variant="outline-primary"> <i class="fab fa-facebook-f"></i>   Login via facebook</b-button>
-                      <br> 
+                        <b-button href="" block variant="outline-danger"> <i class="fab fa-google"></i>  Login via Google</b-button>
+                        <b-button href="" block variant="outline-primary"> <i class="fab fa-facebook-f"></i>  Login via facebook</b-button>
+                        <br> 
       <b-form >
           <b-form-group id='email' label= "Email:" label-for='email1'>
               <!-- email -->
-              <b-form-input class="input" id = "email" type="email"  required placeholder="digite seu email"/>
+              <b-form-input v-model="input.email" class="input" name="email" id = "email" type="email"  required placeholder="digite seu email"/>
           </b-form-group>
 
-          <b-form-group id='password' label= 'Senha:' label-for='nome1'>
+          <b-form-group id='password'  label= 'Senha:' label-for='nome1'>
               <!-- name -->
-              <b-form-input class="input" id = "nome1" type="password"  required placeholder="******"/>
+              <b-form-input v-model="input.password" class="input" name="password" id = "nome1" type="password"  required placeholder="******"/>
           </b-form-group>
 
 
@@ -28,7 +28,7 @@
 
           </b-form-group>
 
-         <b-button id='btn-login' style= "background-color:#033076" type="submit"  block variant="primary">Login</b-button>
+         <b-button id='btn-login' style= "background-color:#033076" type="submit"  v-on:click ="login()" block variant="primary">Login</b-button>
         
          <div class="col-md-12 text-right">
                             <a class="small" href="#">Esqueceu a Senha ? </a>
@@ -42,7 +42,33 @@
 import NavBar from './NavBar'
 
 export default {
-    name:'Login',  
+    name:'Login', 
+
+    data(){
+      return {
+        input:{
+            email:"",
+            password:""
+        }
+
+      }
+    } ,
+
+    methods:{ 
+      login(){ /* checks data equality with data in parent component */
+        if(this.input.email != "" && this.input.password != "") {
+          if(this.input.email == this.$parent.mockAccount.email && this.input.password == this.$parent.mockAccount.password){
+                this.$emit('authenticated',true); //emit event of authenticated > received by App.vue
+                this.$router.replace({name:'PageLogin'}) // replace router(page) to PageLogin
+                
+          }else{
+            alert("nome ou senha incorretos")
+          }
+        }else{
+          alert("necessário email e senha")
+        }
+      }
+    },
     components:{
       NavBar
     }
@@ -68,7 +94,9 @@ export default {
     width: 50%;
 } */
 #btn-cadastrar {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  margin:0 0 10px;
+  
 }
 
   

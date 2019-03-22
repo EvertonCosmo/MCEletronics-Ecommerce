@@ -1,7 +1,10 @@
 
 <template>
+  
     <div class="nav-bar">
-        <span>MC Eletronics</span>
+        <router-link class="logo" to="/Login" >MC Eletronics</router-link>
+        <router-view></router-view>
+        <!-- <span>MC Eletronics</span> -->
     </div>
 </template>
 
@@ -23,8 +26,9 @@ export default {
         width: 100%;
         margin-bottom: 0px;
     }
-    span{
+    .logo{
         color:white;
+        text-decoration: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 2.3rem;
         margin-left: 10px;
