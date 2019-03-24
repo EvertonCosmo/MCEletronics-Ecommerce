@@ -6,9 +6,10 @@
         <!-- if true go to home page(Login) -->
 
           <router-link v-if="authenticated" to="/Login" class="float-right" v-on:click.native = "logout()" replace>
-                Logout
+                  Logout
           </router-link>
           <!-- directive v-on listening event of authenticated -->
+          
            <router-view @authenticated="setAuthenticated" /> 
           
           
@@ -25,8 +26,10 @@
 
 export default {
   name: 'app',
+
   // components:{
   //   Login
+
   // },
   data(){
     return {
@@ -47,6 +50,7 @@ export default {
     setAuthenticated(status){
       this.authenticated = status;
     },
+
     logout(){
       this.authenticated = false;
     }
