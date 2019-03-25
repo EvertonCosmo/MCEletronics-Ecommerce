@@ -1,6 +1,5 @@
-
-## Autores 
-  Emanoel Alves, Everton Cosmo 
+# Authors
+  <i>Emanoel Alves, Everton Cosmo </i>
   
 # MCEletronics
 
