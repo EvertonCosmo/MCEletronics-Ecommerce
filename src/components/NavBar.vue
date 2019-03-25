@@ -2,7 +2,7 @@
 <template>
   
     <div class="nav-bar">
-        <router-link class="logo" to="/Login" >{{title}}</router-link>
+        <router-link class="logo" to="/" >{{title}}</router-link>
         <router-view></router-view>
         <!-- <span>MC Eletronics</span> -->
     </div>
