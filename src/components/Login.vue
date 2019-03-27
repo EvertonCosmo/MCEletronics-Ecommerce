@@ -1,22 +1,28 @@
 <template> 
 <div>
+
   <NavBar></NavBar>
-  <b-card tag="article" class ="mb-2" style="max-width: 25rem" title="Sign in" >
   
-    <b-button id="btn-cadastrar" class="float-right"  href="#" variant="outline-primary">Cadastrar</b-button>
+  <b-card tag="article" class ="mb-2" style="max-width: 25rem" title="Entrar" >
+  
+    <router-link to="/Register" >
+        <b-button id="btn-cadastrar" class="float-right" variant="outline-primary">Cadastrar</b-button>
+  </router-link>
+
+  <router-view ></router-view>
                      
-                        <b-button href="" block variant="outline-danger"> <i class="fab fa-google"></i>  Login via Google</b-button>
-                        <b-button href="" block variant="outline-primary"> <i class="fab fa-facebook-f"></i>  Login via facebook</b-button>
+                        <b-button href="" block variant="danger"> <i class="fab fa-google"></i>  Login via Google</b-button>
+                        <b-button href="" block variant="primary" style="background-color:#3b5998"> <i class="fab fa-facebook-f"></i>  Login via facebook</b-button>
                         <br> 
       <b-form >
-          <b-form-group id='email' label= "Email:" label-for='email1'>
+          <b-form-group id='email' label= "Email" label-for='email1' class="required-field" @click ="login">
               <!-- email -->
-              <b-form-input v-model="input.email" class="input" name="email" id = "email" type="email"  required placeholder="digite seu email"/>
+              <b-form-input v-model="input.email" class="input" name="email1"  id = "email" type="email"   placeholder="digite seu email"/>
           </b-form-group>
 
-          <b-form-group id='password'  label= 'Senha:' label-for='nome1'>
+          <b-form-group id='password'  label= 'Senha  ' label-for='nome1' class="required-field">
               <!-- name -->
-              <b-form-input v-model="input.password" class="input" name="password" id = "nome1" type="password"  required placeholder="******"/>
+              <b-form-input v-model="input.password" maxlength="10" class="input" name="password" id = "nome1" type="password"   placeholder="******"/>
           </b-form-group>
 
 
@@ -27,39 +33,77 @@
               </b-form-checkbox-group>
 
           </b-form-group>
+  
 
-         <b-button id='btn-login' style= "background-color:#033076" type="submit"  v-on:click ="login()" block variant="primary">Login</b-button>
-        
+         <b-button id='btn-login' v-if="!loading" style= "background-color:#033076" type="submit"  @click ="login" block variant="primary">
+           
+           Login
+           
+           </b-button>
+
+            <div v-else class="text-center">
+
+                <b-spinner label="Loading..."  />
+
+             </div>
+
          <div class="col-md-12 text-right">
-                            <a class="small" href="#">Esqueceu a Senha ? </a>
+              <a class="small" href="#">Esqueceu a Senha ? </a>
           </div>     
       </b-form>
+
   </b-card>
+
   </div>
+
+  
 </template>
 
 <script>
 import NavBar from './NavBar'
+import { setTimeout } from 'timers';
+
+
+
 
 export default {
     name:'Login', 
-
+  
     data(){
       return {
+        
+        loading:false,
+        fields: JSON.parse(window.localStorage.getItem('fields')), // get data from localstorage browser
         input:{
             email:"",
             password:""
         }
 
       }
-    } ,
-
+      },
+  
     methods:{ 
-      login(){ /* checks data equality with data in parent component */
+
+       sleep(milliseconds) {
+             var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                  if ((new Date().getTime() - start) > milliseconds){
+                    break;
+                    }
+            }
+    },
+    
+      login(){ /* checks data equality with data in localstorage  */
+     
+                 
         if(this.input.email != "" && this.input.password != "") {
-          if(this.input.email == this.$parent.mockAccount.email && this.input.password == this.$parent.mockAccount.password){
-                this.$emit('authenticated',true); //emit event of authenticated > received by App.vue
-                this.$router.replace({name:'PageLogin'}) // replace router(page) to PageLogin
+          if(this.input.email == this.fields[0].email && this.input.password == this.fields[0].password){
+              
+                this.$emit('authenticated',true);  //emit event of authenticated > received by App.vue
+          
+                 this.loading = true;  // spinner value
+                  
+                  setTimeout(this.place,1500); // wait 1,5 second to call new Route
                 
           }else{
             alert("nome ou senha incorretos")
@@ -67,18 +111,31 @@ export default {
         }else{
           alert("necessário email e senha")
         }
+      
+      },
+      place(){
+            // replace router(page) to PageLogin
+           this.$router.replace({name:'PageLogin'})
+           
       }
-    },
+   
+},
     components:{
       NavBar
     }
 }
 
+
 </script>
 
-<style scoped>
+<style>
+.required-field > label::after {
+  content: '*';
+  color: black;
+  margin-left: 0.25rem;
+}
   .input{
-    width:90%;
+    width:100%;
     margin:auto;
   }
   .mb-2{
@@ -95,7 +152,8 @@ export default {
 } */
 #btn-cadastrar {
   /* margin-bottom: 10px; */
-  margin:0 0 10px;
+  margin:0 0  10px;
+
   
 }
 
