@@ -1,4 +1,7 @@
-# mceletronics
+# Authors
+  <i>Emanoel Alves, Everton Cosmo </i>
+  
+# MCEletronics
 
 ## Project setup
 ```

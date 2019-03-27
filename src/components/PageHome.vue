@@ -1,21 +1,30 @@
 
 <template>
   <div>
-    <header>   
-      <b-navbar toggleable="lg" class="box-search">
+   <header>
+      <b-navbar toggleable="lg" >
 
         <b-navbar-toggle target="nav_collapse" />
-        <b-navbar-brand style="font-size: 120%; position: relative;" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
-        <b-collapse is-nav style="width: 100%" id="nav_collapse">
 
-          <div id="navegacao">
-            <b-nav-form>
+        <b-navbar-brand style="font-size: 120%; position: relative;" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
+
+        <b-collapse is-nav id="nav_collapse ">
+
+          
+            <b-nav-form  >
               
-              <b-form-input  id="form-search" class="mr-sm-2" type="text" placeholder=" Buscar..." />
-              <div style="width: 25%">
-                <b-button id="button-search" type="submit">
-                  <i class="fas fa-search"></i>
-                </b-button>
+              <b-form-input  class="input" maxlength="10"  placeholder= "Buscar .... "/>
+
+                  <b-form-group  id="search"  class="required-field">
+                    <b-input-group >
+                      
+                    </b-input-group>
+
+                    
+                  </b-form-group>
+
+
+              <!-- <b-button-group>
 
                 <b-button id="button-favoritos" type="submit" > 
                   <i class="far fa-heart"></i>
@@ -25,13 +34,15 @@
                   <i class="fas fa-shopping-bag"></i>
                 </b-button>
 
-                <a id="purchase-value" type="text">R$ 0,00</a>
-              </div>
+                <p id="purchase-value" type="text">R$ 0,00</p> 
+                 
+
+               </b-button-group> -->
             </b-nav-form>  
-          </div>
+        
         </b-collapse>
       </b-navbar>
-    </header>
+   </header>
 
     <section style="width: 100%">
       <nav id="categorias">

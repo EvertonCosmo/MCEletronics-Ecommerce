@@ -2,10 +2,11 @@
     <div>
       <!-- <b-navbar style="position: relative max-width:25rem" class="nav-bar" toggleable="lg" type="dark" variant="info" > -->
         <NavBar></NavBar>
-        <b-navbar-brand class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
+
+        <b-navbar-brand class="logo" href="PageHome" style="max-width:25%;">MC Eletronics</b-navbar-brand>
 
         <b-navbar-toggle target="nav_collapse" />
-        <b-collapse is-nav id="nav_collapse">
+       <b-collapse is-nav id="nav_collapse">
 
           <b-navbar-nav class="box-search">
             <div >
