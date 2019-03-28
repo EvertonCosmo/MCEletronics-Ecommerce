@@ -28,9 +28,7 @@ Vue.config.devtools = true
 
 const routes = [{
         path: "/",
-        redirect: {
-            name: "PageHome"
-        }
+        component: HomePageComponent
     },
 
     {

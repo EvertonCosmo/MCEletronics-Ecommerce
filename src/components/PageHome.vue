@@ -1,5 +1,6 @@
 <template>
   <div>
+    <BarInfo></BarInfo>
     <header>   
       <b-navbar toggleable="lg" class="box-search">
 
@@ -11,7 +12,7 @@
             <b-nav-form>
               <b-form-group id="form-search" class="required-field">
                 <b-input-group >
-                  <b-form-input type="text"  maxlength="10" name="search"  placeholder="Buscar... "/>
+                  <b-form-input type="text" style="border-radius: 15px" maxlength="10" name="search"  placeholder="Buscar... "/>
                   <b-input-group-btn >
                     <i class="fas fa-search" style="position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
                   </b-input-group-btn> 
@@ -36,18 +37,81 @@
       </b-navbar>
     </header>
 
-    
-    <b-card-group>
-      <b-card style="max-width: 25rem" class="card" > 
-        <b-list-group class="item ">                
-          <b-list-group-item href="#"  >Painel <b-badge variant="primary" pill>14</b-badge>  <i class="fas fa-tachometer-alt float-right  card-list"></i> </b-list-group-item>
-          <b-list-group-item href="#"  >Meu Perfil<i class="far fa-user float-right card-list"></i></b-list-group-item>
-          <b-list-group-item href="#"  >Pedidos <i class="fas fa-shopping-basket float-right card-list"></i> </b-list-group-item>
-          <b-list-group-item href="#" >Endereço <i class="fas fa-home float-right card-list"></i> </b-list-group-item>
-          <b-list-group-item href="#" >Detalhes da conta<i class="fas fa-info float-right card-list"></i> </b-list-group-item>
+    <!-- <section>
+      <b-card-group >
+        <b-card style="max-width: 25rem; border: none"  > 
+          <b-list-group class="item ">                
+            <b-list-group-item href="#" >Categorias</b-list-group-item>
+            <b-list-group-item href="#" >Computadores</b-list-group-item>
+            <b-list-group-item href="#" >Componentes</b-list-group-item>
+            <b-list-group-item href="#" >Celulares</b-list-group-item>
+            <b-list-group-item href="#" >Arduíno</b-list-group-item>
+            <b-list-group-item href="#" >Video</b-list-group-item>
+            <b-list-group-item href="#" >Som</b-list-group-item>
+          </b-list-group>
+        </b-card>
+      </b-card-group>
+
+      <article>
+          <nav>
+            <div>
+              <b-nav pills fill tabs>
+                <b-nav-item active >Inicio</b-nav-item>
+                <b-nav-item >Produtos</b-nav-item>
+                <b-nav-item >Sobre</b-nav-item>
+                <b-nav-item >Contato</b-nav-item>
+              </b-nav>
+            </div>
+          </nav>
+
+          <nav style="padding: 20px 0px 0px 0px; width: 100%">
+            <div>
+              <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 50rem" fade indicators controls="true">
+                <b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10" />
+                <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12" />
+                <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22" />
+              </b-carousel>
+            </div>  
+          </nav>
+        </article>
+  </section> -->
+
+  <section style="width: 100%">
+      <nav id="categorias">
+        <b-list-group class="item">
+          <b-list-group-item href="#some-link" >Categorias</b-list-group-item>
+            <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
+            <b-list-group-item href="#some-link" >Componentes</b-list-group-item>
+            <b-list-group-item href="#some-link" >Celulares</b-list-group-item>
+            <b-list-group-item href="#some-link" >Arduíno</b-list-group-item>
+            <b-list-group-item href="#some-link" >Video</b-list-group-item>
+            <b-list-group-item href="#some-link" >Som</b-list-group-item>
         </b-list-group>
-      </b-card>
-    </b-card-group>
+      </nav>
+      
+      <article>
+        <nav>
+          <div>
+            <b-nav  fill tabs class="">
+              <b-nav-item >Inicio</b-nav-item>
+              <b-nav-item >Produtos</b-nav-item>
+              <b-nav-item >Sobre</b-nav-item>
+              <b-nav-item >Contato</b-nav-item>
+            </b-nav>
+          </div>
+        </nav>
+
+        <nav style="padding: 20px 0px 0px 0px; width: 100%">
+          <div>
+            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 70rem" fade indicators controls="true">
+              <b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10" />
+              <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12" />
+              <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22" />
+            </b-carousel>
+          </div>  
+        </nav>
+      </article>
+    </section>
 
     <nav id="mid" class="mais-vendidos"> 
       <div style="margin: 5%;">
@@ -120,6 +184,18 @@
   </div>
 </template>
 
+<script>
+
+import BarInfo from './BarInfo.vue'
+
+export default {
+  name: 'PageHome',
+
+  components:{
+    BarInfo
+  }
+}
+</script>
 
 <style scoped>
 
@@ -137,11 +213,11 @@ header {
 }
 
 article {
-  float: left;
+  float: right;
   padding: 20px;
   width: 70%;
   background-color: #fff;
-  height: 300px; /* only for demonstration, should be removed */
+  height: 100px; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */
@@ -149,7 +225,7 @@ section:after {
   content: "";
   display: table;
   clear: both;
-  height: 300px;;
+  height: 100px;
 }
 
 /* Style the footer */
@@ -241,5 +317,16 @@ footer {
 
 .logo{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+ .item{
+      width:100%;
+      /* padding:5%; */
+      border-left:none;
+      border-right: none;
+    }
+.item > :hover{
+        /* Background-color: #033076; */
+        background-color: #033076;
+        color:white;
 }
 </style>
