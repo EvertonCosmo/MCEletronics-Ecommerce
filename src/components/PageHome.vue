@@ -92,10 +92,10 @@
       <article>
         <nav>
           <div>
-            <b-nav  fill tabs class="">
+            <b-nav pills fill class="pages">
               <b-nav-item >Inicio</b-nav-item>
               <b-nav-item >Produtos</b-nav-item>
-              <b-nav-item >Sobre</b-nav-item>
+              <b-nav-item >Sobre Link</b-nav-item>
               <b-nav-item >Contato</b-nav-item>
             </b-nav>
           </div>
@@ -328,5 +328,15 @@ footer {
         /* Background-color: #033076; */
         background-color: #033076;
         color:white;
+}
+.pages > :hover{
+  background-color: #033076;
+  border-radius: 5px;
+  color:white;
+}
+.pages:active{
+  background-color: #033076;
+  border-radius: 5px;
+  color:white;
 }
 </style>
