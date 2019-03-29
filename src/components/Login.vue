@@ -2,11 +2,11 @@
 <div>
 
   <NavBar></NavBar>
-  
+  <!-- <router-view></router-view> -->
   <b-card tag="article" class ="mb-2" style="max-width: 25rem" title="Entrar" >
   
     <router-link to="/Register" >
-        <b-button id="btn-cadastrar" class="float-right" variant="outline-primary">Cadastrar</b-button>
+        <b-button id="btn-cadastrar" class="float-right" style="background-color:#033076" >Cadastrar</b-button>
   </router-link>
 
   <router-view ></router-view>
@@ -103,7 +103,7 @@ export default {
           
                  this.loading = true;  // spinner value
                   
-                  setTimeout(this.place,1500); // wait 1,5 second to call new Route
+                  setTimeout(this.placeLogin,1500); // wait 1,5 second to call new Route
                 
           }else{
             alert("email ou senha incorretos")
@@ -111,14 +111,16 @@ export default {
         }else{
           alert("necessário email e senha")
         }
-      
+        
       },
-      place(){
+      placeLogin(){
             // replace router(page) to PageLogin
-           this.$router.replace({name:'PageLogin'})
+           this.$router.push({name:'PageLogin'})
            
+      },
+      placeHome(){
+        this.$router.push({path:'/'})
       }
-   
 },
     components:{
       NavBar
@@ -128,7 +130,7 @@ export default {
 
 </script>
 
-<style>
+<style >
 .required-field > label::after {
   content: '*';
   color: black;
