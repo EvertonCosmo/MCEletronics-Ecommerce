@@ -6,14 +6,14 @@
             <b-row >     
                     <aside class="col-sm-5 border-right" >
                             <div class="img-big-wrap">
-                                <a href=""><img  id="item-display" src="../assets/arduinoMain.png" alt="arduino"></a>
+                                <a href=""><img  id="item-display" src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg" alt="arduino"></a>
                             </div>
 
                     <div class="img-small-wrap"> <!-- img small -->
-                        <div class="item-gallery"><img  src="../assets/arduinoMain.png" alt="arduino"></div>
-                        <div class="item-gallery"> <img  src="../assets/arduinoMain.png" alt="arduino"> </div>
-                        <div class="item-gallery"><img  src="../assets/arduinoMain.png" alt="arduino"> </div>
-                        <div class="item-gallery"> <img  src="../assets/arduinoMain.png" alt="arduino"></div>
+                        <div class="item-gallery"><img  src="../assets/Raspberry-Pi-3-462x322.jpg" alt="raspberry"></div>
+                        <div class="item-gallery"> <img src="../assets/Raspberry-Pi-3-462x322.jpg" alt="raspberry"> </div>
+                        <div class="item-gallery"><img  src="../assets/Raspberry-Pi-3-462x322.jpg"  alt="raspberry"> </div>
+                        <div class="item-gallery"> <img  src="../assets/Raspberry-Pi-3-462x322.jpg" alt="raspberry"></div>
                     </div>
 
                   </aside>
@@ -27,7 +27,7 @@
                    
                         <b-card-body tag="article">
 
-                            <h3 class="title mb-3">Arduino Uno - R3</h3>
+                            <h3 class="title mb-3">Raspberry Pi 3</h3>
 
                         <p class="price-detail-wrap"> 
 
@@ -73,8 +73,8 @@
 
                         
                     </b-card-body>
-                <label style="margin-left:25%; margin-bottom:0%">Calcular frete</label>
-                <p style="color:red">{{value}}</p>
+                <label style="margin-left:25%;;margin-bottom:0%">Calcular frete</label>
+                <p></p>
                  <b-form-group id="cep" style="margin-left:50%;margin-top:-5%;">
                           <b-form-input class="input" type="text" maxlength="9" style="max-width:100%" name="input" placeholder="CEP"/>
                           <b-button variant="primary"  style="position:absolute; left:85%; top:84.1%" class="float-right">OK</b-button>

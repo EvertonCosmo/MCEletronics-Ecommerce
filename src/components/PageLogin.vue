@@ -1,7 +1,7 @@
 
 <template>
 <div>
-    <!-- <NavBar></NavBar>  -->
+    
     <main-bar></main-bar>
     <div>
         
@@ -37,14 +37,14 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+
 import MainBar from './MainBar.vue'
 
 export default {
     name:'PageLogin',
     
     components:{
-        NavBar,MainBar
+        MainBar
     },
     
     data() {

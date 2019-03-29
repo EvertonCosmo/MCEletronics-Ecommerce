@@ -1,67 +1,30 @@
 <template>
   <div>
     <BarInfo></BarInfo>
-  
-  <main-bar></main-bar>
-    <!-- <section>
-      <b-card-group >
-        <b-card style="max-width: 25rem; border: none"  > 
-          <b-list-group class="item ">                
-            <b-list-group-item href="#" >Categorias</b-list-group-item>
-            <b-list-group-item href="#" >Computadores</b-list-group-item>
-            <b-list-group-item href="#" >Componentes</b-list-group-item>
-            <b-list-group-item href="#" >Celulares</b-list-group-item>
-            <b-list-group-item href="#" >Arduíno</b-list-group-item>
-            <b-list-group-item href="#" >Video</b-list-group-item>
-            <b-list-group-item href="#" >Som</b-list-group-item>
-          </b-list-group>
-        </b-card>
-      </b-card-group>
-
-      <article>
-          <nav>
-            <div>
-              <b-nav pills fill tabs>
-                <b-nav-item active >Inicio</b-nav-item>
-                <b-nav-item >Produtos</b-nav-item>
-                <b-nav-item >Sobre</b-nav-item>
-                <b-nav-item >Contato</b-nav-item>
-              </b-nav>
-            </div>
-          </nav>
-
-          <nav style="padding: 20px 0px 0px 0px; width: 100%">
-            <div>
-              <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 50rem" fade indicators controls="true">
-                <b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10" />
-                <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12" />
-                <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22" />
-              </b-carousel>
-            </div>  
-          </nav>
-        </article>
-  </section> -->
+    <main-bar></main-bar>
 
   <section style="width: 100%">
       <nav id="categorias">
         <b-list-group class="item">
-          <b-list-group-item href="#some-link" >Categorias</b-list-group-item>
-            <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
-            <b-list-group-item href="#some-link" >Componentes</b-list-group-item>
-            <b-list-group-item href="#some-link" >Celulares</b-list-group-item>
-            <b-list-group-item href="#some-link" >Arduíno</b-list-group-item>
-            <b-list-group-item href="#some-link" >Video</b-list-group-item>
-            <b-list-group-item href="#some-link" >Som</b-list-group-item>
+          <b-list-group-item href="#some-link" >Raspberry PI</b-list-group-item>
+          <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
+          <b-list-group-item href="#some-link" >Componentes</b-list-group-item>
+          <b-list-group-item href="#some-link" >Celulares</b-list-group-item>
+          <b-list-group-item href="#some-link" >Arduíno</b-list-group-item>
+          <b-list-group-item href="#some-link" >Conexões</b-list-group-item>
+          <b-list-group-item href="#some-link" >Shields</b-list-group-item>
+          <b-list-group-item href="#some-link" >Video</b-list-group-item>
+          <b-list-group-item href="#some-link" >Som</b-list-group-item>
         </b-list-group>
       </nav>
       
       <article>
         <nav>
           <div>
-            <b-nav  fill tabs class="">
+            <b-nav pills fill class="pages">
               <b-nav-item >Inicio</b-nav-item>
               <b-nav-item >Produtos</b-nav-item>
-              <b-nav-item >Sobre</b-nav-item>
+              <b-nav-item >Sobre </b-nav-item>
               <b-nav-item >Contato</b-nav-item>
             </b-nav>
           </div>
@@ -69,10 +32,10 @@
 
         <nav style="padding: 20px 0px 0px 0px; width: 100%">
           <div>
-            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 70rem" fade indicators controls="true">
-              <b-carousel-slide caption="First slide" img-src="https://picsum.photos/1024/480/?image=10" />
-              <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12" />
-              <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22" />
+            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 70rem; max-height 1rem" fade indicators controls="true">
+              <b-carousel-slide caption="Arduino uno" img-src="http://www.elecomhub.com/wp-content/uploads/2017/07/rb-ard-34-1_1-1024x480.jpg" />
+              <b-carousel-slide caption="Raspeberry Pi" img-src="http://www.elecomhub.com/wp-content/uploads/2017/06/Pi2ModB1GB_-comp-1024x480.jpeg" />
+              <b-carousel-slide caption="Arduino Mega" img-src="https://i1.wp.com/pcminipro.ru/wp-content/uploads/2018/01/banana-pi-r2.jpg?ssl=1" />
             </b-carousel>
           </div>  
         </nav>
@@ -84,7 +47,7 @@
         
          <div>
           <b-card
-            title="Arduino UNO "
+            title="Raspberry Pi"
              img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Arduino Mega"
             img-top
@@ -101,7 +64,7 @@
   
         <div>
           <b-card
-            title="Arduino MEGA "
+             title="Raspberry Pi"
              img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Arduino Mega"
             img-top
@@ -118,7 +81,7 @@
 
         <div>
           <b-card
-            title="Raspberry PI"
+            title="Raspberry Pi"
             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Image"
             img-top
@@ -136,9 +99,8 @@
     </nav>
     
     <nav id="mid" class="informacoes"> 
-      <div>
+      <div style="width: 50%; ">
         <b-navbar-brand style="font-size: 200%; position: relative; color: #033076" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
-        <!-- <i style="background-color: white" class="fas fa-headset"></i> -->
       </div>
     </nav>
 
@@ -228,9 +190,9 @@ footer {
 }
 
 .informacoes {
-  background-color: rgb(155, 154, 154);
+  background-color: rgb(176, 177, 179);
   margin: 0%;
-  height: 250px;
+  height: 240px;
 }
 /* Create two columns/boxes that floats next to each other */
 #categorias {
@@ -301,4 +263,10 @@ footer {
         background-color: #033076;
         color:white;
 }
+.pages :hover{
+  background-color: #033076;
+  border-radius: 8px;
+  color:white;
+}
+
 </style>
