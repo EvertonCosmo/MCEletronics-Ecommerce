@@ -93,7 +93,7 @@ export default {
             }
     },
     
-      login(){ /* checks data equality with data in localstorage  */
+      login(e){ /* checks data equality with data in localstorage  */
      
                  
         if(this.input.email != "" && this.input.password != "") {
@@ -107,9 +107,12 @@ export default {
                 
           }else{
             alert("email ou senha incorretos")
+            e.preventDefault();
+            
           }
         }else{
           alert("necessário email e senha")
+          e.preventDefault()
         }
         
       },
