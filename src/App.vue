@@ -2,7 +2,7 @@
 
     <div id="app">
    
-          <LogonBridge></LogonBridge>
+          <HomePage></HomePage>
 
           
       
@@ -11,12 +11,15 @@
 
 <script>
 
-import LogonBridge from './components/LogonBridge'
+
+import HomePage from './components/PageHome'
+
 export default {
   name: 'app',
 
   components:{
-    LogonBridge
+    HomePage
+    
 
   },
   data(){
@@ -25,8 +28,6 @@ export default {
       
     }
   }
-  
-  
 }
 </script>
 

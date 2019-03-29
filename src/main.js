@@ -1,4 +1,4 @@
-/* eslint-disable */ 
+/* eslint-disable */
 // eslint-disable-next-line 
 
 import Vue from 'vue'
@@ -18,9 +18,7 @@ import LoginComponent from './components/Login.vue'
 import PageLoginComponent from './components/PageLogin.vue';
 import RegisterComponent from './components/Register.vue'
 import LogonBridgeComponent from './components/LogonBridge.vue'
-
-
-
+import HomePageComponent from './components/PageHome.vue'
 
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
@@ -28,48 +26,50 @@ Vue.use(VueRouter)
 Vue.config.productionTip = false
 Vue.config.devtools = true
 
+const routes = [{
+        path: "/",
+        redirect: {
+            name: "PageHome"
+        }
+    },
 
+    {
+        path: "/Login",
+        name: "Login",
+        component: LoginComponent
+    },
 
-const routes =  [
-  {
-      path: "/",
-      redirect: {
-          name:"Login"
-      }
-  },
+    {
+        path: "/PageLogin",
+        name: "PageLogin",
+        component: PageLoginComponent
 
-  {
-      path:"/Login",
-      name:"Login",
-      component:LoginComponent
-  },
+    },
+    {
+        path: "/Register",
+        name: "Register",
+        component: RegisterComponent
 
-  {
-      path:"/PageLogin",
-      name:"PageLogin",
-      component:PageLoginComponent
+    },
+    {
+        path: "/Bridge",
+        name: "Bridge",
+        component: LogonBridgeComponent
+    },
+    {
+        path: "/PageHome",
+        name: "PageHome",
+        component: HomePageComponent
+    }
 
-  },
-  {
-    path:"/Register",
-    name:"Register",
-    component:RegisterComponent
-    
-  },
-  {
-    path:"/Bridge",
-    name:"Bridge",
-    component:LogonBridgeComponent
-  }
-  
 
 ]
 
-const router = new VueRouter({routes});
+const router = new VueRouter({ routes });
 
 
 new Vue({
-  el:'#app',
-  router,
-  render: h => h(App),
+    el: '#app',
+    router,
+    render: h => h(App),
 }).$mount('#app')
