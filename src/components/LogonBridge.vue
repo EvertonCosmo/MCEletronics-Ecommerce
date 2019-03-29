@@ -19,7 +19,7 @@ export default {
     },
     mounted(){ // initialize component 
           if(!this.authenticated){ // listen the emit event of Login.vue
-                 this.$router.replace({name:'Login'}); // // replace router(page) to Login likes initial page
+                 this.$router.push({name:'Login'}); // // replace router(page) to Login likes initial page
       
             }
     },
