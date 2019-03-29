@@ -11,19 +11,36 @@
         <i style="margin-left: 30%; font-size: 100%; margin-top: 1.5%; padding: 1%" class="fas fa-map-marker-alt"></i>
         <p style="margin-left; 1%;font-size: 60%; margin-top: 2.5%">Contato</p>
         <i style="margin-left: 45%; font-size: 100%; margin-top: 1.5%; padding: 1%" class="fas fa-user-circle"></i>
-        <p style="margin-left; 1%; font-size: 60%; margin-top: 2.5%">Conta</p>
+       
+        <a style="cursor:pointer" @click="pagenew"><p style="margin-left:5%;  font-size: 60%; margin-top:45%">Conta</p></a>
+        <!-- <router-link :to="{name:'Bridge'}">Conta</router-link> -->
+        <!-- <router-view ></router-view> -->
+        <!-- <p href="" tag="span" style="cursor:pointer" to="/Login"><p >Conta</p></router-link> -->
+        <!-- <router-view></router-view> -->
+        <!-- <router-view></router-view> -->
       </b-navbar-nav>
     </b-navbar>
+  
+        <!-- <a href="/Bridge"><p style="margin-left:5%;  font-size: 60%; margin-top:45%">Conta</p></a> -->
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "BarInfo"
+  name: "BarInfo",
+
+
+methods:{
+  pagenew(){
+   this.$router.replace({name:'Login'});
+  }
+}
 };
+
 </script>
 
-<style>
+<style >
 .bar-info {
   background-color: white;
   font-size: 25px;
