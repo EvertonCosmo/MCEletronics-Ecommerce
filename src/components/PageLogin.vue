@@ -1,7 +1,8 @@
 
 <template>
 <div>
-    <NavBar></NavBar> 
+    
+    <main-bar></main-bar>
     <div>
         
             <p> Inicio  > minha conta</p>
@@ -24,7 +25,7 @@
                             <b-list-group-item href="/Login" @click="logout" >Sair <i class="fas fa-sign-out-alt float-right card-list"></i></b-list-group-item>
                        <!-- </router-link>  -->
                        
-                        <router-view></router-view>
+                        <!-- <router-view></router-view> -->
                 </b-list-group>
                     
                 </b-card>
@@ -36,13 +37,14 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
+
+import MainBar from './MainBar.vue'
 
 export default {
     name:'PageLogin',
     
     components:{
-        NavBar
+        MainBar
     },
     
     data() {

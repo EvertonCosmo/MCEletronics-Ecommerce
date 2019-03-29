@@ -21,7 +21,7 @@ export default {
 
 </script>
 
-<style>
+<style >
 
     .nav-bar{
         background: linear-gradient(-90deg,#033076);

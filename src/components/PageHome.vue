@@ -1,52 +1,18 @@
 <template>
   <div>
     <BarInfo></BarInfo>
-    <header>   
-      <b-navbar toggleable="lg" class="box-search">
-
-        <b-navbar-toggle target="nav_collapse" />
-        <b-navbar-brand style="font-size: 120%; position: relative; color: white" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
-        <b-collapse is-nav style="width: 100%" id="nav_collapse">
-
-          <div id="navigation">
-            <b-nav-form>
-              <b-form-group id="form-search" class="required-field">
-                <b-input-group >
-                  <b-form-input type="text" style="border-radius: 15px" maxlength="10" name="search"  placeholder="Buscar... "/>
-                  <b-input-group-btn >
-                    <i class="fas fa-search" style="position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
-                  </b-input-group-btn> 
-                </b-input-group>           
-              </b-form-group>
-            </b-nav-form> 
-          </div>
-
-          <div style="max-width: 25rem; width: 100%; display: block">
-            <b-button  id="button-favoritos" type="submit" > 
-              <i class="far fa-heart"></i>
-            </b-button>
-
-            <b-button  id="button-bag" type="submit" > 
-              <i class="fas fa-shopping-bag"></i>
-            </b-button>
-
-            <a id="purchase-value" type="text">R$ 0,00</a>
-          </div>
-
-        </b-collapse>
-      </b-navbar>
-    </header>
+    <main-bar></main-bar>
 
   <section style="width: 100%">
       <nav id="categorias">
         <b-list-group class="item">
-          <b-list-group-item href="#some-link" >Categorias</b-list-group-item>
+          <b-list-group-item href="#some-link" >Raspberry PI</b-list-group-item>
           <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
           <b-list-group-item href="#some-link" >Componentes</b-list-group-item>
           <b-list-group-item href="#some-link" >Celulares</b-list-group-item>
           <b-list-group-item href="#some-link" >Arduíno</b-list-group-item>
-          <b-list-group-item href="#some-link" >Variedades</b-list-group-item>
-          <b-list-group-item href="#some-link" >Lançamentos</b-list-group-item>
+          <b-list-group-item href="#some-link" >Conexões</b-list-group-item>
+          <b-list-group-item href="#some-link" >Shields</b-list-group-item>
           <b-list-group-item href="#some-link" >Video</b-list-group-item>
           <b-list-group-item href="#some-link" >Som</b-list-group-item>
         </b-list-group>
@@ -67,9 +33,9 @@
         <nav style="padding: 20px 0px 0px 0px; width: 100%">
           <div>
             <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 70rem; max-height 1rem" fade indicators controls="true">
-              <b-carousel-slide caption="Produto 1" img-src="https://picsum.photos/1024/480/?image=118" />
-              <b-carousel-slide caption="Produto 2" img-src="https://picsum.photos/1024/480/?image=12" />
-              <b-carousel-slide caption="Produto 3" img-src="https://picsum.photos/1024/480/?image=22" />
+              <b-carousel-slide caption="Arduino uno" img-src="http://www.elecomhub.com/wp-content/uploads/2017/07/rb-ard-34-1_1-1024x480.jpg" />
+              <b-carousel-slide caption="Raspeberry Pi" img-src="http://www.elecomhub.com/wp-content/uploads/2017/06/Pi2ModB1GB_-comp-1024x480.jpeg" />
+              <b-carousel-slide caption="Arduino Mega" img-src="https://i1.wp.com/pcminipro.ru/wp-content/uploads/2018/01/banana-pi-r2.jpg?ssl=1" />
             </b-carousel>
           </div>  
         </nav>
@@ -78,59 +44,58 @@
 
     <nav id="mid" class="mais-vendidos"> 
       <div style="margin: 5%;">
-        <div>
+        
+         <div>
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=215"
-            img-alt="Image"
+            title="Raspberry Pi"
+             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            img-alt="Arduino Mega"
             img-top
             tag="article"
-            style="max-width: 20rem; margin: 20px"
+           style="max-width:30%; margin-top: 2%;color:black; margin-right:2%; height:1%"
             class="mb-2"
-            
             >
             <b-card-text>
               Some quick example text to build on the card title and make up the bulk of the card's content.
             </b-card-text>
-            
-            <b-button href="#" variant="primary">Go somewhere</b-button> 
+            <b-button href="#" variant="primary">Comprar</b-button>
+          </b-card>
+        </div>
+  
+        <div>
+          <b-card
+             title="Raspberry Pi"
+             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            img-alt="Arduino Mega"
+            img-top
+            tag="article"
+           style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
+            class="mb-2"
+            >
+            <b-card-text>
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </b-card-text>
+            <b-button href="#" variant="primary">Comprar</b-button>
           </b-card>
         </div>
 
         <div>
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=225"
+            title="Raspberry Pi"
+            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem; margin: 20px"
+            style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
             class="mb-2"
             >
             <b-card-text>
               Some quick example text to build on the card title and make up the bulk of the card's content.
             </b-card-text>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
+            <b-button href="" @click="pagenew " variant="primary">Comprar</b-button>
           </b-card>
         </div>
-
-        <div>
-          <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=257"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem; margin: 20px"
-            class="mb-2"
-            >
-            <b-card-text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>
-        </div>
-      </div>
+      </div> 
     </nav>
     
     <nav id="mid" class="informacoes"> 
@@ -149,18 +114,25 @@
 <script>
 
 import BarInfo from './BarInfo.vue'
-
+import MainBar from './MainBar.vue'
 export default {
   name: 'PageHome',
 
   components:{
-    BarInfo
-  }
+    BarInfo,MainBar
+  },
+  methods: {
+    pagenew(){
+      this.$router.push({name:'Product'})
+    }
+  },
 }
 </script>
 
 <style scoped>
-
+img{
+  width:50%;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

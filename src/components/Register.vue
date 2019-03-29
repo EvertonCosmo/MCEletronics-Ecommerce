@@ -4,7 +4,7 @@
 
          <b-card tag="article" class ="mb-2"  title="Cadastro" style="max-width:25rem">
           
-             <b-form method="get" @submit="checkErrors">
+             <b-form  @submit="checkErrors">
 
                 <p v-show="input.errors.length ">
                     <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
@@ -92,9 +92,10 @@ export default {
             
 
             // alert(JSON.parse(localStorage.getItem('fields')));
-          alert('Cadastrado com sucesso')
+          alert('Cadastrado com sucesso');
+
             
-            
+    
           
         },
 
@@ -102,15 +103,26 @@ export default {
               
              
             if(this.input.email && this.input.password && this.input.password === this.input.password2) {
+                if(this.input.password.length < 5 && this.input.password2.length < 5){
+                
+                    this.input.errors.push('senha com no minímo 5 digitos')
+                    e.preventDefault();
+                    return false;
+                  
+            }else{
                 this.register();
                 return true;
+                
+            }
+              
             }
           
             this.input.errors = [];    
 
+           
+            
             if(!this.input.email) 
                 this.input.errors.push('O email é obrigatório');
-        
             if(!this.input.password)
                  this.input.errors.push('a senha é obrigatório');
             if(!this.input.password2) 
@@ -139,7 +151,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style >
  
 
 </style>

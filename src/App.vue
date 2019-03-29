@@ -2,7 +2,9 @@
 
     <div id="app">
    
-          <HomePage></HomePage>
+          <!-- <HomePage></HomePage> -->
+          <router-view></router-view>
+          <!-- <Login></Login> -->
 
           
       
@@ -12,22 +14,20 @@
 <script>
 
 
-import HomePage from './components/PageHome'
-
+// import HomePage from './components/PageHome'
+// import Login from './components/LogonBridge'
 export default {
   name: 'app',
 
   components:{
-    HomePage
+    // HomePage
     
 
   },
-  data(){
-    return {
-     
-      
-    }
-  }
+  mounted() {
+    this.$router.replace({name:'PageHome'});
+  },
+   
 }
 </script>
 
