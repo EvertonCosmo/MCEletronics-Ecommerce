@@ -1,42 +1,8 @@
 <template>
   <div>
     <BarInfo></BarInfo>
-    <header>   
-      <b-navbar toggleable="lg" class="box-search">
-
-        <b-navbar-toggle target="nav_collapse" />
-        <b-navbar-brand style="font-size: 120%; position: relative; color: white" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
-        <b-collapse is-nav style="width: 100%" id="nav_collapse">
-
-          <div id="navigation">
-            <b-nav-form>
-              <b-form-group id="form-search" class="required-field">
-                <b-input-group >
-                  <b-form-input type="text" style="border-radius: 15px" maxlength="10" name="search"  placeholder="Buscar... "/>
-                  <b-input-group-btn >
-                    <i class="fas fa-search" style="position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
-                  </b-input-group-btn> 
-                </b-input-group>           
-              </b-form-group>
-            </b-nav-form> 
-          </div>
-
-          <div style="max-width: 25rem; width: 100%; display: block">
-            <b-button  id="button-favoritos" type="submit" > 
-              <i class="far fa-heart"></i>
-            </b-button>
-
-            <b-button  id="button-bag" type="submit" > 
-              <i class="fas fa-shopping-bag"></i>
-            </b-button>
-
-            <a id="purchase-value" type="text">R$ 0,00</a>
-          </div>
-
-        </b-collapse>
-      </b-navbar>
-    </header>
-
+  
+  <main-bar></main-bar>
     <!-- <section>
       <b-card-group >
         <b-card style="max-width: 25rem; border: none"  > 
@@ -115,59 +81,58 @@
 
     <nav id="mid" class="mais-vendidos"> 
       <div style="margin: 5%;">
-        <div>
+        
+         <div>
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
+            title="Arduino UNO "
+             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            img-alt="Arduino Mega"
             img-top
             tag="article"
-            style="max-width: 20rem; margin: 20px"
+           style="max-width:30%; margin-top: 2%;color:black; margin-right:2%; height:1%"
             class="mb-2"
-            
             >
             <b-card-text>
               Some quick example text to build on the card title and make up the bulk of the card's content.
             </b-card-text>
-            
-            <b-button href="#" variant="primary">Go somewhere</b-button> 
+            <b-button href="#" variant="primary">Comprar</b-button>
+          </b-card>
+        </div>
+  
+        <div>
+          <b-card
+            title="Arduino MEGA "
+             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            img-alt="Arduino Mega"
+            img-top
+            tag="article"
+           style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
+            class="mb-2"
+            >
+            <b-card-text>
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </b-card-text>
+            <b-button href="#" variant="primary">Comprar</b-button>
           </b-card>
         </div>
 
         <div>
           <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
+            title="Raspberry PI"
+            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Image"
             img-top
             tag="article"
-            style="max-width: 20rem; margin: 20px"
+            style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
             class="mb-2"
             >
             <b-card-text>
               Some quick example text to build on the card title and make up the bulk of the card's content.
             </b-card-text>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
+            <b-button href="" @click="pagenew " variant="primary">Comprar</b-button>
           </b-card>
         </div>
-
-        <div>
-          <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem; margin: 20px"
-            class="mb-2"
-            >
-            <b-card-text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>
-        </div>
-      </div>
+      </div> 
     </nav>
     
     <nav id="mid" class="informacoes"> 
@@ -187,18 +152,25 @@
 <script>
 
 import BarInfo from './BarInfo.vue'
-
+import MainBar from './MainBar.vue'
 export default {
   name: 'PageHome',
 
   components:{
-    BarInfo
-  }
+    BarInfo,MainBar
+  },
+  methods: {
+    pagenew(){
+      this.$router.push({name:'Product'})
+    }
+  },
 }
 </script>
 
 <style scoped>
-
+img{
+  width:50%;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
