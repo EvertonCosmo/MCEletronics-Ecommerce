@@ -22,7 +22,7 @@
             </b-nav-form> 
           </div>
           <div style="max-width: 25rem; width: 100%; display: block">
-            <b-button  id="button-favoritos" type="submit" > 
+            <b-button  id="button-favorites" type="submit" > 
               <i class="far fa-heart"></i>
             </b-button>
 
@@ -84,12 +84,7 @@ article {
 }
 
 /* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
-  height: 100px;
-}
+
 
 /* Style the footer */
 footer {
@@ -108,45 +103,15 @@ footer {
   }
 }
 
-#mid {
-  color: white;
-}
-
-.mais-vendidos{
-  margin: 1%;
-  background-color: rgb(222, 224, 224);
-  height: 400px;
-}
-
-.informacoes {
-  background-color: rgb(155, 154, 154);
-  margin: 0%;
-  height: 250px;
-}
 /* Create two columns/boxes that floats next to each other */
-#categorias {
-  float: left;
-  width: 30%;
-  background: white;
-  padding: 1.7%;
-  font-size: 100%;
-}
+
 
 #form-search{
   width: 100%;
   margin-top: 1.7%;
 }
-/* #button-search{
-  background-color: #e6f3ff;
-  color: #033076;
-  height: 60%;
-  font-size: 45%;
-  width: 20%;
-  border: 10%;
-  border-radius: 15%;
-  height: 36px;
-}    */
-#button-favoritos{
+
+#button-favorites{
   background-color: #033076;
   width: 20%;
   height: 70%;

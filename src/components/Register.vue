@@ -79,9 +79,7 @@ export default {
         },
         register(){
             this.fields.push({email:this.input.email,password:this.input.password});
-            // console.log(1);
-            // alert(1);
-            // setTimeout(this.registerFile,100);
+         
             this.registerFile();
              
         },

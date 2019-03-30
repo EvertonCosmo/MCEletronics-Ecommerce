@@ -4,7 +4,7 @@
     <main-bar></main-bar>
 
   <section style="width: 100%">
-      <nav id="categorias">
+      <nav id="categories">
         <b-list-group class="item">
           <b-list-group-item href="#some-link" >Raspberry PI</b-list-group-item>
           <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
@@ -42,7 +42,7 @@
       </article>
     </section>
 
-    <nav id="mid" class="mais-vendidos"> 
+    <nav id="mid" class="more-sold"> 
       <div style="margin: 5%;">
         
          <div>
@@ -98,7 +98,7 @@
       </div> 
     </nav>
     
-    <nav id="mid" class="informacoes"> 
+    <nav id="mid" class="informations"> 
       <div style="width: 50%; ">
         <b-navbar-brand style="font-size: 200%; position: relative; color: #033076" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
       </div>
@@ -137,14 +137,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the header */
-header {
-  background-color: #033076;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  height: 2%;
-}
+
 
 article {
   float: right;
@@ -183,19 +176,19 @@ footer {
   color: white;
 }
 
-.mais-vendidos{
+.more-sold{
   margin: 1%;
   background-color: rgb(222, 224, 224);
   height: 400px;
 }
 
-.informacoes {
+.informations {
   background-color: rgb(176, 177, 179);
   margin: 0%;
   height: 240px;
 }
 /* Create two columns/boxes that floats next to each other */
-#categorias {
+#categories {
   float: left;
   width: 30%;
   background: white;
@@ -203,51 +196,9 @@ footer {
   font-size: 100%;
 }
 
-#form-search{
-  width: 100%;
-  margin-top: 1.7%;
-}
-/* #button-search{
-  background-color: #e6f3ff;
-  color: #033076;
-  height: 60%;
-  font-size: 45%;
-  width: 20%;
-  border: 10%;
-  border-radius: 15%;
-  height: 36px;
-}    */
-#button-favoritos{
-  background-color: #033076;
-  width: 20%;
-  height: 70%;
-  font-size: 55%;
-  border: 0px;
-  margin-left: -10%;
-  border-radius: 5%;
-}
-#button-bag{
-  background-color: #033076;
-  width: 20%;
-  height: 70%;
-  font-size: 55%;
-  border: 0px;
-  margin-left: 3%;
-}
-#purchase-value{
-  color: white;
-  font-size: 55%;
-  margin-left: 5%;
-}
-#navigation {
-  width: 100%;
-  margin-top: -0.5%;
-}
 
-.box-search{
-  position: sticky;
-  width: 100%;
-}
+
+
 
 .logo{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
