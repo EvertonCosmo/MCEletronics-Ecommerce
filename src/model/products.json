@@ -1,5 +1,38 @@
 {
-    
+  "products": [
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 1,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 2,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 3,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 4,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      }
+    ]  
 
 
 }

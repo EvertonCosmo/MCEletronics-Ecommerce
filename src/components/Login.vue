@@ -63,32 +63,29 @@
 import NavBar from './NavBar'
 import { setTimeout } from 'timers';
 
-
-
-
 export default {
-    name:'Login', 
+  name:'Login', 
   
-    data(){
-      return {
+  data(){
+    return {
         
-        loading:false,
-        fields: JSON.parse(window.localStorage.getItem('fields')), // get data from localstorage browser
-        input:{
-            email:"",
-            password:""
-        }
-
+      loading:false,
+      fields: JSON.parse(window.localStorage.getItem('fields')), // get data from localstorage browser
+      input:{
+        email:"",
+        password:""
       }
-      },
-  
-    methods:{ 
 
-       sleep(milliseconds) {
-             var start = new Date().getTime();
-            for (var i = 0; i < 1e7; i++) {
-                  if ((new Date().getTime() - start) > milliseconds){
-                    break;
+    }
+  },
+  
+  methods:{ 
+
+    sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
                     }
             }
     },
@@ -112,7 +109,7 @@ export default {
           }
         }else{
           alert("necessário email e senha")
-          e.preventDefault()
+          e.preventDefault();
         }
         
       },

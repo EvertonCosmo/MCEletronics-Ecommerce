@@ -13,9 +13,9 @@
             <b-nav-form>
               <b-form-group id="form-search" class="required-field">
                 <b-input-group >
-                  <b-form-input type="text" style="border-radius: 15px" maxlength="10" name="search"  placeholder="Buscar... "/>
+                  <b-form-input type="text" style="border-radius: 8px; z-index: 0" maxlength="10" name="search"  placeholder="Buscar... "/>
                   <b-input-group-btn >
-                    <i class="fas fa-search" style="position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
+                    <i class="fas fa-search" style=" z-index: 1; position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
                   </b-input-group-btn> 
                 </b-input-group>           
               </b-form-group>
@@ -26,8 +26,12 @@
               <i class="far fa-heart"></i>
             </b-button>
 
-            <b-button  id="button-bag" type="submit" > 
+            <b-button  id="button-bag" @click="pageBag" type="submit" > 
               <i class="fas fa-shopping-bag"></i>
+            </b-button>
+
+            <b-button id="button-usuer" @click="pagenew" type="submit">
+              <i class="fas fa-user-circle"></i>
             </b-button>
 
             <a id="purchase-value" type="text">R$ 0,00</a>
@@ -55,7 +59,16 @@ export default {
             valor: ""           
         }
       }
+    },
+
+  methods:{
+    pagenew(){
+    this.$router.replace({name:'Login'});
+    },
+    pageBag(){
+      this.$router.replace({name:'PageBag'});
     }
+  }  
 }
 
 </script>
@@ -113,29 +126,38 @@ footer {
 
 #button-favorites{
   background-color: #033076;
-  width: 20%;
+  width: 10%;
   height: 70%;
   font-size: 55%;
   border: 0px;
-  margin-left: -10%;
+  margin-left: 8%;
   border-radius: 5%;
 }
 #button-bag{
   background-color: #033076;
-  width: 20%;
+  width: 10%;
   height: 70%;
   font-size: 55%;
   border: 0px;
-  margin-left: 3%;
+  margin-left: 8%;
 }
 #purchase-value{
   color: white;
   font-size: 55%;
-  
+  margin-left: 10%;
 }
 #navigation {
   width: 50%;
   margin-top: -0.5%;
+}
+#button-usuer {
+  background-color: #033076;
+  width: 15%;
+  height: 70%;
+  font-size: 70%;
+  border: 0px;
+  margin-left: 10%;
+  border-radius: 8%;
 }
 
 .box-search{

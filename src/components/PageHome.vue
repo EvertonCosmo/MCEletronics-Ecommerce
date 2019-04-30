@@ -3,78 +3,88 @@
     <!-- <BarInfo></BarInfo> -->
     <main-bar></main-bar>
 
-  <section style="width: 100%">
+    <section style="width: 100%">
       <nav id="categories">
         <b-list-group class="item">
-          <b-list-group-item href="#some-link" >Raspberry PI</b-list-group-item>
-          <b-list-group-item href="#some-link" >Computadores</b-list-group-item>
-          <b-list-group-item href="#some-link" >Componentes</b-list-group-item>
-          <b-list-group-item href="#some-link" >Celulares</b-list-group-item>
-          <b-list-group-item href="#some-link" >Arduíno</b-list-group-item>
-          <b-list-group-item href="#some-link" >Conexões</b-list-group-item>
-          <b-list-group-item href="#some-link" >Shields</b-list-group-item>
-          <b-list-group-item href="#some-link" >Video</b-list-group-item>
-          <b-list-group-item href="#some-link" >Som</b-list-group-item>
+          <b-list-group-item href="#some-link">Raspberry PI</b-list-group-item>
+          <b-list-group-item href="#some-link">Computadores</b-list-group-item>
+          <b-list-group-item href="#some-link">Componentes</b-list-group-item>
+          <b-list-group-item href="#some-link">Celulares</b-list-group-item>
+          <b-list-group-item href="#some-link">Arduíno</b-list-group-item>
+          <b-list-group-item href="#some-link">Conexões</b-list-group-item>
+          <b-list-group-item href="#some-link">Shields</b-list-group-item>
+          <b-list-group-item href="#some-link">Video</b-list-group-item>
+          <b-list-group-item href="#some-link">Som</b-list-group-item>
         </b-list-group>
       </nav>
-      
+
       <article>
         <nav>
           <div>
             <b-nav pills fill class="pages">
-              <b-nav-item >Inicio</b-nav-item>
-              <b-nav-item >Produtos</b-nav-item>
-              <b-nav-item >Sobre </b-nav-item>
-              <b-nav-item >Contato</b-nav-item>
+              <b-nav-item>Inicio</b-nav-item>
+              <b-nav-item>Produtos</b-nav-item>
+              <b-nav-item>Sobre</b-nav-item>
+              <b-nav-item>Contato</b-nav-item>
             </b-nav>
           </div>
         </nav>
 
         <nav style="padding: 20px 0px 0px 0px; width: 100%">
           <div>
-            <b-carousel id="carousel-fade" style="text-shadow: 0px 0px 8px #000; max-width: 70rem; max-height 1rem" fade indicators controls="true">
-              <b-carousel-slide caption="Arduino uno" img-src="http://www.elecomhub.com/wp-content/uploads/2017/07/rb-ard-34-1_1-1024x480.jpg" />
-              <b-carousel-slide caption="Raspeberry Pi" img-src="http://www.elecomhub.com/wp-content/uploads/2017/06/Pi2ModB1GB_-comp-1024x480.jpeg" />
-              <b-carousel-slide caption="Arduino Mega" img-src="https://i1.wp.com/pcminipro.ru/wp-content/uploads/2018/01/banana-pi-r2.jpg?ssl=1" />
+            <b-carousel
+              id="carousel-fade"
+              style="text-shadow: 0px 0px 8px #000; max-width: 70rem; max-height 1rem"
+              fade
+              indicators
+              controls="true"
+            >
+              <b-carousel-slide
+                caption="Arduino uno"
+                img-src="http://www.elecomhub.com/wp-content/uploads/2017/07/rb-ard-34-1_1-1024x480.jpg"
+              />
+              <b-carousel-slide
+                caption="Raspeberry Pi"
+                img-src="http://www.elecomhub.com/wp-content/uploads/2017/06/Pi2ModB1GB_-comp-1024x480.jpeg"
+              />
+              <b-carousel-slide
+                caption="Arduino Mega"
+                img-src="https://i1.wp.com/pcminipro.ru/wp-content/uploads/2018/01/banana-pi-r2.jpg?ssl=1"
+              />
             </b-carousel>
-          </div>  
+          </div>
         </nav>
       </article>
     </section>
 
-    <nav id="mid" class="more-sold"> 
+    <nav id="mid" class="more-sold">
       <div style="margin: 5%;">
-        
-         <div>
+        <div>
           <b-card
             title="Raspberry Pi"
-             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Arduino Mega"
             img-top
             tag="article"
-           style="max-width:30%; margin-top: 2%;color:black; margin-right:2%; height:1%"
+            style="max-width:30%; margin-top: 2%;color:black; margin-right:2%; height:1%"
             class="mb-2"
-            >
-            <b-card-text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
+          >
+            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
             <b-button href="#" variant="primary">Comprar</b-button>
           </b-card>
         </div>
-  
+
         <div>
           <b-card
-             title="Raspberry Pi"
-             img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
+            title="Raspberry Pi"
+            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
             img-alt="Arduino Mega"
             img-top
             tag="article"
-           style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
+            style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
             class="mb-2"
-            >
-            <b-card-text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
+          >
+            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
             <b-button href="#" variant="primary">Comprar</b-button>
           </b-card>
         </div>
@@ -88,56 +98,75 @@
             tag="article"
             style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
             class="mb-2"
-            >
-            <b-card-text>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </b-card-text>
-            <b-button href="" @click="pagenew " variant="primary">Comprar</b-button>
+          >
+            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
+            <b-button href @click="pagenew " variant="primary">Comprar</b-button>
           </b-card>
         </div>
-      </div> 
+      </div>
     </nav>
-    
-    <nav id="mid" class="informations"> 
+
+    <nav id="mid" class="informations">
       <div style="width: 50%; ">
-        <b-navbar-brand style="font-size: 200%; position: relative; color: #033076" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
+        <b-navbar-brand
+          style="font-size: 200%; position: relative; color: #033076"
+          class="logo"
+          href="PageHome"
+        >MC Eletronics</b-navbar-brand>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div style="margin-left: 5%">
+            <!-- <i style="font-size: 50%; background-color: #111" class="fas fa-headset"></i> -->
+            <i style="font-size: 80px; color: #111; float: right" class="fab fa-tencent-weibo"></i>
+          </div>
+          <div style="color: #111" class="col-sm-4">
+            <h3>Fale conosco</h3>
+            <p>(88) 0 0000-0000</p>
+          </div>
+          <div style="margin-left: 30%; margin-top: -2%; color: #111; float: right" >
+            <h3>FAQ</h3>
+            <p>Como comprar</p>
+            <p>Trocas</p>
+            <p>Envios</p>
+            <p>Devoluções</p>
+          </div>
+        </div>
       </div>
     </nav>
 
     <footer>
-      <i class="far fa-copyright"> Direitos Reservados MC Eletronics</i>
+      <i class="far fa-copyright">Direitos Reservados MC Eletronics</i>
     </footer>
-
   </div>
 </template>
 
 <script>
 
 import MainBar from './MainBar.vue'
+
 export default {
-  name: 'PageHome',
+  name: "PageHome",
 
   components:{
     MainBar
   },
   methods: {
-    pagenew(){
-      this.$router.push({name:'Product'})
+    pagenew() {
+      this.$router.push({ name: "Product" });
     }
-  },
-}
+  }
+};
 </script>
 
 <style scoped>
-img{
-  width:50%;
+img {
+  width: 50%;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-
-
 article {
   float: right;
   padding: 20px;
@@ -145,7 +174,6 @@ article {
   background-color: #fff;
   height: 100px; /* only for demonstration, should be removed */
 }
-
 /* Clear floats after the columns */
 section:after {
   content: "";
@@ -153,7 +181,6 @@ section:after {
   clear: both;
   height: 100px;
 }
-
 /* Style the footer */
 footer {
   background-color: #033076;
@@ -162,25 +189,19 @@ footer {
   color: white;
   height: 2%;
 }
-
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, article {
+  nav,
+  article {
     width: 100%;
     height: auto;
   }
 }
-
-#mid {
-  color: white;
-}
-
-.more-sold{
+.more-sold {
   margin: 1%;
   background-color: rgb(222, 224, 224);
   height: 400px;
 }
-
 .informations {
   background-color: rgb(176, 177, 179);
   margin: 0%;
@@ -194,29 +215,24 @@ footer {
   padding: 1.7%;
   font-size: 100%;
 }
-
-
-
-
-
-.logo{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+#mid {
+  color: white;
 }
- .item{
-      width:100%;
-      /* padding:5%; */
-      border-left:none;
-      border-right: none;
-    }
-.item > :hover{
-        /* Background-color: #033076; */
-        background-color: #033076;
-        color:white;
+.logo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.pages :hover{
+.item {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+.item > :hover {
+  background-color: #033076;
+  color: white;
+}
+.pages :hover {
   background-color: #033076;
   border-radius: 8px;
-  color:white;
+  color: white;
 }
-
 </style>
