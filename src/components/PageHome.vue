@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BarInfo></BarInfo>
+    <!-- <BarInfo></BarInfo> -->
     <main-bar></main-bar>
 
   <section style="width: 100%">
@@ -113,13 +113,12 @@
 
 <script>
 
-import BarInfo from './BarInfo.vue'
 import MainBar from './MainBar.vue'
 export default {
   name: 'PageHome',
 
   components:{
-    BarInfo,MainBar
+    MainBar
   },
   methods: {
     pagenew(){

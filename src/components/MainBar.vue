@@ -131,10 +131,10 @@ footer {
 #purchase-value{
   color: white;
   font-size: 55%;
-  margin-left: 5%;
+  
 }
 #navigation {
-  width: 100%;
+  width: 50%;
   margin-top: -0.5%;
 }
 
@@ -153,9 +153,12 @@ footer {
       border-right: none;
     }
 .item > :hover{
-        /* Background-color: #033076; */
         background-color: #033076;
         color:white;
+}
+
+*{
+  box-sizing: border-box;
 }
 </style>
 
