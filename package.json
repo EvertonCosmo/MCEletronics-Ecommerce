@@ -14,6 +14,7 @@
     "popper": "^1.0.1",
     "postcss-url": "^8.0.0",
     "vue": "^2.6.6",
+    "vue-agile": "^1.0.5",
     "vue-owl-carousel": "^2.0.3",
     "vue-piczoom": "^1.0.6",
     "vue-router": "^3.0.2"

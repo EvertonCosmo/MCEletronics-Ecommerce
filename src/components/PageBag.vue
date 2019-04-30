@@ -37,7 +37,7 @@
 <script>
 
 
-import MainBar from "./MainBar.vue";
+import MainBar from "../components/BarComponents/MainBar.vue";
 export default {
   name: "PageHome",
 

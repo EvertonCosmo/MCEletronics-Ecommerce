@@ -11,13 +11,13 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueRouter from 'vue-router'
 
 // Components
-import LoginComponent from './components/Login.vue'
-import PageLoginComponent from './components/PageLogin.vue';
-import RegisterComponent from './components/Register.vue'
-import LogonBridgeComponent from './components/LogonBridge.vue'
-import HomePageComponent from './components/PageHome.vue'
-import ProductViewComponent from './components/ProductView.vue'
-import PageBagComponent from './components/PageBag.vue'
+import LoginComponent from '../src/components/LoginComponents/Login.vue'
+import PageLoginComponent from '../src/components/LoginComponents/PageLogin.vue'
+import RegisterComponent from '../src/components/LoginComponents/Register.vue'
+import LogonBridgeComponent from '../src/components/LoginComponents/LogonBridge.vue'
+import HomePageComponent from '../src/components/PageHome.vue'
+import ProductViewComponent from '../src/components/ProductComponents/ProductView.vue'
+import PageBagComponent from '../src/components/PageBag.vue'
 
 
 Vue.use(BootstrapVue)

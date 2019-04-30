@@ -3,116 +3,45 @@
     <!-- <BarInfo></BarInfo> -->
     <main-bar></main-bar>
 
-    <section style="width: 100%">
-      <nav id="categories">
-        <b-list-group class="item">
-          <b-list-group-item href="#some-link">Raspberry PI</b-list-group-item>
-          <b-list-group-item href="#some-link">Computadores</b-list-group-item>
-          <b-list-group-item href="#some-link">Componentes</b-list-group-item>
-          <b-list-group-item href="#some-link">Celulares</b-list-group-item>
-          <b-list-group-item href="#some-link">Arduíno</b-list-group-item>
-          <b-list-group-item href="#some-link">Conexões</b-list-group-item>
-          <b-list-group-item href="#some-link">Shields</b-list-group-item>
-          <b-list-group-item href="#some-link">Video</b-list-group-item>
-          <b-list-group-item href="#some-link">Som</b-list-group-item>
-        </b-list-group>
-      </nav>
 
-      <article>
-        <nav>
-          <div>
-            <b-nav pills fill class="pages">
-              <b-nav-item>Inicio</b-nav-item>
-              <b-nav-item>Produtos</b-nav-item>
-              <b-nav-item>Sobre</b-nav-item>
-              <b-nav-item>Contato</b-nav-item>
-            </b-nav>
-          </div>
-        </nav>
 
-        <nav style="padding: 20px 0px 0px 0px; width: 100%">
-          <div>
-            <b-carousel
-              id="carousel-fade"
-              style="text-shadow: 0px 0px 8px #000; max-width: 70rem; max-height 1rem"
-              fade
-              indicators
-              controls="true"
-            >
-              <b-carousel-slide
-                caption="Arduino uno"
-                img-src="http://www.elecomhub.com/wp-content/uploads/2017/07/rb-ard-34-1_1-1024x480.jpg"
-              />
-              <b-carousel-slide
-                caption="Raspeberry Pi"
-                img-src="http://www.elecomhub.com/wp-content/uploads/2017/06/Pi2ModB1GB_-comp-1024x480.jpeg"
-              />
-              <b-carousel-slide
-                caption="Arduino Mega"
-                img-src="https://i1.wp.com/pcminipro.ru/wp-content/uploads/2018/01/banana-pi-r2.jpg?ssl=1"
-              />
-            </b-carousel>
-          </div>
-        </nav>
-      </article>
-    </section>
 
-    <nav id="mid" class="more-sold">
-      <div style="margin: 5%;">
-        <div>
-          <b-card
-            title="Raspberry Pi"
-            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
-            img-alt="Arduino Mega"
-            img-top
-            tag="article"
-            style="max-width:30%; margin-top: 2%;color:black; margin-right:2%; height:1%"
-            class="mb-2"
-          >
-            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-            <b-button href="#" variant="primary">Comprar</b-button>
-          </b-card>
-        </div>
+  <b-card-group>
+      <b-card style="max-width:25rem" class="card"> 
+          <b-list-group class="item ">
+              <b-list-group-item href="#some-link"> Raspberry PI</b-list-group-item>
+              <b-list-group-item href="#some-link">Computadores</b-list-group-item>
+              <b-list-group-item href="#some-link">Componentes</b-list-group-item>
+              <b-list-group-item href="#some-link">Celulares</b-list-group-item>
+              <b-list-group-item href="#some-link">Arduíno</b-list-group-item>
+              <b-list-group-item href="#some-link">Conexões</b-list-group-item>
+              <b-list-group-item href="#some-link">Shields</b-list-group-item>
+              <b-list-group-item href="#some-link">Video</b-list-group-item>
+          </b-list-group>
+      </b-card>
 
-        <div>
-          <b-card
-            title="Raspberry Pi"
-            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
-            img-alt="Arduino Mega"
-            img-top
-            tag="article"
-            style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
-            class="mb-2"
-          >
-            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-            <b-button href="#" variant="primary">Comprar</b-button>
-          </b-card>
-        </div>
+  </b-card-group>
+   <div>
+      <agile :autoplay-speed="5000" :speed="1500" fade pause-on-hover pause-on-dots-hover autoplay>
+            <div class="slide">
+			<img src="../assets/Raspberry-Pi-3-462x322.jpg"/>
+            </div>
+      <div class="slide">
+		  	<h3>d33s</h3>
+		</div>
+</agile>
+   </div>
 
-        <div>
-          <b-card
-            title="Raspberry Pi"
-            img-src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-462x322.jpg"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width:30%; margin-top: 2%; margin-right:2%;color:black; height:1%"
-            class="mb-2"
-          >
-            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
-            <b-button href @click="pagenew " variant="primary">Comprar</b-button>
-          </b-card>
-        </div>
-      </div>
-    </nav>
 
-    <nav id="mid" class="informations">
+
+  <div id="mid" class="informations">
       <div style="width: 50%; ">
         <b-navbar-brand
           style="font-size: 200%; position: relative; color: #033076"
           class="logo"
           href="PageHome"
-        >MC Eletronics</b-navbar-brand>
+        >MC Eletronics
+        </b-navbar-brand>
       </div>
 
       <div class="container">
@@ -134,7 +63,7 @@
           </div>
         </div>
       </div>
-    </nav>
+  </div>
 
     <footer>
       <i class="far fa-copyright">Direitos Reservados MC Eletronics</i>
@@ -144,13 +73,14 @@
 
 <script>
 
-import MainBar from './MainBar.vue'
+import MainBar from '../components/BarComponents/MainBar.vue'
+import { VueAgile } from 'vue-agile'
 
 export default {
   name: "PageHome",
 
   components:{
-    MainBar
+    MainBar,agile: VueAgile
   },
   methods: {
     pagenew() {
@@ -221,18 +151,31 @@ footer {
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.item {
-  width: 100%;
-  border-left: none;
-  border-right: none;
-}
-.item > :hover {
-  background-color: #033076;
-  color: white;
-}
-.pages :hover {
+ver {
   background-color: #033076;
   border-radius: 8px;
   color: white;
 }
+   .card-list{
+       
+        margin-top:auto;
+        margin-left:auto;
+        
+     }
+    .card{
+        border: none;
+      
+        
+    }
+    .item{
+      width:100%;
+      padding:5%;
+      border-left:none;
+      border-right: none;
+    }
+    .item > :hover{
+        /* Background-color: #033076; */
+        background-color: #033076;
+        color:white;
+    }
 </style>

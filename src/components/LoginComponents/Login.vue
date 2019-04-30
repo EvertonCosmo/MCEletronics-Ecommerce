@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import NavBar from './NavBar'
+import NavBar from '../BarComponents/NavBar.vue'
 import { setTimeout } from 'timers';
 
 export default {

@@ -3,38 +3,48 @@
       <!-- <b-navbar style="position: relative max-width:25rem" class="nav-bar" toggleable="lg" type="dark" variant="info" > -->
         <!-- <NavBar></NavBar> -->
      <header>   
-      <b-navbar toggleable="lg" class="box-search">
+      <b-navbar toggleable="lg" type="dark"  class="box-search">
 
         <b-navbar-toggle target="nav_collapse" />
-        <b-navbar-brand style="font-size: 120%; position: relative; color: white" class="logo" href="PageHome">MC Eletronics</b-navbar-brand>
+        <b-navbar-brand style="font-size: 90%; position: relative; color: white" class="logo" href="PageHome">{{titlePage}}</b-navbar-brand>
         <b-collapse  e is-nav style="width: 100%" id="nav_collapse">
 
-          <div id="navigation">
+          <div class="navigation">
             <b-nav-form>
-              <b-form-group id="form-search" class="required-field">
+              <b-form-group id="form-search">
                 <b-input-group >
-                  <b-form-input type="text" style="border-radius: 8px; z-index: 0" maxlength="10" name="search"  placeholder="Buscar... "/>
-                  <b-input-group-btn >
-                    <i class="fas fa-search" style=" z-index: 1; position:absolute;right:8px;top: 9px;visibility:visible; color: #033076; font-size: 22px" ></i>
+                  <b-form-input type="search" style="border-radius: 6px; z-index: 0" maxlength="10" name="search"  placeholder="Buscar... "/>
+
+                  <b-input-group-btn style="cursor:pointer" >
+                   
+                    <i class="fas fa-search" style=" z-index: 1; position:absolute;right:2%;top: 25%;visibility:visible; color: #033076; font-size: 22px" ></i>
                   </b-input-group-btn> 
-                </b-input-group>           
+
+                </b-input-group>    
+                       
               </b-form-group>
             </b-nav-form> 
           </div>
+
           <div style="max-width: 25rem; width: 100%; display: block">
+            
             <b-button  id="button-favorites" type="submit" > 
               <i class="far fa-heart"></i>
             </b-button>
 
-            <b-button  id="button-bag" @click="pageBag" type="submit" > 
-              <i class="fas fa-shopping-bag"></i>
+            <b-button  class="button-bag" @click="pageBag"> 
+              <i class="fas fa-shopping-bag">   <b-badge variant="primary">{{quantity}}</b-badge></i>
+             
             </b-button>
 
-            <b-button id="button-usuer" @click="pagenew" type="submit">
+            <span id="purchase-value">R$ {{value}}</span>
+
+            <b-button id="button-usuer" @click="pagenew" >
               <i class="fas fa-user-circle"></i>
+           
             </b-button>
 
-            <a id="purchase-value" type="text">R$ 0,00</a>
+           
           </div>
 
         </b-collapse>
@@ -49,15 +59,15 @@
 
 export default {
     name: 'PageHome',
+
    components:{
     
    },
     data(){
       return {
-        input:{
-            search:"",
-            valor: ""           
-        }
+        titlePage:"MC Eletronics",
+        quantity:10,
+        value:"0,00"
       }
     },
 
@@ -133,7 +143,7 @@ footer {
   margin-left: 8%;
   border-radius: 5%;
 }
-#button-bag{
+.button-bag{
   background-color: #033076;
   width: 10%;
   height: 70%;
@@ -146,8 +156,8 @@ footer {
   font-size: 55%;
   margin-left: 10%;
 }
-#navigation {
-  width: 50%;
+.navigation {
+  width: 100%;
   margin-top: -0.5%;
 }
 #button-usuer {

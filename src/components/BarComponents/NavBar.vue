@@ -21,14 +21,14 @@ export default {
 
 </script>
 
-<style >
+<style scoped>
 
     .nav-bar{
         background: linear-gradient(-90deg,#033076);
         box-shadow: 1px 2px 2px 2px #033076;
-        height: 80px;
+        /* height: 100%; */
         width: 100%;
-        /* margin-bottom: 0px; */
+        margin-bottom: 0px;
         margin:auto;
     }
     .logo{

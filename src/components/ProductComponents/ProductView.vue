@@ -132,7 +132,7 @@
 
 
 <script>
-import MainBar from './MainBar.vue'
+import MainBar from '../BarComponents/MainBar.vue'
 
 import PicZoom from 'vue-piczoom'
 export default {
