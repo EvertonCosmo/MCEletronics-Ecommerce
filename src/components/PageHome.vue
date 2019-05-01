@@ -23,13 +23,10 @@
   </b-card-group>
    <div>
       <agile :autoplay-speed="5000" :speed="1500" fade pause-on-hover pause-on-dots-hover autoplay>
-            <div class="slide">
-			<img src="../assets/Raspberry-Pi-3-462x322.jpg"/>
-            </div>
-      <div class="slide">
-		  	<h3>d33s</h3>
-		</div>
-</agile>
+        <div class="slide">
+          <img src="../assets/Raspberry-Pi-3-462x322.jpg"/>
+        </div>	
+      </agile>
    </div>
 
 
