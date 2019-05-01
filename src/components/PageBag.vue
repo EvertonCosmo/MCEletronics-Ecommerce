@@ -1,3 +1,4 @@
+
 <template>
   <div>
         <!-- <BarInfo></BarInfo> -->
@@ -12,9 +13,11 @@
       <div class="row" style="margin-top: 1%">
 
         <div class="selection-box">
-          <button @click="getUsers">GET ALL</button>
+          <button >GET ALL</button>
             <ul>
-              <!-- <li v-for="products in product" >{{ product.name}} - {{ product.username}}</li> -->
+             <li :key="product.id" v-for="product in products">
+               {{product.name}}
+             </li>
             </ul>
         </div>
 
@@ -35,29 +38,39 @@
 </template>
 
 <script>
-
-
+/*eslint no-console: "error"*/
+/* eslint-disable */
 import MainBar from "../components/BarComponents/MainBar.vue";
+import axios from "axios"
+
 export default {
   name: "PageHome",
 
- 
+  data(){
+    return{
+      api:'http://localhost:3000/products',
+      products:[]
+    }
+  },
 
   components: {
     MainBar
-  }
+  },
+
+  created(){
+    axios.get(this.api)
+    .then(Response => {
+       this.products = Response.data;
+        console.log(Response.data)
+       
+     })
+    
+  },
+
 
   }
-//     getProducts() {
-//       vm = this;
-//       axios.get(this.url).then(function (r) {
-//         console.log(r.data);
-//         vm.products = r.data;
-//       }).catch(function (error) {
-//         console.log(error);
-//       });
-//  }
-//   }
+
+
 
 </script>
 
