@@ -26,7 +26,6 @@
                             <b-row>
                                 <div class="col-md-5">
                                     
-                                       <pic-zoom url="../assets/Raspberry-Pi-3-462x322.jpg" :scale="3"></pic-zoom>
                                       
                                    
                                     <!-- END THUMBS -->
@@ -134,11 +133,10 @@
 <script>
 import MainBar from '../BarComponents/MainBar.vue'
 
-import PicZoom from 'vue-piczoom'
 export default {
     
     components:{
-        MainBar, PicZoom
+        MainBar
     }
 }
 

@@ -31,6 +31,38 @@
         "unidade": 1,
         "value": 150,
         "type": "Placa PCB"
+      },
+      {
+        "name": "Arduino",
+        "username": "Pi",
+        "id": 5,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "Raspberry PI 4",
+        "username": "Pi",
+        "id": 6,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "Carro voador",
+        "username": "Pi",
+        "id": 7,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
+      },
+      {
+        "name": "78dhjsa",
+        "username": "Pi",
+        "id": 8,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB"
       }
     ]  
 

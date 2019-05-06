@@ -9,7 +9,7 @@
   <b-card-group>
       <b-card style="max-width:25rem" class="card"> 
           <b-list-group class="item ">
-              <b-list-group-item href="#some-link"> Raspberry PI</b-list-group-item>
+              <b-list-group-item href="#some-link">Raspberry PI</b-list-group-item>
               <b-list-group-item href="#some-link">Computadores</b-list-group-item>
               <b-list-group-item href="#some-link">Componentes</b-list-group-item>
               <b-list-group-item href="#some-link">Celulares</b-list-group-item>
@@ -21,13 +21,7 @@
       </b-card>
 
   </b-card-group>
-   <div>
-      <agile :autoplay-speed="5000" :speed="1500" fade pause-on-hover pause-on-dots-hover autoplay>
-        <div class="slide">
-          <img src="../assets/Raspberry-Pi-3-462x322.jpg"/>
-        </div>	
-      </agile>
-   </div>
+   
 
 
 
@@ -71,13 +65,13 @@
 <script>
 
 import MainBar from '../components/BarComponents/MainBar.vue'
-import { VueAgile } from 'vue-agile'
+
 
 export default {
   name: "PageHome",
 
   components:{
-    MainBar,agile: VueAgile
+    MainBar
   },
   methods: {
     pagenew() {
@@ -153,26 +147,24 @@ ver {
   border-radius: 8px;
   color: white;
 }
-   .card-list{
+.card-list{
        
-        margin-top:auto;
-        margin-left:auto;
-        
-     }
-    .card{
-        border: none;
+  margin-top:auto;
+  margin-left:auto;
       
-        
-    }
-    .item{
-      width:100%;
-      padding:5%;
-      border-left:none;
-      border-right: none;
-    }
-    .item > :hover{
-        /* Background-color: #033076; */
-        background-color: #033076;
-        color:white;
-    }
+}
+.card{
+  border: none; 
+}
+.item{
+  width:100%;
+  padding:5%;
+  border-left:none;
+  border-right: none;
+}
+.item > :hover{
+  /* Background-color: #033076; */
+  background-color: #033076;
+  color:white;
+}
 </style>
