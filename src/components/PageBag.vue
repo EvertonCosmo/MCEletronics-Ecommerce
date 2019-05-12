@@ -104,18 +104,9 @@ export default {
   },
 
   methods:{ 
-    // get products from api
+    
 
-    getProducts(){
-        ProductService.get().then(Response=>{
-            if(Response.data.product.length > 1){
-                   this.products = Response.data.product;
-                
-                }else{
-                    this.products = Response.data;
-                    
-                }
-        })
+
     },
       sum(e){
 
