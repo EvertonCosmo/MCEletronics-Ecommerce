@@ -17,7 +17,7 @@
                     Raspeberry Pi 3
             </nav>
         </b-container>
- <div id="content">
+        <div id="content">
             <main class="main">
                 <div class="shopify-section">
                     <div class="single-product-area mt-80 mb-80">

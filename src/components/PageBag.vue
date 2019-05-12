@@ -48,7 +48,7 @@ export default {
 
   data(){
     return{
-      api:'http://localhost:3000/products',
+      api:'http://localhost:8080/project/api/products',
       products:[]
     }
   },
