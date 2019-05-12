@@ -2,32 +2,18 @@
 
     <div id="app">
    
-          <!-- <HomePage></HomePage> -->
-          <router-view></router-view>
-          <!-- <Login></Login> -->
+       <router-view :key="$route.fullPath"/>
 
-          
-      
     </div>
 </template>
 
 <script>
 
 
-// import HomePage from './components/PageHome'
-// import Login from './components/LogonBridge'
+/* eslint-disable */ 
 export default {
   name: 'app',
 
-  components:{
-    // HomePage
-    
-
-  },
-  mounted() {
-    this.$router.replace({name:'PageHome'});
-  },
-   
 }
 </script>
 

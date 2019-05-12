@@ -1,0 +1,78 @@
+{
+  "products": [
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 1,
+        "unidade": 1,
+        "value": 160,
+        "type": "Placa PCB",
+        "qtd": 1
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 2,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 1
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 3,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 1
+      },
+      {
+        "name": "Raspberry",
+        "username": "Pi",
+        "id": 4,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 2
+      },
+      {
+        "name": "Arduino",
+        "username": "Pi",
+        "id": 5,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 5
+      },
+      {
+        "name": "Raspberry PI 4",
+        "username": "Pi",
+        "id": 6,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 1
+      },
+      {
+        "name": "Carro voador",
+        "username": "Pi",
+        "id": 7,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 1
+      },
+      {
+        "name": "78dhjsa",
+        "username": "Pi",
+        "id": 8,
+        "unidade": 1,
+        "value": 150,
+        "type": "Placa PCB",
+        "qtd": 1
+      }
+    ]  
+
+
+}

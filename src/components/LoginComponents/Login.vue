@@ -17,10 +17,10 @@
       <b-form >
           <b-form-group id='email' label= "Email" label-for='email1' class="required-field" @click ="login">
               <!-- email -->
-              <b-form-input v-model="input.email" class="input" name="email1"  id = "email" type="email"   placeholder="digite seu email"/>
+              <b-form-input v-model="input.email" class="input" name="email1"  id = "email" type="email"   placeholder="Digite seu email"/>
           </b-form-group>
 
-          <b-form-group id='password'  label= 'Senha  ' label-for='nome1' class="required-field">
+          <b-form-group id='password'  label= 'Senha' label-for='nome1' class="required-field">
               <!-- name -->
               <b-form-input v-model="input.password" maxlength="10" class="input" name="password" id = "nome1" type="password"   placeholder="******"/>
           </b-form-group>
@@ -48,7 +48,7 @@
              </div>
 
          <div class="col-md-12 text-right">
-              <a class="small" href="#">Esqueceu a Senha ? </a>
+              <a class="small" href="#">Esqueceu a Senha? </a>
           </div>     
       </b-form>
 
@@ -60,41 +60,37 @@
 </template>
 
 <script>
-import NavBar from './NavBar'
+import NavBar from '../BarComponents/NavBar.vue'
 import { setTimeout } from 'timers';
 
-
-
-
 export default {
-    name:'Login', 
+  name:'Login', 
   
-    data(){
-      return {
+  data(){
+    return {
         
-        loading:false,
-        fields: JSON.parse(window.localStorage.getItem('fields')), // get data from localstorage browser
-        input:{
-            email:"",
-            password:""
-        }
-
+      loading:false,
+      fields: JSON.parse(window.localStorage.getItem('fields')), // get data from localstorage browser
+      input:{
+        email:"",
+        password:""
       }
-      },
-  
-    methods:{ 
 
-       sleep(milliseconds) {
-             var start = new Date().getTime();
-            for (var i = 0; i < 1e7; i++) {
-                  if ((new Date().getTime() - start) > milliseconds){
-                    break;
-                    }
-            }
+    }
+  },
+  
+  methods:{ 
+
+    sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
+        }
+      }
     },
     
-      login(e){ /* checks data equality with data in localstorage  */
-     
+    login(e){ /* checks data equality with data in localstorage  */ 
                  
         if(this.input.email != "" && this.input.password != "") {
           if(this.input.email == this.fields[0].email && this.input.password == this.fields[0].password){
@@ -106,21 +102,21 @@ export default {
                   setTimeout(this.placeLogin,1500); // wait 1,5 second to call new Route
                 
           }else{
-            alert("email ou senha incorretos")
+            alert("Email ou senha incorretos")
             e.preventDefault();
             
           }
         }else{
-          alert("necessário email e senha")
-          e.preventDefault()
+          alert("Necessário email e senha")
+          e.preventDefault();
         }
         
-      },
-      placeLogin(){
+    },
+    placeLogin(){
             // replace router(page) to PageLogin
            this.$router.push({name:'PageLogin'})
            
-      },
+    },
       placeHome(){
         this.$router.push({path:'/'})
       }
