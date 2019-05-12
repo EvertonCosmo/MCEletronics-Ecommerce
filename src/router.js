@@ -4,10 +4,7 @@ import LoginComponent from './components/Login.vue'
 import PageLoginComponent from './components/PageLogin.vue'
 import PageHomeComponent from './components/PageHome.vue'
 
-
 Vue.use(Router)
-
-
 
 export default new Router({
 

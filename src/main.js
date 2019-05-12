@@ -4,10 +4,8 @@ import App from './App.vue'
 
 import BootstrapVue from 'bootstrap-vue'
 
-
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
 
 import VueRouter from 'vue-router'
 
@@ -20,15 +18,11 @@ import HomePageComponent from '../src/components/PageHome.vue'
 import ProductViewComponent from '../src/components/ProductComponents/ProductView.vue'
 import PageBagComponent from '../src/components/PageBag.vue'
 
-
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
-
-
-
 
 const routes = [{
         path: "*",

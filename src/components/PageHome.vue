@@ -3,9 +3,6 @@
     <!-- <BarInfo></BarInfo> -->
     <main-bar></main-bar>
 
-
-
-
   <b-card-group>
       <b-card style="max-width:25rem" class="card"> 
           <b-list-group class="item ">
@@ -28,7 +25,7 @@
   <div id="mid" class="informations">
       <div style="width: 50%; ">
         <b-navbar-brand
-          style="font-size: 200%; position: relative; color: #033076"
+          style="font-size: 200%; position: relative; color: #033076; margin-left: 6%"
           class="logo"
           href="PageHome"
         >MC Eletronics
@@ -37,15 +34,15 @@
 
       <div class="container">
         <div class="row">
-          <div style="margin-left: 5%">
+          <div style="margin-left: 20%">
             <!-- <i style="font-size: 50%; background-color: #111" class="fas fa-headset"></i> -->
-            <i style="font-size: 80px; color: #111; float: right" class="fab fa-tencent-weibo"></i>
+            <i style="font-size: 80px; color: #2D2C3F; float: right" class="fab fa-tencent-weibo"></i>
           </div>
-          <div style="color: #111" class="col-sm-4">
+          <div style="color: #2D2C3F" class="col-sm-4">
             <h3>Fale conosco</h3>
             <p>(88) 0 0000-0000</p>
           </div>
-          <div style="margin-left: 30%; margin-top: -2%; color: #111; float: right" >
+          <div style="margin-left: 10%; margin-top: -2%; color: #2D2C3F; float: right" >
             <h3>FAQ</h3>
             <p>Como comprar</p>
             <p>Trocas</p>
