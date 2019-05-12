@@ -1,40 +1,51 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LoginComponent from './components/Login.vue'
-import PageLoginComponent from './components/PageLogin.vue'
+
+
+import LoginComponent from './components/LoginComponents/Login.vue'
+import RegisterComponent from './components/LoginComponents/Register.vue'
 import PageHomeComponent from './components/PageHome.vue'
+
+import ProductViewComponent from './components/ProductComponents/ProductView.vue'
+import BagComponent from '../src/components/PageBag.vue'
 
 
 Vue.use(Router)
 
-
-
 export default new Router({
-
-    routes: [{
-            path: "/",
-            redirect: {
-                name: "Login"
-            }
+    mode:'history',
+    routes: [
+        {
+            path:'*',
+            component:PageHomeComponent
         },
         {
-            path: "/Login",
-            name: "Login",
-            component: LoginComponent
+            path:'/',
+            component:PageHomeComponent
         },
         {
-            path: "/PageLogin",
-            name: "PageLogin",
-            component: PageLoginComponent
-
+            path:'/login',
+            name:'login',
+            component:LoginComponent
+            
         },
         {
-            path: "/PageHome",
-            name: "PageHome",
-            component: PageHomeComponent
-
+            path:'/register',
+            name:'register',
+            component:RegisterComponent
+        },
+        {
+            path:'/product-view/:id',
+            name:'product-view',
+            component:ProductViewComponent,
+            props:true
+        },
+        {
+            path:'/bag',
+            name:'bag',
+            component:BagComponent
         }
-
     ]
+   
 
-})
+});

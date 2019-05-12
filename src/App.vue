@@ -2,26 +2,18 @@
 
     <div id="app">
    
-          
-          <router-view></router-view>
-      
+       <router-view :key="$route.fullPath"/>
 
-          
-      
     </div>
 </template>
 
 <script>
 
 
-
+/* eslint-disable */ 
 export default {
   name: 'app',
 
-  components:{
-    
-
-  },   
 }
 </script>
 

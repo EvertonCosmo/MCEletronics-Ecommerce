@@ -14,10 +14,8 @@
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
     "postcss-url": "^8.0.0",
-    "vue": "^2.6.6",
-    "vue-agile": "^1.0.5",
-    "vue-owl-carousel": "^2.0.3",
-    "vue-piczoom": "^1.0.6",
+    "vue": "^2.6.10",
+    "vue-agile": "^1.0.8",
     "vue-router": "^3.0.6"
   },
   "devDependencies": {
@@ -33,7 +31,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "sugarss": "^2.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
     "root": true,
