@@ -48,7 +48,7 @@
 <script>
 
 
-import  NavBar from '../BarComponents/NavBar.vue'
+import  NavBar from './NavBar'
 
 
 export default {
