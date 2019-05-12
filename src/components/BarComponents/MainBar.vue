@@ -54,12 +54,12 @@
               
 
            
-
-            <b-button id="button-usuer">
-              <i class="fas fa-user-circle"></i>
-           
-            </b-button>
-
+            <router-link :to="{name:'login'}">
+              <b-button id="button-usuer">
+                <i class="fas fa-user-circle"></i>
+            
+              </b-button>
+            </router-link>
            
           </div>
         <!-- BODY BANNER -->

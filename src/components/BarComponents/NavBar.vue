@@ -1,11 +1,13 @@
 
 <template>
   
-    <div class="nav-bar">
-        <router-link class="logo" to="/" >{{title}}</router-link>
-        <router-view></router-view>
+    <nav class="nav-bar ">
+        <div>
+       <router-link to="/" class="logo center">{{title}}</router-link>
+        <!-- <router-view></router-view> -->
         <!-- <span>MC Eletronics</span> -->
-    </div>
+        </div>
+    </nav>
 </template>
 
 <script>
@@ -22,13 +24,55 @@ export default {
 </script>
 
 <style scoped>
-
-    .nav-bar{
+nav{ 
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
+nav .brand-logo.center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.nav-wrapper{
         background: linear-gradient(-90deg,#033076);
         box-shadow: 1px 2px 2px 2px #033076;
-        /* height: 100%; */
+        height: 4rem;
         width: 100%;
         margin-bottom: 10px;
+        /* margin:auto; */
+        
+    }
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+    .logo{
+        color:white;
+       
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2.3rem;
+        margin-left: 10px;
+        
+    }
+       .nav-bar{
+        background: linear-gradient(-90deg,#033076);
+        box-shadow: 1px 2px 2px 2px #033076;
+        height: 80px;
+        width: 100%;
+        /* margin-bottom: 0px; */
         margin:auto;
     }
     .logo{
@@ -43,7 +87,7 @@ export default {
         color:white;
         text-decoration: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 3.3rem;
+        font-size: 2.3rem;
         margin-left: 10px;
         
     }

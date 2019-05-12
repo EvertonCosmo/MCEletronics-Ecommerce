@@ -87,15 +87,16 @@
 /*eslint no-console: "error"*/
 /* eslint-disable */
 import MainBar from "../components/BarComponents/MainBar.vue";
-import axios from "axios"
+import ProductService from "../services/products.js"
 
 export default {
   name: "PageHome",
-
+    props:{
+        product:Object
+    },
   data(){
     return{
-      api:'http://localhost:3000/products',
-      products:[],
+    //   products:[],
       input: {
           value: '1',
       }
@@ -103,6 +104,19 @@ export default {
   },
 
   methods:{ 
+    // get products from api
+
+    getProducts(){
+        ProductService.get().then(Response=>{
+            if(Response.data.product.length > 1){
+                   this.products = Response.data.product;
+                
+                }else{
+                    this.products = Response.data;
+                    
+                }
+        })
+    },
       sum(e){
 
           if(this.input.value <= 9){
