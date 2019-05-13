@@ -11,12 +11,14 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
+    "chunk": "^0.0.2",
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
     "postcss-url": "^8.0.0",
     "vue": "^2.6.10",
     "vue-agile": "^1.0.8",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

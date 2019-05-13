@@ -43,6 +43,7 @@
                 <b-button id="button-bag">
                    <i class="fas fa-shopping-cart">
                         <!-- <span>{{value}}</span> -->
+                      <!-- <span class="ml-1">{{this.cartProducts.length}}</span> -->
                    </i>
                  
                   
@@ -76,14 +77,14 @@
 
 <script>
 
-
+// import Products from "../components/ProductComponents/AllProducts"
+// import { mapState, mapActions, mapMutations } from "vuex";
 
 export default {
     name: 'PageHome',
 
-   components:{
-    
-   },
+
+   
     data(){
       return {
         titlePage:"MC Eletronics",
@@ -92,9 +93,8 @@ export default {
       }
     },
 
-  methods:{
-  
-  },  
+  // computed: mapState(["cartProducts"]),
+
 }
 
 </script>
