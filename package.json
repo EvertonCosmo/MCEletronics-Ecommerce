@@ -11,6 +11,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.19",
+    "es6-promise": "^4.2.6",
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
     "postcss-url": "^8.0.0",
@@ -18,7 +19,8 @@
     "vue-agile": "^1.0.5",
     "vue-owl-carousel": "^2.0.3",
     "vue-piczoom": "^1.0.6",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

@@ -1,6 +1,10 @@
 /*eslint no-console: "error"*/
+import 'es6-promise/auto'
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App.vue'
+
+import 'es6-promise/auto'
 
 import BootstrapVue from 'bootstrap-vue'
 
@@ -20,6 +24,7 @@ import PageBagComponent from '../src/components/PageBag.vue'
 
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
