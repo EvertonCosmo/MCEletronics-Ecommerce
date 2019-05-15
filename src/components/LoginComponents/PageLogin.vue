@@ -5,7 +5,19 @@
     <main-bar></main-bar>
     <div>
         
-            <p> Inicio  > minha conta</p>
+          <b-container>
+            <nav class="breadcrumb"> 
+                <a href="#">Início</a>
+                <span class="delimiter">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+                <a href="#">Minha Conta</a>
+                <!-- <span class="delimiter">
+                     <i class="fa fa-angle-right"></i>
+                </span> -->
+             
+            </nav>
+        </b-container>
 
             <h2 class="text-center">Minha Conta</h2>
                 <div class="text-center">
@@ -38,7 +50,7 @@
 
 <script>
 
-import MainBar from './MainBar.vue'
+import MainBar from '../BarComponents/MainBar.vue'
 
 export default {
     name:'PageLogin',
@@ -97,8 +109,19 @@ export default {
         color:white;
     }
 
+span.delimiter {
+    margin: 0 1.429em;
+}
 
+* {
+    box-sizing: border-box;
+}
 
+.breadcrumb {
+    background-color:transparent;
+    margin-top: 1.786em;
+      /* margin-left: 0%/ */
+}
 </style>
 
 

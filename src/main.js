@@ -1,27 +1,18 @@
-
+/*eslint no-console: "error"*/
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
+import store from './store/'
 
 import BootstrapVue from 'bootstrap-vue'
-
+// import VueCarousel from '@chenfengyuan/vue-carousel';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
-import VueRouter from 'vue-router'
-
-// Components
-import LoginComponent from './components/Login.vue'
-import PageLoginComponent from './components/PageLogin.vue';
-import RegisterComponent from './components/Register.vue'
-import LogonBridgeComponent from './components/LogonBridge.vue'
-import HomePageComponent from './components/PageHome.vue'
-import ProductViewComponent from './components/ProductView.vue'
-
-
 Vue.use(BootstrapVue)
-Vue.use(VueRouter)
+// Vue.use(VueCarousel);
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
@@ -29,57 +20,9 @@ Vue.config.devtools = true
 
 
 
-const routes =  [
-{
-        path:"*",
-        component:HomePageComponent
-},
- {
-    path:"/",
-    component:HomePageComponent
-    
- },
- {
-      path:"/Login",
-      name:"Login",
-      component:LoginComponent
-  },
-
-  {
-      path:"/PageLogin",
-      name:"PageLogin",
-      component:PageLoginComponent
-
-  },
-  {
-    path:"/Register",
-    name:"Register",
-    component:RegisterComponent
-    
-  },
-  {
-    path:"/Bridge",
-    name:"Bridge",
-    component:LogonBridgeComponent
-  },
-  {
-    path:"/PageHome",
-    name:"PageHome",
-    component:HomePageComponent
-  },
-  { 
-    path:"/Product",
-    name:"Product",
-    component:ProductViewComponent
-  }
-
-]
-
-const router = new VueRouter({routes});
-
-
 new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App),
 }).$mount('#app')
