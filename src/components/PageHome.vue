@@ -3,12 +3,12 @@
     <!-- <BarInfo></BarInfo> -->
    <main-bar></main-bar>
   
-<div class="container" >
+<div class="container-fluid" >
  <b-row>
 
- <div class="col-md-5" >
+ <div class="col-md-4" >
   <b-card-group >
-      <b-card style="max-width:25rem" class="card" > 
+      <b-card style="max-width:22rem" > 
           <b-list-group class="item">
             <b-list-group-item active><i class="fas fa-list-ul"></i> Categorias</b-list-group-item>
               <b-list-group-item href="#some-link">Raspberry PI</b-list-group-item>
@@ -64,9 +64,9 @@
               </b-carousel> -->
 
    <!-- <agile  class="" :nav-buttons="false" :autoplay-speed="5000" :speed="2500" fade="fade" pause-on-hover="pause-on-hover" pause-on-dots-hover="pause-on-dots-hover" autoplay="autoplay"><img class="slide" src="https://images.unsplash.com/photo-1509549649946-f1b6276d4f35?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/><img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1511135232973-c3ee80040060?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1511231683436-44735d14c11c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1517677129300-07b130802f46?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/></agile> -->
-   <!-- <aside class="float-right" role="complementary">
-   <carousel></carousel>
-   </aside> -->
+<article class="col-sm-8" style="margin-top:4%;margin-left:-3%;">
+   <carousel style="max-width:100%" ></carousel>
+</article> 
  </b-row>
   </div>
 
@@ -106,38 +106,30 @@
     </footer> -->
 <products></products>
 
-
-
-
-
-   
-
-
-
   </div>
 </template>
 
 <script>
 
 import MainBar from '../components/BarComponents/MainBar.vue'
-// import Carousel from './Carrousel.vue'
+import Carousel from './Carrousel.vue'
 import Products from "./ProductComponents/Products"
 
+
+import {mapGetters} from 'vuex'
 export default {
   name: "PageHome",
-
-  data(){
-    return {
-      
-    }
+  computed:{
+    ...mapGetters([
+      'getAllProducts',
+    ])
   },
+
   components:{
-    MainBar,Products
+    MainBar,Products,Carousel
   },
 
-  methods: {
-    
-  },
+  
 }
 
 </script>

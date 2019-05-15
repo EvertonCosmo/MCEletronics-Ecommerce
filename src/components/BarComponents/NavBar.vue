@@ -39,14 +39,14 @@ export default {
         margin-left: 10px;
         
     }
-    .logo:hover{
+    /* .logo:hover{
         color:white;
         text-decoration: none;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 3.3rem;
         margin-left: 10px;
         
-    }
+    } */
 </style>
 
 

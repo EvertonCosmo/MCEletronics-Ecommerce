@@ -1,29 +1,38 @@
 <template>
     <div>
         <h3>Recomendados</h3>
-        <div class="row" v-for="(row,index) in productsRows" :key="index">
-            <div class="col-sm-4 mb-4" v-for="product in row" :key="product.id">
+        <b-row v-for="(row,index) in productRows" :key="index" style="width:70%; margin-left:%">
+            <div class="col-sm-4 mb-6" v-for="product in row" :key="product.id">
                 <Product :product="product" track-id="id"/>
-
             </div>
-        </div>
+        </b-row>
+
+       
     </div>
 </template>
 
 <script>
 import Product from "./Product"
-import {mapActions,mapState} from "vuex"
-import chunk from 'chunk' // Chunk converts arrays like [1,2,3,4,5] into arrays of arrays like [[1,2], [3,4], [5]].
+import { mapActions, mapState } from 'vuex'
+// import chunk from 'chunk'
+ // Chunk converts arrays like [1,2,3,4,5] into arrays of arrays like [[1,2], [3,4], [5]].
 
 export default {
     name:"Products",
+    // props:['products'],
+    data(){
+        return {
+          
+        }
+    },
     components: { 
          Product
      
-    }, 
-    computed: mapState({
-        ProductRows: state => chunk(state.products.all,3)
-    }),
+    },
+   computed: mapState({
+    productRows: state => state.products.products
+    
+  }),
      methods: mapActions([
          'getProducts'
      ]),
@@ -31,6 +40,8 @@ export default {
 
   created () {
     this.getProducts()
+    
+    
   }
     
 }

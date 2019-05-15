@@ -17,14 +17,13 @@
             <b-nav-form>
               <b-form-group id="form-search">
                 <b-input-group >
-                  <b-form-input type="search" style="border-radius: 6px; z-index: 0" maxlength="10" name="search"  placeholder="Buscar... "/>
+                  <b-form-input style="border-radius: 6px; z-index: 0" maxlength="10" name="search"  placeholder="Buscar... "/>
 
-                  <!-- <b-input-group style="cursor:pointer" > -->
                            
                            <i class="fas fa-search" style=" z-index: 1; position:absolute;right:2%;top: 25%;visibility:visible; color: #033076; font-size:50%" ></i>
                   
                    
-                  <!-- </b-input-group>  -->
+                
 
                 </b-input-group>    
                        
@@ -35,35 +34,36 @@
 
 
           <div style="max-width: 25rem; width: 100%; display: block">
-            
-            <b-button  id="button-favorites" type="submit" > 
+            <router-link :to="{path:'/'}">
+            <b-button  id="button-favorites"> 
               <i class="far fa-heart"></i>
             </b-button>
-            <router-link :to="{name:'bag'}">
-                <b-button id="button-bag">
+            </router-link>
+            <router-link :to  ="{name:'bag'}">
+                <b-button id="button-bag" >
                    <i class="fas fa-shopping-cart">
-                        <!-- <span>{{value}}</span> -->
-                      <!-- <span class="ml-1">{{this.cartProducts.length}}</span> -->
+               
+                         <span class="ml-1" v-if="hasProduct()"> <b-badge variant="primary">{{ getProductsInCart.length }}</b-badge></span>
+
                    </i>
                  
                   
                 </b-button>
-                  <!-- <span id="purchase-value">R$</span> -->
+                
             </router-link>
-                 <!-- <b-badge variant="primary">{{quantity}}</b-badge></i>  -->
-            
+             
               
 
-           
+           <router-link :to="{name:'login'}">
 
             <b-button id="button-usuer">
               <i class="fas fa-user-circle"></i>
            
             </b-button>
-
+          </router-link>
            
           </div>
-        <!-- BODY BANNER -->
+       
         
 
 
@@ -77,9 +77,8 @@
 
 <script>
 
-// import Products from "../components/ProductComponents/AllProducts"
-// import { mapState, mapActions, mapMutations } from "vuex";
 
+import { mapGetters } from 'vuex';
 export default {
     name: 'PageHome',
 
@@ -92,6 +91,19 @@ export default {
         value:"100,00"
       }
     },
+
+methods:{
+  hasProduct(){
+    return this.getProductsInCart.length > 0
+  }
+},
+computed:{
+   ...mapGetters([
+      'getProductsInCart',
+      
+    ]),
+  },
+
 
   // computed: mapState(["cartProducts"]),
 

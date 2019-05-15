@@ -9,7 +9,14 @@ import axios from "axios"
         },
     })
 export default {
-    get: (cd) => { 
-       cd(http.get('products')) // get all products
+    get: () => { 
+       return http.get('products') // get all products
+    },
+    
+    getUser:(email) => { // get the user 
+        return http.get('users/' +email)
+    },
+    postUser :(user) => {
+        return http.post('users',user)
     }
 }

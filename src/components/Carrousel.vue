@@ -23,11 +23,13 @@
 </div> -->
 
  <b-carousel
+ class="position-relative"
     id="carousel-fade"
-    style="text-shadow: 0px 0px 2px #000; width:100%"
+    style="text-shadow: 0px 0px 2px #000;width:102%; "
     fade
     indicators
-    img-width="1024"
+     controls
+    img-width="720"
     img-height="480"
     
   >

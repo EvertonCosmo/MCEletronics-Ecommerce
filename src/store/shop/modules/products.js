@@ -11,13 +11,7 @@ export const mutations = {
     SET_PRODUCTS(state, products) {
         state.products = products
     },
-    ADD_TO_CART(state,productId){
-        // state.products = products
-        state.products.find(product => product.id == productId).quantity--
-    },
-    REMOVE_FROM_CART: (state, index) => {
-        state.cartProducts.splice(index, 1);
-    },
+  
 }
 
 

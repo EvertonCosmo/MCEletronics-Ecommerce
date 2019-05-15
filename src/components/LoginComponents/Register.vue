@@ -14,13 +14,13 @@
                  </p>
                     
                 <b-form-group id="email" label='Email' label-for="email"  >
-                       <b-form-input class="input" type="email" v-model="input.email" name="email"  placeholder="Email"/>
+                       <b-form-input class="input" type="email" v-model="user.email" name="email"  placeholder="Email"/>
                      
                 </b-form-group>    
 
                   <b-form-group  id="senha" label='Senha' label-for="password" class="required-field">
                       <b-input-group >
-                       <b-form-input :type="passwordFieldType" class="input"  maxlength="10" v-model="input.password" name="password"  placeholder="******* "/>
+                       <b-form-input :type="passwordFieldType" class="input"  maxlength="10" v-model="user.password" name="password"  placeholder="******* "/>
                     <b-input-group-btn >
                                  <i class="fas fa-eye-slash" style="position:absolute;right:3px;top:12px;visibility:visible;" @click="switchVisibility" ></i>
                     </b-input-group-btn>
@@ -33,7 +33,7 @@
                    
 
                      <b-form-group id="senha2" label="Redigite a senha" label-for="password2" class="required-field">
-                       <b-form-input class="input" type="password" maxlength="10" name="email2" v-model="input.password2" placeholder="******* "/>
+                       <b-form-input class="input" type="password" maxlength="10" name="email2" v-model="user.password2" placeholder="******* "/>
                   </b-form-group>  
 
                     <b-button type="submit" block variant="primary" style="background-color:#033076" id="btn-register">Registrar</b-button>
@@ -49,7 +49,8 @@
 
 
 import  NavBar from '../BarComponents/NavBar.vue'
-
+import api from '../../services/api';
+/* eslint-disable */
 
 export default {
     name :'Register',
@@ -57,7 +58,11 @@ export default {
     data(){
         return{
              passwordFieldType: 'password',
-             
+             user:{
+                 email:'',
+                 password:'',
+                 password2:''
+             },
             input:{
                 errors: [],
                 email:"",
@@ -78,40 +83,33 @@ export default {
                 this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
         },
         register(){
-            this.fields.push({email:this.input.email,password:this.input.password});
-         
-            this.registerFile();
-             
-        },
-        registerFile(){
-            const data = JSON.stringify(this.fields);
-
-            localStorage.setItem('fields',data);
-            
-
-            // alert(JSON.parse(localStorage.getItem('fields')));
-          alert('Cadastrado com sucesso');
-
-            
-    
-          
+              let formData = new FormData()
+                   formData.append('email', this.user.email);
+                    formData.append('password', this.user.password);
+            api.postUser(formData).then(Response => {
+                    alert('adicionado com sucesso')
+                    this.$router.push({name:'login'})
+            }).catch(e => {
+                console.log(e)
+            })
         },
 
         checkErrors(e){
               
              
-            if(this.input.email && this.input.password && this.input.password === this.input.password2) {
-                if(this.input.password.length < 5 && this.input.password2.length < 5){
+            if(this.user.email && this.user.password && this.user.password === this.user.password2) {
+                if(this.user.password.length <= 5 && this.user.password2.length <= 5){
                 
                     this.input.errors.push('senha com no minímo 5 digitos')
                     e.preventDefault();
-                    return false;
+                   
                   
-            }else{
-                this.register();
-                return true;
-                
-            }
+                 }else{
+                        this.register();
+                        
+                       
+                 }
+
               
             }
           
@@ -119,13 +117,13 @@ export default {
 
            
             
-            if(!this.input.email) 
+            if(!this.user.email) 
                 this.input.errors.push('O email é obrigatório');
-            if(!this.input.password)
-                 this.input.errors.push('a senha é obrigatório');
-            if(!this.input.password2) 
+            if(!this.user.password)
+                 this.input.errors.push('a senha é obrigatória');
+            if(!this.user.password2) 
                 this.input.errors.push('por favor redigite a senha'); 
-            if(this.input.password !== this.input.password2 || this.input.password > this.input.password2 || this.input.password2 > this.input.password)
+            if(this.user.password !== this.user.password2 || this.user.password > this.user.password2 || this.user.password2 > this.user.password)
                  this.input.errors.push('senhas não conferem');
           
             e.preventDefault();

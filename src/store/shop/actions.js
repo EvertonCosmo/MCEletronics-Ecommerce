@@ -1,16 +1,21 @@
+ /* eslint-disable */
 import api from "../../services/api.js"
 
 
 export const getProducts =({ commit }) => {
-    api.get(products => {
-        commit('SET_PRODUCTS',products)
-    })
+    api.get().then(Response => {commit('SET_PRODUCTS',Response.data)})
+    
+        
 }
-export const addToCart = ({ commit }, product) => {
+
+export const addToCart = (context, product) => {
     if (product.quantity > 0) {
-        commit('ADD_TO_CART', product.id)
+        context.commit('ADD_TO_CART', product)
     }
 }
-export const removeFromCart = ({ commit }, product) => {
-    commit('REMOVE_FROM_CART', product)
+
+
+export const removeFromCart = (context, product) => {
+    context.commit('REMOVE_FROM_CART', product)
 }
+

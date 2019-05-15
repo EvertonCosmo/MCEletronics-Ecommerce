@@ -1,14 +1,34 @@
 <template>
-    <div class="cart text-center">
+    <b-card
+    img-top
+    :img-src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)"
+    style="max-width: 20rem;border:solid 1px rgba(0,0,0,.2)"
+    >
+    <b-card-body>
+        <b-card-title>
+             <router-link :to="{ name:'product-view', params: {id: product.id,product:product}} ">
+                {{product.name}}
+             </router-link>
+            
+        </b-card-title>
+            <b-card-text>
+                R$ {{product.price}} - Estoque: {{product.quantity}}
+                <AddToCart :product="product"/>
+            </b-card-text>
+    </b-card-body>
+    </b-card>
+
+    
+    <!-- <div class="cart text-center" >
         <div class="card-img-top vue-logo"></div>
 
         <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.price}} - Estoque: {{product.quantity}}</p>
+            <p class="card-text"> R$ {{product.price}} - Estoque: {{product.quantity}}</p>
             <AddToCart :product="product"/>
             
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -21,7 +41,7 @@ export default {
     },
     data(){
         return{
-
+                
         }
     }
 

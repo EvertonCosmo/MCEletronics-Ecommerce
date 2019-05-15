@@ -1,24 +1,22 @@
 <template>
-<div class="site-content">
+<div>
   <MainBar></MainBar>
-   
 
-        
         <b-container>
             <nav class="breadcrumb"> 
                 <a href="#">Início</a>
                 <span class="delimiter">
                     <i class="fa fa-angle-right"></i>
                 </span>
-                <a href="#">Robótica</a>
+                <a href="#">{{product.category}}</a>
                 <span class="delimiter">
                      <i class="fa fa-angle-right"></i>
                 </span>
-                    Raspeberry Pi 3
+                   {{product.name}}
             </nav>
         </b-container>
         <div id="content">
-            <main class="main">
+            <div>
                 <div class="shopify-section">
                     <div class="single-product-area mt-80 mb-80">
                         <b-container>
@@ -26,8 +24,7 @@
                             <b-row>
                                 <div class="col-md-5">
                                     
-                                      
-                                   
+                                                 <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="90%"/>
                                     <!-- END THUMBS -->
 
                                 </div> 
@@ -37,16 +34,16 @@
                                 <b-card  tag="article" class="col-sm-7 product-actions" style="max-width:100%" > 
                                 <div class="availability">
                                     Disponibilidade: 
-                                    <span ><p class="stock in-stock">Em estoque</p></span> <!-- BIND CLASS -->
+                                    <span><p class="stock in-stock">Em estoque</p></span> <!-- BIND CLASS -->
                                 </div>
                                 <b-card-body tag="article">
-                                     <h3 class="title mb-3">Raspberry Pi 3</h3>
+                                     <h3 class="title mb-3">{{product.name}}</h3>
                                      <p class="price-detail-wrap"> 
 
                                         <span class="price"> 
                                     
                                             <span class="currency"> R$ </span>
-                                            <span class="num"> 300,00 </span>
+                                            <span class="num"> {{product.price}} </span>
 
                                         </span>
 
@@ -116,7 +113,7 @@
                         </b-container>
                     </div>
                 </div>
-            </main>
+            </div>
        
         
 
@@ -134,7 +131,12 @@
 import MainBar from '../BarComponents/MainBar.vue'
 
 export default {
-    
+    props:['product'],
+    data(){
+        return {
+            // stock : this.product.quantity > 0
+        }
+    },
     components:{
         MainBar
     }
@@ -266,7 +268,9 @@ label {
     margin-bottom: .857em;
     display: inline-block;
 }
-
+.quantity{
+    background-color: transparent
+}
 div.quantity.buttons_added .minus, div.quantity.buttons_added .plus {
     width: 1.729em;
     height: 1.729em;
