@@ -15,6 +15,7 @@
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
     "postcss-url": "^8.0.0",
+    "toastr": "^2.1.4",
     "vue": "^2.6.10",
     "vue-agile": "^1.0.8",
     "vue-router": "^3.0.6",

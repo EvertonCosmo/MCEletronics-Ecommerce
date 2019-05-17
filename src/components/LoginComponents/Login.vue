@@ -62,7 +62,7 @@
 
 <script>
 /* eslint-disable */
-import NavBar from '../BarComponents/NavBar.vue'
+import NavBar from "./../shared/LoginBar"
 import api from "../../services/api.js"
 import { setTimeout } from 'timers';
 
