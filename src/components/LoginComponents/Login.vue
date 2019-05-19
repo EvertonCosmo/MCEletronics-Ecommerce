@@ -3,7 +3,7 @@
 
   <NavBar></NavBar>
   <!-- <router-view></router-view> -->
-  <b-card tag="article" class ="mb-2" style="max-width: 25rem" title="Entrar" >
+  <b-card tag="article" class ="mb-2" style="max-width: 25rem;" title="Entrar" >
   
     <router-link :to="{name:'register'}">
         <b-button id="btn-cadastrar" class="float-right" style="background-color:#033076" >Cadastrar</b-button>
@@ -17,7 +17,7 @@
       <b-form @submit.prevent ="getUser" >
           <b-form-group id='email' label= "Email" label-for='email1' class="required-field">
               <!-- email -->
-              <b-form-input v-model="user.email" class="input" name="email1"  id = "email" type="email"   placeholder="Digite seu email"/>
+              <b-form-input autocomplete="email" v-model="user.email" class="input" name="email1"  id = "email" type="email"   placeholder="Digite seu email"/>
           </b-form-group>
 
           <b-form-group id='password'  label= 'Senha' label-for='nome1' class="required-field">

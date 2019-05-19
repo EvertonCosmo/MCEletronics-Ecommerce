@@ -1,8 +1,8 @@
 <template>
     <div>
         <h3>Recomendados</h3>
-        <b-row v-for="(row,index) in productRows" :key="index" style="width:70%; margin-left:%">
-            <div class="col-sm-4 mb-6" v-for="product in row" :key="product.id">
+        <b-row v-for="(row,index) in productRows" :key="index">
+            <div class="col-sm-3 mb-4 " v-for="product in row" :key="product.id">
                 <Product :product="product" track-id="id"/>
             </div>
         </b-row>

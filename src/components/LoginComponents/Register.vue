@@ -2,16 +2,17 @@
     <div>
         <NavBar></NavBar>
 
-         <b-card tag="article" class ="mb-2"  title="Cadastro" style="max-width:25rem">
+         <b-card tag="article" class ="mb-2"  title="Cadastro" style="max-width:35rem">
           
              <b-form  @submit="checkErrors">
-
-                <p v-show="input.errors.length ">
-                    <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
-                     <ul>
-                      <li :key="error" v-for="error in input.errors">{{ error }}</li>
-                     </ul>
-                 </p>
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                    v-for="(error, index) in errorMessage"
+                    :key="index"
+                    >
+                    {{error}}
+                </div>
                     
                 <b-form-group id="email" label='Email' label-for="email"  >
                        <b-form-input class="input" type="email" v-model="user.email" name="email"  placeholder="Email"/>
@@ -32,7 +33,7 @@
 
                    
 
-                     <b-form-group id="senha2" label="Redigite a senha" label-for="password2" class="required-field">
+                     <b-form-group id="senha2" label="Repita a senha" label-for="password2" class="required-field">
                        <b-form-input class="input" type="password" maxlength="10" name="email2" v-model="user.password2" placeholder="******* "/>
                   </b-form-group>  
 
@@ -48,7 +49,7 @@
 <script>
 
 
-import  NavBar from '../BarComponents/NavBar.vue'
+import  NavBar from '../shared/LoginBar'
 import api from '../../services/api';
 /* eslint-disable */
 

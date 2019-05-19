@@ -128,7 +128,7 @@
 
 
 <script>
-import MainBar from '../BarComponents/MainBar.vue'
+import MainBar from '../shared/MainBar'
 
 export default {
     props:['product'],
