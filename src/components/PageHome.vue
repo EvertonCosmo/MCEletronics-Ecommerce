@@ -99,19 +99,23 @@ import Carousel from './Carrousel.vue'
 import Products from "./ProductComponents/Products"
 
 
-import {mapGetters} from 'vuex'
+import {mapGetters } from "vuex";
+// import {isLoggedIn,getLoggedInUser} from "../services/authService"
 export default {
   name: "PageHome",
   computed:{
     ...mapGetters([
       'getAllProducts',
-    ])
+    ]),
+    // ...mapState(['loggedUser']),
+    
+   
   },
 
   components:{
     MainBar,Products,Carousel
   },
-
+  
   
 }
 

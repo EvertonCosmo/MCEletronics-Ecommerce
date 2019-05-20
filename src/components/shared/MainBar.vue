@@ -51,16 +51,52 @@
                 
             </router-link>
              
-              
-            <router-link :to="{name:'login'}">
-                <b-button id="button-user">
+          <!-- <ul>
+            <li class="nav-item dropdown" v-if="logged">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >{{this.loggedUser.username}}</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <router-link to="/" class="dropdown-item">Perfil</router-link>
+                
+                <router-link
+                  :to="{name:'/'}"
+                  class="dropdown-item text-danger"
+                  @click.native="logout"
+                >Logout</router-link>
+              </div>
+            </li>
+
+           -->
+               
                   <!-- <i class="fas fa-user-circle "></i>Login  -->
-                  Entre
-                </b-button>
-            </router-link>
+               
+           <router-link :to="{name:'login'}" v-if="!logged">
+
+            <b-button id="button-user">
+              <!-- <i class="fas fa-user-circle"></i> -->
+              Entre
+            </b-button>
+          </router-link>
+           <router-link :to="{name:'login'}" v-if="logged">
+
+            <b-button id="button-user" v-if="logged" @click="logout">
+             <!-- <i class="fas fa-user-circle"> </i> -->
+            Sair
+            </b-button>
+          </router-link>
+
+          
+          <!-- </ul> -->
            <!-- <router-link :to="{name:'login'}">
 
-            <b-button id="button-usuer">
+            
               
            
             </b-button>
@@ -119,8 +155,11 @@
 
 <script>
 
+ /* eslint-disable */
 
-import { mapGetters } from 'vuex';
+import { mapState, mapActions, mapMutations,mapGetters } from "vuex";
+import {isLoggedIn,getLoggedInUser} from "../../services/authService"
+import api from '../../services/api';
 export default {
     name: 'PageHome',
 
@@ -129,21 +168,55 @@ export default {
     data(){
       return {
         titlePage:"MC Eletronics",
-        quantity:10,
-        value:"100,00"
+        logged:false,
       }
     },
 
-methods:{
-  hasProduct(){
-    return this.getProductsInCart.length > 0
-  }
-},
+
 computed:{
    ...mapGetters([
       'getProductsInCart',
       
     ]),
+    // ...mapState({
+    //     loggedUser: state => state.users.loggedUser
+    // })
+  },
+  
+
+  methods:  {
+  //  ... mapActions(['addLoggedUser']),
+
+    // ...mapMutations(["ADD_LOGGED_USER"]),
+
+  
+    hasProduct(){
+      return this.getProductsInCart.length > 0
+    },
+
+    //  isLogged(){
+    //    return isLoggedIn()
+    //  },
+
+    logout(){
+      // localStorage.removeItem("_auth")
+      // this.$router.push("/");
+      // location.reload();
+      this.$session.destroy();
+
+      this.logged = false // not logged
+      location.reload()
+      
+     },
+  },
+  created(){
+    // const loggedUser = getLoggedInUser();
+    // this.ADD_LOGGED_USER(loggedUser);
+    // console.log(this.loggedUser)
+    if(this.$session.exists()){
+      this.logged = true // logged
+    }
+    
   },
 
 

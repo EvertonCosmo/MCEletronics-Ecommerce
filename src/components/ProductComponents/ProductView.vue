@@ -24,7 +24,7 @@
                             <b-row>
                                 <div class="col-md-5">
                                     
-                                                 <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="90%"/>
+                                                 <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="80%"/>
                                     <!-- END THUMBS -->
 
                                 </div> 

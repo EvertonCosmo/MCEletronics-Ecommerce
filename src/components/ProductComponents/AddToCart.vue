@@ -20,7 +20,8 @@ export default {
     ]),
 
    	addProductToCart(product) {
-   		this.addToCart(product)
+           // this.addToCart(product)
+           
    	}
 
    },
