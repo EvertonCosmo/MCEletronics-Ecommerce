@@ -81,7 +81,7 @@
 
             <b-button id="button-user">
               <!-- <i class="fas fa-user-circle"></i> -->
-              Entre
+              Entrar
             </b-button>
           </router-link>
            <router-link :to="{name:'login'}" v-if="logged">
@@ -127,7 +127,7 @@
       <!-- </b-card> -->
 
   <!-- </b-card-group> -->
-  <div>
+  <div v-show="category">
   <b-dropdown id="dropdown-header" text="Categorias" class="m-2" variant="primary"  size="lg"  >
    <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
     <b-dropdown-group id="Placas" header="Placas">
@@ -162,7 +162,9 @@ import {isLoggedIn,getLoggedInUser} from "../../services/authService"
 import api from '../../services/api';
 export default {
     name: 'PageHome',
-
+    props:{
+      category:Boolean
+    },
 
    
     data(){

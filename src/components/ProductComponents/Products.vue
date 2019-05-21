@@ -1,6 +1,14 @@
 <template>
     <div>
-        <h3>Recomendados</h3>
+        <!-- <h3>Recomendados</h3> -->
+         <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Recomendados</li>
+                    <li class="ml-auto" aria-current="page"><router-link to="/">MostrarTodos</router-link></li>
+                </ol>
+      
+    </nav>
+        <hr>
         <b-row v-for="(row,index) in productRows" :key="index">
             <div class="col-sm-3 mb-4 " v-for="product in row" :key="product.id">
                 <Product :product="product" track-id="id"/>

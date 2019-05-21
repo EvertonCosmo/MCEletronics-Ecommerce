@@ -5,20 +5,24 @@ import router from './router'
 import store from './store/'
 
 import NProgress from 'nprogress'
- 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
 
 import VueSession from 'vue-session'
-Vue.use(VueSession)
+
 import BootstrapVue from 'bootstrap-vue'
-// import VueCarousel from '@chenfengyuan/vue-carousel';
+
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+// require styles
+import 'swiper/dist/css/swiper.css'
 
 
 Vue.use(BootstrapVue)
+Vue.use(VueSession)
+Vue.use(VueAwesomeSwiper)
 
-// Vue.use(VueCarousel);
 
 Vue.config.productionTip = false
 Vue.config.devtools = true
