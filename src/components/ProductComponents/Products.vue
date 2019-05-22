@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <h3>Recomendados</h3> -->
+       
          <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active" aria-current="page">Recomendados</li>
@@ -9,13 +9,26 @@
       
     </nav>
         <hr>
-        <b-row v-for="(row,index) in productRows" :key="index">
+        <!-- <b-row v-for="(row,index) in productRows" :key="index">
             <div class="col-sm-3 mb-4 " v-for="product in row" :key="product.id">
                 <Product :product="product" track-id="id"/>
             </div>
-        </b-row>
+        </b-row> -->
+        
+            <swiper :options="swiperOption" v-for="(row,index) in productRows" :key="index" class="swiper-box container" style="max-width:100%;">
+        <swiper-slide v-for="(product,index) in row " :key="index">
+            <!-- {{product}} -->
+            <Product :product="product" track-id="id"/>
+            
 
-       
+        </swiper-slide>
+        <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+        <div class="swiper-pagination" slot="pagination"></div>
+         <div class="swiper-button-prev" slot="button-prev"></div> 
+        <div class="swiper-button-next" slot="button-next"></div> 
+      </swiper>
+        
+
     </div>
 </template>
 
@@ -27,10 +40,41 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
     name:"Products",
-    // props:['products'],
+  
     data(){
         return {
-          
+
+         swiperOption: {
+          slidesPerView: 3,
+          spaceBetween: 5,
+          freeMode: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            }
+          }
+        }
         }
     },
     components: { 
@@ -38,7 +82,8 @@ export default {
      
     },
    computed: mapState({
-    productRows: state => state.products.products
+    productRows:state => state.products.products
+    
     
   }),
      methods: mapActions([
@@ -48,6 +93,7 @@ export default {
 
   created () {
     this.getProducts()
+    
     
     
   }

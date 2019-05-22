@@ -6,64 +6,15 @@
 
   
 
- 
-
-
- 
- <!-- <b-carousel
-    id="carousel-fade"
-    style="text-shadow: 0px 0px 2px #000"
-    fade
-    indicators
-    img-width="654"
-    img-height="680"
-  >
-    
-  
-  
-   <b-carousel-slide>
-        <img
-          slot="img"
-          class="d-block img-fluid w-100"
-          width="640"
-          height="480"
-          :src="require(`@/assets/banner.jpg`)"
-          alt="image slot"
-        >
-      </b-carousel-slide>
- 
-
-      </b-carousel> -->
-       <!-- <b-carousel 
-       class="float-right" id="carousel-fade" style="text-shadow: 0px 0px 2px #000; max-width: 80%; margin-top:-32%; margin-right:0%" 
-       
-       indicators 
-       
-      >
-                <b-carousel-slide  :img-src="require(`@/assets/banner.jpg`)" img-width="1"
-       :img-height="1"/>
-                <b-carousel-slide  :img-src="require(`@/assets/banner2.jpg`)" />
-                <b-carousel-slide  :img-src="require(`@/assets/banner.jpg`)" />
-              </b-carousel> -->
-
-   <!-- <agile  class="" :nav-buttons="false" :autoplay-speed="5000" :speed="2500" fade="fade" pause-on-hover="pause-on-hover" pause-on-dots-hover="pause-on-dots-hover" autoplay="autoplay"><img class="slide" src="https://images.unsplash.com/photo-1509549649946-f1b6276d4f35?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/><img class="slide" src="https://images.unsplash.com/photo-1511469054436-c7dedf24c66b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1511135232973-c3ee80040060?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1511231683436-44735d14c11c?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/><img class="slide" src="https://images.unsplash.com/photo-1517677129300-07b130802f46?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9"/></agile> -->
-<!-- <div class="col-sm-8" style="margin-top:4%;margin-left:-3%;">
-   <carousel style="max-width:100%" ></carousel>
-</div>  -->
-
-<!-- <div style="background-color:red; max-width:100%"> -->
-  <!-- <b-card style="width:50%"> -->
-  <swiper :options="swiperOption" class="swiper-box container" style="max-width:100%; height:20%">
-        <swiper-slide>   <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img></swiper-slide>
-        <swiper-slide>   <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img></swiper-slide>
-        <swiper-slide>   <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img></swiper-slide>
+  <swiper :options="swiperOption" class="swiper-box container" style="max-width:80%;">
+        <swiper-slide>  <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img></swiper-slide>
+        <swiper-slide>  <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img></swiper-slide>
+        <swiper-slide>  <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img></swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-         <!-- <div class="swiper-pagination" slot="pagination"></div> -->
    </swiper>
-   <!-- </b-card> -->
-<!-- </div> -->
+
 
 
   <!-- <div id="mid" class="informations">

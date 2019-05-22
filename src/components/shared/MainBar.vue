@@ -130,7 +130,7 @@
   <div v-show="category">
   <b-dropdown id="dropdown-header" text="Categorias" class="m-2" variant="primary"  size="lg"  >
    <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
-    <b-dropdown-group id="Placas" header="Placas">
+    <b-dropdown-group id="Placas" header="Placas" >
       <b-dropdown-item-button>Arduino</b-dropdown-item-button>
       <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
     </b-dropdown-group>
