@@ -2,19 +2,20 @@
     <div>
         <NavBar></NavBar>
 
-         <b-card tag="article" class ="mb-2"  title="Cadastro" style="max-width:25rem">
+         <b-card tag="article" class ="mb-2"  title="Cadastro" style="max-width:35rem">
           
-             <b-form  @submit="checkErrors">
-
-                <p v-show="input.errors.length ">
-                    <b>Por favor, corrija o(s) seguinte(s) erro(s):</b>
-                     <ul>
-                      <li :key="error" v-for="error in input.errors">{{ error }}</li>
-                     </ul>
-                 </p>
+             <b-form  @submit.prevent="createAccount">
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                    v-for="(error, index) in errorMessage"
+                    :key="index"
+                    >
+                    {{error}}
+                </div>
                     
-                <b-form-group id="email" label='Email' label-for="email"  >
-                       <b-form-input class="input" type="email" v-model="user.email" name="email"  placeholder="Email"/>
+                <b-form-group id="username" label='Nome de Usuário' label-for="username"  >
+                       <b-form-input class="input" type="text" v-model="user.username" name="username"  placeholder="Nome de Usuário"/>
                      
                 </b-form-group>    
 
@@ -32,8 +33,8 @@
 
                    
 
-                     <b-form-group id="senha2" label="Redigite a senha" label-for="password2" class="required-field">
-                       <b-form-input class="input" type="password" maxlength="10" name="email2" v-model="user.password2" placeholder="******* "/>
+                     <b-form-group id="passowrd2" label="Repita a senha" label-for="password2" class="required-field">
+                       <b-form-input class="input" type="password" maxlength="10" name="email2" v-model="passwordcomparation" placeholder="******* "/>
                   </b-form-group>  
 
                     <b-button type="submit" block variant="primary" style="background-color:#033076" id="btn-register">Registrar</b-button>
@@ -48,8 +49,9 @@
 <script>
 
 
-import  NavBar from '../BarComponents/NavBar.vue'
+import  NavBar from '../shared/LoginBar'
 import api from '../../services/api';
+import {successToaster, errorToaster} from "../../services/ErrorHandler.js";
 /* eslint-disable */
 
 export default {
@@ -59,17 +61,12 @@ export default {
         return{
              passwordFieldType: 'password',
              user:{
-                 email:'',
-                 password:'',
-                 password2:''
+                 username:'',
+                 password:''
              },
-            input:{
-                errors: [],
-                email:"",
-                password:"",
-                password2:""
-            },
-            fields : []
+             errorMessage: [],
+            passwordcomparation:''
+            
         }
     
     },  
@@ -78,77 +75,86 @@ export default {
         NavBar
     },
     methods:{
+        // ValidateEmail(email) {
+        //     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        //         return true;
+        //     }
+      
+        //     return false;
+        // },
 
         switchVisibility() {
                 this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
-        },
-        register(){
-              let formData = new FormData()
-                   formData.append('email', this.user.email);
-                    formData.append('password', this.user.password);
-            api.postUser(formData).then(Response => {
-                    alert('adicionado com sucesso')
-                    this.$router.push({name:'login'})
-            }).catch(e => {
-                console.log(e)
-            })
-        },
-
-        checkErrors(e){
-              
-             
-            if(this.user.email && this.user.password && this.user.password === this.user.password2) {
-                if(this.user.password.length <= 5 && this.user.password2.length <= 5){
                 
-                    this.input.errors.push('senha com no minímo 5 digitos')
-                    e.preventDefault();
-                   
-                  
-                 }else{
-                        this.register();
-                        
-                       
-                 }
-
-              
-            }
-          
-            this.input.errors = [];    
-
-           
-            
-            if(!this.user.email) 
-                this.input.errors.push('O email é obrigatório');
-            if(!this.user.password)
-                 this.input.errors.push('a senha é obrigatória');
-            if(!this.user.password2) 
-                this.input.errors.push('por favor redigite a senha'); 
-            if(this.user.password !== this.user.password2 || this.user.password > this.user.password2 || this.user.password2 > this.user.password)
-                 this.input.errors.push('senhas não conferem');
-          
-            e.preventDefault();
-
-
-           
-           
-         
-           
-            
-            
         },
       
+        createAccount(e){
+            errorMessage: []
 
-    }
+            if(this.user.username.length < 5){
+                this.errorMessage.push('Nome deve conter mais de 5 caracteres')
+            }
+            if(this.user.password != this.passwordcomparation){
+                this.errorMessage.push('Senhas não conferem')
+            }
+            if(this.errorMessage.length == 0){
+                let formData = new FormData();
+                formData.append('username',this.user.username);
+                formData.append('password',this.user.password);
+
+                api.postUser(formData).then(Response => {
+                    if(Response.status == 200){
+                        console.log(Response.data)
+                        successToaster(
+                            "Cadastrado com sucesso",
+                            "Usuário cadastrado com sucesso"  
+                        );
+                        this.$router.push({name:'login'})
+
+                    }
+                }
+                ).catch(e => {
+                    console.log(e)
+                    if(e.response.status == 400){
+                        errorToaster(
+                            "Falha no cadastro",
+                            "Por favor,tente novamente mais tarde"
+                         );
+                    }
+                })
+                           
+            }
+        }
 
         
     }
+}
 
 
 </script>
 
 
 <style >
- 
+ #toast-container > div {
+  opacity: 1;
+}
+.toast {
+  font-size: initial !important;
+  border: initial !important;
+  backdrop-filter: blur(0) !important;
+}
+.toast-success {
+  background-color: #51A351 !important;
+}
+.toast-error {
+  background-color: #BD362F !important;
+}
+.toast-info {
+  background-color: #2F96B4 !important;
+}
+.toast-warning {
+  background-color: #F89406 !important;
+}
 
 </style>
 

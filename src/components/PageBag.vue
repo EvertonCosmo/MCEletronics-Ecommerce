@@ -86,7 +86,7 @@
 <script>
 /*eslint no-console: "error"*/
 /* eslint-disable */
-import MainBar from "../components/BarComponents/MainBar.vue";
+import MainBar from "../components/shared/MainBar";
 import axios from "axios"
 
 export default {

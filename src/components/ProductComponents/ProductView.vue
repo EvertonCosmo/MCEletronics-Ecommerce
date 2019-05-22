@@ -1,6 +1,6 @@
 <template>
 <div>
-  <MainBar></MainBar>
+  <MainBar :category="false"></MainBar>
 
         <b-container>
             <nav class="breadcrumb"> 
@@ -24,14 +24,14 @@
                             <b-row>
                                 <div class="col-md-5">
                                     
-                                                 <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="90%"/>
+                                                 <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="70%"/>
                                     <!-- END THUMBS -->
 
                                 </div> 
                                     
                                 <!-- END COL -->
-
-                                <b-card  tag="article" class="col-sm-7 product-actions" style="max-width:100%" > 
+                          
+                                <b-card  tag="article" class="col-sm-7 product-actions" style="max-width:100%;" > 
                                 <div class="availability">
                                     Disponibilidade: 
                                     <span><p class="stock in-stock">Em estoque</p></span> <!-- BIND CLASS -->
@@ -106,7 +106,7 @@
                                 </b-card-body>
                                 
                                 </b-card>
-                                
+                              
                             </b-row>   
 
 
@@ -128,7 +128,7 @@
 
 
 <script>
-import MainBar from '../BarComponents/MainBar.vue'
+import MainBar from '../shared/MainBar'
 
 export default {
     props:['product'],
@@ -150,24 +150,7 @@ export default {
 
 <style scoped>
 
-.img-zoom-container {
-  position: relative;
-}
 
-.img-zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
-}
-
-.img-zoom-result {
-  border: 1px solid #d4d4d4;
-  /*set the size of the result div:*/
-  width: 300px;
-  height: 300px;
-}
     body, button, input, textarea {
         color: #333e48;
         font-family: open sans,HelveticaNeue-Light,helvetica neue light,helvetica neue,Helvetica,Arial,lucida grande,sans-serif;

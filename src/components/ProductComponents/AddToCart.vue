@@ -1,7 +1,7 @@
 <template>
     <b-button variant="primary"
     :disabled="!product.quantity" @click="addProductToCart(product)">
-        Adicionar Carrinho 
+       Adicionar ao carrinho 
     </b-button>
 
 </template>
@@ -9,6 +9,7 @@
 <script>
 
 import {mapActions} from 'vuex'
+import { successToaster } from '../../services/ErrorHandler';
 /* eslint-disable */ 
 export default {
     name:'AddToCart',
@@ -20,7 +21,11 @@ export default {
     ]),
 
    	addProductToCart(product) {
-   		this.addToCart(product)
+           this.addToCart(product)
+           successToaster(
+               "Produto adicionado ao carrinho com sucesso","Sucesso ao adicionar"
+           )
+           
    	}
 
    },

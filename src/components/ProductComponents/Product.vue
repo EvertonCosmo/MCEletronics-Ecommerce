@@ -2,7 +2,9 @@
     <b-card
     img-top
     :img-src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)"
-    style="max-width: 20rem;border:solid 1px rgba(0,0,0,.2)"
+    style="max-width: 80%;border:none"
+
+    
     >
     <b-card-body>
         <b-card-title>
@@ -36,6 +38,7 @@ import AddToCart from "./AddToCart"
 export default {
     name:  'Product',
     props:['product'],
+  
     components:{
         AddToCart
     },
@@ -43,15 +46,16 @@ export default {
         return{
                 
         }
-    }
+    },
+    
 
 }
 </script>
 
 <style scoped>
-    .vue-logo{
+/* solid 1px rgba(0,0,0,.2);margin-left:10% */
+    .logo{
         padding-bottom: 75%;
-        background: url('../../assets/logo.png') no-repeat center center #ddd;
         background-size: 40%;
     }
 </style>
