@@ -21,7 +21,7 @@
 
             <h2 class="text-center">Minha Conta</h2>
                 <div class="text-center">
-                            <p>olá {{email}}</p>
+                            <p>Olá {{email}}</p>
                 </div>
                 <b-card-group>
                 <b-card style="max-width: 25rem" class="card" > 
