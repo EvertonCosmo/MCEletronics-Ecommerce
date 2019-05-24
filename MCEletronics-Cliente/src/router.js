@@ -10,6 +10,8 @@ import ProductViewComponent from './components/ProductComponents/ProductView.vue
 import BagComponent from '../src/components/PageBag.vue'
 
 
+import DashBoardComponent from './components/LoginComponents/PageLogin.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -44,6 +46,12 @@ export default new Router({
             path:'/bag',
             name:'bag',
             component:BagComponent
+        },
+        {
+            path:'/dashboard',
+            name:'dashboard',
+            component:DashBoardComponent,
+            props:true
         }
     ]
    

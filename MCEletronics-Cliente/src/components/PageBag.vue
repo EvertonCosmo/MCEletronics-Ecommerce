@@ -147,7 +147,7 @@ export default {
 
 .my-basket {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 250%; 
+  font-size:1q2rem; 
   margin-top:3%;
   color: #033076;
   margin-left:4%;

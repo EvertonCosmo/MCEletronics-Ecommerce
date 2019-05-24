@@ -88,16 +88,28 @@ export default {
                 
         },
       
-        createAccount(e){
-            errorMessage: []
-
+        checkForm(){
+            this.errorMessage =  []
+            if(this.user.password.length < 5){
+                this.errorMessage.push('Senha deve conter mais de 5 digitos')
+            }
             if(this.user.username.length < 5){
                 this.errorMessage.push('Nome deve conter mais de 5 caracteres')
+               
             }
+
             if(this.user.password != this.passwordcomparation){
                 this.errorMessage.push('Senhas não conferem')
+               
             }
+            console.log(this.errorMessage.length)
+        },
+        createAccount(e){
+            
+            this.checkForm();
+          
             if(this.errorMessage.length == 0){
+
                 let formData = new FormData();
                 formData.append('username',this.user.username);
                 formData.append('password',this.user.password);
@@ -111,19 +123,39 @@ export default {
                         );
                         this.$router.push({name:'login'})
 
+                    }else{
+                        console.log(Response.data)
                     }
-                }
-                ).catch(e => {
+                
+                }).catch(e => {
                     console.log(e)
                     if(e.response.status == 400){
                         errorToaster(
-                            "Falha no cadastro",
-                            "Por favor,tente novamente mais tarde"
+                            "Usuário já cadastrado",
+                            "Já cadastrado"
                          );
+                        
+                         
+                        
+                    }else{
+                        errorToaster(
+                            "Falha no cadastro",
+                            "Tente novamente mais tarde"
+                         ); 
                     }
+
                 })
                            
+            }else {
+                
+                this.checkForm()
+
             }
+
+
+            
+
+           
         }
 
         

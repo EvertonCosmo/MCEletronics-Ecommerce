@@ -17,7 +17,10 @@
 
 
 
-  <!-- <div id="mid" class="informations">
+  <products></products>
+  </div>
+
+  <div id="mid" class="informations">
       <div style="width: 50%; ">
         <b-navbar-brand
           style="font-size: 200%; position: relative; color: #033076; margin-left: 6%"
@@ -49,9 +52,7 @@
 
     <footer>
       <i class="far fa-copyright">Direitos Reservados MC Eletronics</i>
-    </footer> -->
-  <products></products>
-  </div>
+    </footer>
 </div>
 </template>
 
@@ -149,4 +150,65 @@ export default {
     -webkit-align-items: center;
     align-items: center;
   }
+
+  img {
+  width: 50%;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+article {
+  float: right;
+  padding: 20px;
+  width: 70%;
+  background-color: #fff;
+  height: 100px; /* only for demonstration, should be removed */
+}
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+  height: 100px;
+}
+/* Style the footer */
+footer {
+  background-color: #033076;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  height: 2%;
+}
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+}
+.more-sold {
+  margin: 1%;
+  background-color: rgb(222, 224, 224);
+  height: 400px;
+}
+.informations {
+  background-color: rgb(176, 177, 179);
+  margin: 0%;
+  height: 240px;
+}
+/* Create two columns/boxes that floats next to each other */
+#categories {
+  float: left;
+  width: 30%;
+  background: white;
+  padding: 1.7%;
+  font-size: 100%;
+}
+#mid {
+  color: white;
+}
+.logo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 </style>

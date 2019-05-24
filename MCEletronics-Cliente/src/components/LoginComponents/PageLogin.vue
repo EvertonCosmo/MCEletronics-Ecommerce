@@ -7,7 +7,7 @@
         
           <b-container>
             <nav class="breadcrumb"> 
-                <a href="#">Início</a>
+                <a href="/">Início</a>
                 <span class="delimiter">
                     <i class="fa fa-angle-right"></i>
                 </span>
@@ -21,7 +21,7 @@
 
             <h2 class="text-center">Minha Conta</h2>
                 <div class="text-center">
-                            <p>olá {{email}}</p>
+                            <p>Olá {{user.username}}</p>
                 </div>
                 <b-card-group>
                 <b-card style="max-width: 25rem" class="card" > 
@@ -50,8 +50,8 @@
 
 <script>
 
-import MainBar from '../BarComponents/MainBar.vue'
 
+import  MainBar from '../shared/MainBar.vue'
 export default {
     name:'PageLogin',
     
@@ -61,14 +61,25 @@ export default {
     
     data() {
       return{
-            email: JSON.parse(window.localStorage.getItem('fields'))[0].email // get email data from localStorage     
+           user:{}
         };  
     },
   
-    
+    created(){
+    // const loggedUser = getLoggedInUser();
+    // this.ADD_LOGGED_USER(loggedUser);
+    // console.log(this.loggedUser)
+    if(this.$session.exists()){
+      this.logged = true
+      this.user = JSON.parse(this.$session.get('user'));
+    }else{
+        this.$router.push({name:'login'})
+    }
+
+    },
     methods: {
         logout(){
-            this.$parent.logout();
+           
         }
     },
 }
@@ -104,7 +115,7 @@ export default {
       border-right: none;
     }
     .item > :hover{
-        /* Background-color: #033076; */
+      
         background-color: #033076;
         color:white;
     }

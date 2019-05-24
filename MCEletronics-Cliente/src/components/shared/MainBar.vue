@@ -84,12 +84,18 @@
               Entrar
             </b-button>
           </router-link>
-           <router-link :to="{name:'login'}" v-if="logged">
 
-            <b-button id="button-user" v-if="logged" @click="logout">
-             <!-- <i class="fas fa-user-circle"> </i> -->
-            Sair
+           <router-link  :to="{name:'dashboard'}" v-if="logged">
+
+            <b-button id="button-user"  >
+
+             <i class="fas fa-user-circle" style="margin-right: : 40%"><span style="font-size: 60%">{{user.username}}</span>   </i>
+                       
             </b-button>
+
+            <b-button id="button-user" v-if="logged"   @click="logout" >
+              <span style="font-size: 90%;">Sair</span>
+          </b-button>
           </router-link>
 
           
@@ -171,6 +177,7 @@ export default {
       return {
         titlePage:"MC Eletronics",
         logged:false,
+        user:{},
       }
     },
 
@@ -217,7 +224,11 @@ computed:{
     // console.log(this.loggedUser)
     if(this.$session.exists()){
       this.logged = true // logged
+      this.user = JSON.parse(this.$session.get('user'));
     }
+
+   
+    
     
   },
 
@@ -290,11 +301,11 @@ footer {
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-ver {
+/*ver {
   background-color: #033076;
   border-radius: 8px;
   color: white;
-}
+}*/
 .card-list{
        
   margin-top:auto;
@@ -436,7 +447,7 @@ footer {
 }
 #button-user {
   background-color: #033076;
-  width: 15%;
+  width: 20%;
   height: 70%;
   font-size: 70%;
   border: 0px;
