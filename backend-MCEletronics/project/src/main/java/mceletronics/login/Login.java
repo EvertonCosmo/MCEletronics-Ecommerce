@@ -11,8 +11,8 @@ import org.json.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import mceletronics.dao.UserDAO;
 import mceletronics.entities.User;
-import mceletronics.repositories.UserDAO;
 
 /**
  * Servlet implementation class Login
@@ -47,7 +47,8 @@ public class Login extends HttpServlet {
             while ((line = reader.readLine()) != null)
                 jb.append(line);
         } catch (Exception e) {
-            /* report an error */ }
+        	System.out.println(e);
+        }
  
         User aux = null;
         try {
@@ -60,12 +61,17 @@ public class Login extends HttpServlet {
  
         if (aux != null) {
             User user = UserDAO.getUserByUsername(aux.getUsername());
-                       
+            
+//            if(user.getUsername().equals(aux.getUsername())) {
+//            
+//				response.setStatus(400);
+//			}
+//            
+//            else 
             if (user != null && user.getPassword().equals(aux.getPassword())) {
                 response.setStatus(200);
-            } else {
-                response.setStatus(401);
             }
+            
         } else {
             response.setStatus(401);   
         }

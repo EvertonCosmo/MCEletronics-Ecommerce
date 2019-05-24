@@ -1,12 +1,12 @@
 
-package mceletronics.service;
+package mceletronics.controller;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import mceletronics.dao.ProductDAO;
 import mceletronics.entities.Product;
-import mceletronics.repositories.ProductDAO;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
 //import com.sun.jersey.*;

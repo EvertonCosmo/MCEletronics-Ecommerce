@@ -1,4 +1,4 @@
-package mceletronics.service;
+package mceletronics.controller;
 
 
 import java.util.List;
@@ -21,8 +21,8 @@ import javax.ws.rs.core.Response.Status;
 
 import com.sun.jersey.multipart.FormDataParam;
 
+import mceletronics.dao.UserDAO;
 import mceletronics.entities.User;
-import mceletronics.repositories.UserDAO;
 
 
 
@@ -53,13 +53,24 @@ public class UserService {
 	    @POST
 	    @Produces({ MediaType.APPLICATION_JSON})
 	    @Consumes(MediaType.MULTIPART_FORM_DATA)
-	    public Response addUser( @FormDataParam("username") String username, @FormDataParam("password") String password) {
-	               
-	        if(username == null || password == null || username.equals("null") || password.equals("null")) {
+	    public  Response addUser( @FormDataParam("username") String username, @FormDataParam("password") String password) {
+	    		
+	    	User user = UserDAO.getUserByUsername(username);
+	    	if(username == null || password == null || username.equals("null") || password.equals("null")) {
 	            return Response.status(400).build();
 	        }
+	    	
+//	    	 if(username.equals(user.getUsername()) ) {
+//
+//		        	System.out.println("Already Registered");
+//		        	
+//		        	return Response.status(400).build();
+//
+//		        }else {
+		        	 return Response.status(Status.OK).entity(UserDAO.addUser(username, password)).build();
+//	    }
+	        
 	       
-	        return Response.status(Status.OK).entity(UserDAO.addUser(username, password)).build();
 	    }
 	 
 	    @PUT

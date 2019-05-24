@@ -1,4 +1,4 @@
-package mceletronics.repositories;
+package mceletronics.dao;
 
 import java.io.File;
 import java.io.FileOutputStream;
