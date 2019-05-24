@@ -122,9 +122,15 @@ export default {
           // this.addLoggedUser(Response.data[0])
           this.loading = true;
           this.$session.start()
-          this.$session.set("id",Response.data)
+          this.$session.set("user",JSON.stringify({username:this.user.username,password:this.user.password}));
           // event.target.reset()
           setTimeout(this.placeLogin,1200)
+          
+        }
+        if(Response.status == 401){
+          errorToaster(
+            'Usuário já registrado '
+          )
           
         }
        
