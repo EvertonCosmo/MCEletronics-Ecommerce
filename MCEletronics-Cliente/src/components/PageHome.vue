@@ -18,6 +18,8 @@
 
 
   <products></products>
+
+  
   </div>
 
   <div id="mid" class="informations">
@@ -59,12 +61,11 @@
 <script>
 
 import MainBar from '../components/shared/MainBar'
-// import Carousel from './Carousel.vue'
 import Products from "./ProductComponents/Products"
 
 
 import {mapGetters } from "vuex";
-// import {isLoggedIn,getLoggedInUser} from "../services/authService"
+
 export default {
   name: "PageHome",
   data(){
@@ -110,7 +111,7 @@ export default {
     ...mapGetters([
       'getAllProducts',
     ]),
-    // ...mapState(['loggedUser']),
+  
     
    
   },

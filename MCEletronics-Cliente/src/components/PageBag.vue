@@ -4,6 +4,7 @@
     <main-bar></main-bar>
 
     <div style="width: 50%; height: 50px;">
+            
             <b-navbar-brand class="my-basket">Minha Cesta <i class="fas fa-shopping-basket" style="margin-left: 5%"></i> </b-navbar-brand>
     </div>
 
@@ -16,29 +17,24 @@
                         <ul :key="product.id" v-for="product in products">
                             <div class="row" >
                                 <div class="col-12 col-sm-12 col-md-2 text-center">
-                                    <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                                    <!-- <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80"> -->
+                                     <!-- <img :src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" width="100%" height="70%"/> -->
+                                     <b-img :src="require(`/home/everton/Desktop/WEBAPP/MCEletronics/MCEletronics-ADM/src/assets/${product.id}.png`)" fluid-grow></b-img>
                                 </div>
 
                                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                                     <h4 class="product-name"><strong>{{product.name}}</strong></h4>
                                     <h4>
-                                        <small>{{product.type}}</small>
+                                        <small>{{product.category}}</small>
                                     </h4>  
                                 </div>
 
                                 <div style="margin-top: 3%" class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                                     <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 10px">
-                                        <h6>valor: {{product.value}} <span class="text-muted"> x </span></h6>
+                                        <h6>valor: {{product.price}} <span class="text-muted"> x </span></h6>
                                     </div>
 
-                                    <div class="col-4 col-sm-4 col-md-4">
-                                        <div class="quantity">
-                                            <input type="button" value="+" @click="sum" class="plus">
-                                            <input v-model="input.value" type="text" step="1" max="99" min="1" title="Qty" class="qty"
-                                                size="4">
-                                            <input type="button" value="-" @click="decrease" class="minus">
-                                        </div>
-                                    </div>
+                                
 
                                     <div class="col-2 col-sm-2 col-md-2 text-right">
                                         <button type="button" class="btn btn-outline-danger btn-xs">
@@ -87,46 +83,38 @@
 /*eslint no-console: "error"*/
 /* eslint-disable */
 import MainBar from "../components/shared/MainBar";
-import axios from "axios"
 
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 export default {
-  name: "PageHome",
-
+  name: "PageBag",
+ 
   data(){
     return{
-      api:'http://localhost:3000/products',
-      products:[],
-      input: {
-          value: '1',
-      }
-    }
+        products:[],
+        value:""
+    }   
   },
 
   methods:{ 
       sum(e){
 
-          if(this.input.value <= 9){
-              this.input.value++;
+          if(this.value <= 9){
+              this.value++;
           }else{
-              this.input.value = value;
+              this.value = value;
           }
 
           
       },
       decrease(e){
-          if(this.input.value >=2){
-              this.input.value--;
+          if(this.value >=2){
+              this.value--;
           }else{
-              this.input.value = value;
+              this.value = value;
               
           }
       },
-      total(e){
-          for (let index = 0; index < products.length; index++) {
-              const element = products.value;
-              
-          }
-      }
+     
    
     },
 
@@ -135,11 +123,12 @@ export default {
     },
 
   created(){
-    axios.get(this.api)
-    .then(Response => {
-       this.products = Response.data;
-    })
+   this.products =this.getProductsInCart
   },
+  computed:{
+      ...mapGetters(["getProductsInCart"])
+  }
+  
 }
 </script>
 

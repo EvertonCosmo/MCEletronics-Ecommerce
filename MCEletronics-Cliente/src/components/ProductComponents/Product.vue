@@ -21,16 +21,7 @@
     </b-card>
 
     
-    <!-- <div class="cart text-center" >
-        <div class="card-img-top vue-logo"></div>
-
-        <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text"> R$ {{product.price}} - Estoque: {{product.quantity}}</p>
-            <AddToCart :product="product"/>
-            
-        </div>
-    </div> -->
+  
 </template>
 
 <script>
@@ -53,11 +44,7 @@ export default {
 </script>
 
 <style scoped>
-/* solid 1px rgba(0,0,0,.2);margin-left:10% */
-    .logo{
-        padding-bottom: 75%;
-        background-size: 40%;
-    }
+
 </style>
 
 
