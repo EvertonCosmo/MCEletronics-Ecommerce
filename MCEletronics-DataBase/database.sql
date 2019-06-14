@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -109,12 +109,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 --
 
 COPY public.products (id, name, category, price, quantity, description) FROM stdin;
-39	Manel CDS  	Iniciante	100	15	Manel  Katarina
-37	Raspberry	Eletronico	250	100	Raspberry pi 
-34	Arduino UNO 2	Eletronico	500	25	Arduino UNO 
-42	PLACA PCB	Eletronico	500	5	Essa placa é legal 
-43	PS4	Eletronico	5000	30	PS4
-\.
+
 
 
 --
@@ -122,19 +117,7 @@ COPY public.products (id, name, category, price, quantity, description) FROM std
 --
 
 COPY public.users (id, username, password) FROM stdin;
-1	Everton	cosmo123
-2	Everton	cosmo123
-3	Cosmo	123
-4	Cosmo123	cosmo123
-5	EvertonCosmo	cosmo123
-6	EvertonCosmo	cosmo123
-7	EvertonCosmo	123
-8	Antonio 	cosmo123
-9	Everton123	cosmo123
-10	EvertonCosmo	cosmo123
-11	Cosmo123	cosmo123
-12	Antonio	cosmo123
-\.
+
 
 
 --

@@ -1,157 +1,117 @@
 <template>
   <div>
-    
-   <main-bar :category="true"></main-bar>
-  <div class="container-fluid">
-
-  
-
-  <swiper :options="swiperOption" class="swiper-box container" style="max-width:80%;">
-        <swiper-slide>  <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img></swiper-slide>
-        <swiper-slide>  <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img></swiper-slide>
-        <swiper-slide>  <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img></swiper-slide>
+    <main-bar :category="true"></main-bar>
+    <div class="container-fluid">
+      <swiper :options="swiperOption" class="swiper-box container" style="max-width:80%;">
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-   </swiper>
+      </swiper>
 
+      <products></products>
+    </div>
 
-
-  <products></products>
+    <PageFooter></PageFooter>
   </div>
-
-  <div id="mid" class="informations">
-      <div style="width: 50%; ">
-        <b-navbar-brand
-          style="font-size: 200%; position: relative; color: #033076; margin-left: 6%"
-          class="logo"
-          href="PageHome"
-        >MC Eletronics
-        </b-navbar-brand>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div style="margin-left: 20%">
-            <i style="font-size: 80px; color: #2D2C3F; float: right" class="fab fa-tencent-weibo"></i>
-          </div>
-          <div style="color: #2D2C3F" class="col-sm-4">
-            <h3>Fale conosco</h3>
-            <p>(88) 0 0000-0000</p>
-          </div>
-          <div style="margin-left: 10%; margin-top: -2%; color: #2D2C3F; float: right" >
-            <h3>FAQ</h3>
-            <p>Como comprar</p>
-            <p>Trocas</p>
-            <p>Envios</p>
-            <p>Devoluções</p>
-          </div>
-        </div>
-      </div>
-  </div>
-
-    <footer>
-      <i class="far fa-copyright">Direitos Reservados MC Eletronics</i>
-    </footer>
-</div>
 </template>
 
 <script>
-
-import MainBar from '../components/shared/MainBar'
+import MainBar from "../components/shared/MainBar";
 // import Carousel from './Carousel.vue'
-import Products from "./ProductComponents/Products"
+import Products from "./ProductComponents/Products";
+import PageFooter from "../components/PageFooter";
 
-
-import {mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 // import {isLoggedIn,getLoggedInUser} from "../services/authService"
 export default {
   name: "PageHome",
-  data(){
+  data() {
     return {
       swiperOption: {
-          spaceBetween: 30,
-          centeredSlides: true,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 40
           },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30
           },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }, 
-          breakpoints: {
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 40
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 30
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20
-            },
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            }
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
           }
         }
-    
-    }
+      }
+    };
   },
-  computed:{
-    ...mapGetters([
-      'getAllProducts',
-    ]),
+  computed: {
+    ...mapGetters(["getAllProducts"])
     // ...mapState(['loggedUser']),
-    
-   
   },
 
-  components:{
-    MainBar,Products
-  },
-  
-  
-}
-
+  components: {
+    MainBar,
+    Products,
+    PageFooter
+  }
+};
 </script>
 
 <style scoped >
-
 .swiper-box {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  .swiper-item {
-    height: 100%;
-    text-align: center;
-    font-size: 18px ;
-    background: #fff;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.swiper-item {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 
-  img {
+img {
   width: 50%;
 }
 body {
@@ -172,13 +132,13 @@ section:after {
   height: 100px;
 }
 /* Style the footer */
-footer {
+/* footer {
   background-color: #033076;
   padding: 20px;
   text-align: center;
   color: white;
   height: 2%;
-}
+} */
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
   nav,
@@ -192,11 +152,11 @@ footer {
   background-color: rgb(222, 224, 224);
   height: 400px;
 }
-.informations {
+/* .informations {
   background-color: rgb(176, 177, 179);
   margin: 0%;
   height: 240px;
-}
+} */
 /* Create two columns/boxes that floats next to each other */
 #categories {
   float: left;
@@ -205,9 +165,9 @@ footer {
   padding: 1.7%;
   font-size: 100%;
 }
-#mid {
+/* #mid {
   color: white;
-}
+} */
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
