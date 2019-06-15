@@ -23,7 +23,7 @@
                   <div class="col-12 col-sm-12 col-md-2 text-center">
                     <img
                       class="img-responsive"
-                      :img-src="require(`/home/emanoel/Downloads/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.png`)"
+                      :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.png`)"
                       alt="prewiew"
                       width="120"
                       height="80"

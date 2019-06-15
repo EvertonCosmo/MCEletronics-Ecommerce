@@ -22,11 +22,23 @@
                     name="search"
                     placeholder="Buscar... "
                   />
-
-                  <i
-                    class="fas fa-search"
-                    style=" z-index: 1; position:absolute;right:2%;top: 25%;visibility:visible; color: #033076; font-size:50%"
+                  <button style=" position:absolute; 
+                            border: none; 
+                            width: 5%; 
+                            margin-top: 1.3%; 
+                            right:2%; 
+                            background: #fff; 
+                            z-index: 1;">
+                    <i class="fas fa-search"
+                    style=" 
+                      position:absolute;
+                      right:2.0%;
+                      top: 25%;
+                      color: #033076; 
+                      font-size:60%"
                   ></i>
+                  </button>
+                  
                 </b-input-group>
               </b-form-group>
             </b-nav-form>
@@ -106,27 +118,67 @@
       </b-navbar>
     </header>
 
-    <div v-show="category">
-      <b-dropdown id="dropdown-header" text="Categorias" class="m-2" variant="primary" size="lg">
-        <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
-        <b-dropdown-group id="Placas" header="Placas">
-          <b-dropdown-item-button>Arduino</b-dropdown-item-button>
-          <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
-        </b-dropdown-group>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-group id="dropdown-group-2" header="Shields">
-          <b-dropdown-header>Shields</b-dropdown-header>
-          <b-dropdown-item-button>Wifi</b-dropdown-item-button>
-          <b-dropdown-item-button>Bluetooth</b-dropdown-item-button>
-        </b-dropdown-group>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-group id="dropdown-group-2" header="Computadores">
-          <b-dropdown-header>Computadores</b-dropdown-header>
-          <b-dropdown-item-button>Pessoal</b-dropdown-item-button>
-          <b-dropdown-item-button>Notebooks</b-dropdown-item-button>
-        </b-dropdown-group>
-      </b-dropdown>
-    </div>
+    <!-- <div>
+      <b-navbar toggleable="lg" type="dark" variant="info">
+        
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          
+          <b-navbar-nav class="ml-auto">
+            <b-navbar-brand style="margin-left: 0%" href="#">Home</b-navbar-brand>
+            <b-navbar-brand style="margin-left: 2%" href="#">Sobre</b-navbar-brand>
+            <b-navbar-brand style="margin-left: 0%" href="#">Contato</b-navbar-brand>
+            <b-navbar-brand style="margin-left: 0%" href="#">Quem somos?</b-navbar-brand>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div> -->
+
+    <div>
+  <b-navbar style="height: 60px; margin-top: 2%; margin-bottom: 2%" toggleable="sm" type="light" variant="light">
+    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+
+      <div v-show="category">
+          <b-dropdown
+            id="dropdown-header"
+            text="Categorias"
+            class="m-2"
+            variant="primary"
+            size="lg"
+          >
+            <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
+            <b-dropdown-group id="Placas" header="Placas">
+              <b-dropdown-item-button>Arduino</b-dropdown-item-button>
+              <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
+            </b-dropdown-group>
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-group id="dropdown-group-2" header="Shields">
+              <b-dropdown-header>Shields</b-dropdown-header>
+              <b-dropdown-item-button>Wifi</b-dropdown-item-button>
+              <b-dropdown-item-button>Bluetooth</b-dropdown-item-button>
+            </b-dropdown-group>
+            <b-dropdown-divider></b-dropdown-divider>
+            <b-dropdown-group id="dropdown-group-2" header="Computadores">
+              <b-dropdown-header>Computadores</b-dropdown-header>
+              <b-dropdown-item-button>Pessoal</b-dropdown-item-button>
+              <b-dropdown-item-button>Notebooks</b-dropdown-item-button>
+            </b-dropdown-group>
+          </b-dropdown>
+        </div>
+
+    
+
+    <b-collapse id="nav-text-collapse" is-nav>
+      <b-navbar-nav style="margin-left: 25%">
+        <b-nav-text style="margin-left: 50%" >Home</b-nav-text>
+        <b-nav-text style="margin-left: 50%" >Sobre</b-nav-text>
+        <b-nav-text style="margin-left: 50%" >Contato</b-nav-text>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+</div>
   </div>
 </template>
 

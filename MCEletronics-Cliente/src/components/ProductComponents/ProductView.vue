@@ -24,7 +24,7 @@
                             <b-row>
                                 <div class="col-md-5">
                                     
-                                                 <img :src="require(`/home/emanoel/Downloads/MCEletronics/MCEletronics-Cliente/src/assets/${this.product.id}.png`)" width="100%" height="70%"/>
+                                                 <img :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-Cliente/src/assets/${this.product.id}.png`)" width="100%" height="70%"/>
                                     <!-- END THUMBS -->
 
                                 </div> 
