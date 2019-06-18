@@ -3,7 +3,10 @@ import api from "../../services/api.js"
 
 
 export const getProducts =({ commit }) => { // fetch data in products.js
-    api.get().then(Response => {commit('SET_PRODUCTS',Response.data)})
+    api.get().then(Response => {
+        console.log(Response.data)
+        commit('SET_PRODUCTS',Response.data)
+    })
     
         
 }
@@ -19,7 +22,7 @@ export const removeFromCart = (context, product) => {
     context.commit('REMOVE_FROM_CART', product)
 }
 
-export const addLoggedUser = (context,user) => {
-    context.commit('ADD_LOGGED_USER',user)
-}
+// export const addLoggedUser = (context,user) => {
+//     context.commit('ADD_LOGGED_USER',user)
+// }
 

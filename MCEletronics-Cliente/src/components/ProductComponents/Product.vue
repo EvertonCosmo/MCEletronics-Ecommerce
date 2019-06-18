@@ -1,15 +1,15 @@
 <template>
     <b-card
-    img-top
-    :img-src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)"
     style="max-width: 80%;border:none"
-
-    
     >
+    <!--
+           img-top
+         :img-src="require(`/home/everton/Desktop/WEBAPP/adm/src/assets/${this.product.id}.png`)" -->
     <b-card-body>
         <b-card-title>
-             <router-link :to="{ name:'product-view', params: {id: product.id,product:product}} ">
+             <router-link :to="{ name:'product-view', params: {id: this.product.id,product:product}} ">
                 {{product.name}}
+                <!-- {{product}} -->
              </router-link>
             
         </b-card-title>
@@ -38,8 +38,7 @@ export default {
                 
         }
     },
-    
-
+   
 }
 </script>
 

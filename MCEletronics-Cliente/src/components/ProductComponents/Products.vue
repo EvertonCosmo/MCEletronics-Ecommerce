@@ -12,19 +12,21 @@
 
     <swiper
       :options="swiperOption"
-      v-for="(row,index) in productRows"
+      
       :key="index"
       class="swiper-box container"
       style="max-width:100%;"
     >
-      <swiper-slide v-for="(product,index) in row " :key="index">
+      <swiper-slide v-for="(product,index) in productRows" :key="index">
         <Product :product="product" track-id="id"/>
-      </swiper-slide>
+      </swiper-slide> 
 
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
+
+    
   </div>
 </template>
 

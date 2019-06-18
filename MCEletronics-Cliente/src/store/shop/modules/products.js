@@ -3,7 +3,7 @@
 // export const namespaced = true
 
 const state ={
-    products:[],
+    products:Object,
 
 }
 

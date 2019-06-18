@@ -2,9 +2,10 @@ import axios from "axios"
 
 
  const http  = axios.create({
-        //  baseURL: 'http://192.168.42.71:8080/project/',
+         baseURL: 'http://192.168.1.7:8080/MCEletronics/',
 
-        baseURL:'http://localhost:8080/project/',
+        // baseURL:'http://192.168.1.8:8080/MCEletronics/',
+        
         headers: {
              Accept: 'application/json',
             'Content-Type': 'application/json'

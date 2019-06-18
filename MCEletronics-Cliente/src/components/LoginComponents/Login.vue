@@ -101,7 +101,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["addLoggedUser"]),
+    
 
     login(event) {
       if (this.user.username == "" && this.user.password == "") {
