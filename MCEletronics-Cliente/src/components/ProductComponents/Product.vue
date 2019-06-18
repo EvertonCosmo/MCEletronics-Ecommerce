@@ -1,7 +1,7 @@
 <template>
     <b-card
     img-top
-    :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.png`)"
+    :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)"
     style="max-width: 80%;border:none"
 
     
