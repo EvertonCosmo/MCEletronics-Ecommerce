@@ -27,4 +27,4 @@
 // }
 export const getAllProducts = state => state.products.products
 export const getProductsInCart = state => state.shoppingCart.added
-export const getLoggedUser = state =>  state.users.loggedUser
+// export const getLoggedUser = state =>  state.users.loggedUser

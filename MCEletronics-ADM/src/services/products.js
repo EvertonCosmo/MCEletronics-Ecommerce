@@ -4,22 +4,22 @@ export default{
     // CRUD 
     
     post:(product)=>{
-         // product.append('image',file);
-         return http.post('products', product)
+         return http.post('api/product',product)
           
     },
-    update: (product,id) => {
-        return http.put('products/' +id, product)
+    update: (product, id) => {
+        return http.put('api/product/' + id, product)
     },
 
     get:()=>{
-        return http.get('products')
+        return http.get('api/products')
     },
     getProduct:(id)=>{
-        return http.get('products/'+id)
+        return http.get('api/products/'+id)
     },
-    delete:(id)=>{
-        return http.delete('products/'+ id)
+
+    delete: (id) => {
+        return http.delete('api/product/' + id)
     }
 
 }

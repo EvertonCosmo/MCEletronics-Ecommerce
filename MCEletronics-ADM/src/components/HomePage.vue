@@ -140,7 +140,16 @@ export default {
     },
     data(){
         return{
-          
+           products:[],
+            errors:[],
+          product : { 
+              name:'',
+              price:'',
+              category:'',
+              quantity:'',
+              description:'',
+              file:null,
+          },
           money: {
             decimal: ',',
             thousands: '.',
@@ -155,16 +164,7 @@ export default {
             dismissCountDown: 0,
             variant:'',
             message:'',
-            product: {
-               file:null,
-                // id:'',
-                name:'',
-                price:'',
-                category:'',
-                quantity:'',
-                description:'',
-              
-            },
+         
             product_modal : {
                 file:null,
                 name:'',
@@ -183,8 +183,7 @@ export default {
                 {value:"Música",text:"Musica"}
             ],
 
-            products:[],
-            errors:[]
+           
           }
     },
     methods: {
@@ -196,13 +195,14 @@ export default {
       },
         getProducts(){
             ProductService.get().then(Response => {
-                if(Response.data.product.length > 1){
-                   this.products = Response.data.product;
+                if(Response.data.length > 1){
+                   this.products = Response.data;
                    this.load = true;
                 }else{
                     this.products = Response.data;
                     this.load = true;
-                }
+                }  
+                // this.products = Response.data;
 
             }).catch(e =>{
                 console.log(e)
@@ -224,13 +224,15 @@ export default {
          this.modalShow = true;
       },
         saveProduct(){
-            let formData = new FormData()
-                   formData.append('image', this.product.file);
+          let formData = new FormData()
+                   
                     formData.append('name', this.product.name);
                     formData.append('category', this.product.category);
                     formData.append('price', this.product.price);
                     formData.append('quantity', this.product.quantity);
                     formData.append('description', this.product.description);
+                     formData.append('image', this.product.file);
+
             ProductService.post(formData).then(Response => {
                 console.log(Response.data);
                 this.product = {}

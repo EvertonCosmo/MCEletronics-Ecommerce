@@ -16,9 +16,9 @@
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
-
-      <products></products>
     </div>
+
+    <products></products>
 
     <PageFooter></PageFooter>
   </div>
@@ -72,11 +72,14 @@ export default {
       }
     };
   },
-  computed: {
-    ...mapGetters(["getAllProducts"])
-    // ...mapState(['loggedUser']),
+  computed:{
+    ...mapGetters([
+      'getAllProducts',
+    ]),
+  
+    
+   
   },
-
   components: {
     MainBar,
     Products,

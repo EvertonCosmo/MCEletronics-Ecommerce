@@ -1,29 +1,4 @@
 <template>
-<!-- 	<div id="my-modal" class="modal fade">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">{{product.name}}!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        	
-          <p>Name: {{ product.name }}</p>
-          <p>Description: {{ product.description }}</p>
-          <p>Price: {{ product.price}}</p>
-        </div>
-        <div class="modal-footer">
-          <b-button variant="primary">Save changes</b-button>
-            <b-button variant="secondary" data-dismiss="modal">Close</b-button>
-          
-        </div>
-      </div>
-    </div>
-	</div> -->
-
-
 <div class="container" v-if="edit">
    <transition name="modal">
     <div class="modal-mask">
@@ -69,8 +44,6 @@
           <b-form-select v-model="product.category"  :value="product.category" :options="options"> </b-form-select>
            
           <label>Preço</label>
-          <!-- <b-input type="number" v-model="product.price"  :value="product.price" placeholder="Preço"  inputmode="numeric"  pattern="[0-9]*" required></b-input> -->
-          <!-- <v-currency-field label="Value" v-bind="currency_config" :error-messages="errors.price" v-model="product.price"></v-currency-field> -->
            <div>
           <money v-model="product.price" v-bind="money" class="form-control"></money> 
           </div>
@@ -148,7 +121,7 @@
 
             <aside role="complementary" class="col-md-4">
                
-                        <img :src="require(`@/assets/${this.product.id}.png`)" height="100%" width="100%"/>
+                        <img :src="require(`/home/emanoel/Documentos/MCEletronics/backend-MCEletronics/api/images/${this.product.id}.jpg`)" height="100%" width="100%"/>
                   
             </aside>
           </b-row>
@@ -211,13 +184,13 @@
         this.dismissCountDown = this.dismissSecs
       },
       updateProduct(){
-        let formData = new FormData()
-                   formData.append('image', this.file);
+                       let formData = new FormData()
                     formData.append('name', this.product.name);
                     formData.append('category', this.product.category);
                     formData.append('price', this.product.price);
                     formData.append('quantity', this.product.quantity);
                     formData.append('description', this.product.description);
+                     formData.append('image', this.file);
             ProductService.update(formData,this.id).then(Response => {
                 console.log(Response.data);
                 // this.product = {}
@@ -239,11 +212,7 @@
       handleFileUpload(){
              this.file = this.$refs.file.files[0];
         },
-    //   url () {
-    //      // const url = 'https://images-americanas.b2w.io/produtos/01/00/item/133280/7/133280747G1.jpg'
-    //      const url  = require(`@/assets/images/${this.product.id}`)
-    //      return url
-    // },
+ 
 
     
     },

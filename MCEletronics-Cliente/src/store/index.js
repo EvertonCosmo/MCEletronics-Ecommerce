@@ -6,7 +6,7 @@ import * as getters from "./shop/getters"
 
 import products from "./shop/modules/products"
 import shoppingCart from  "./shop/modules/shopping-cart"
-import users from "./shop/modules/users"
+
 
 // import axios from "axios"
 Vue.use(Vuex)
@@ -18,7 +18,6 @@ export default new Vuex.Store({
     getters,
    modules:{
        products,
-       users,
        shoppingCart
    },
 
