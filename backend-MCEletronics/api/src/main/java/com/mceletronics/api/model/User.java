@@ -17,30 +17,49 @@ public class User implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Integer id;
 	
 	@NotNull
 	private String username;
 	
 	@NotNull
 	private String password;
+	
 	@NotNull
 	private String email;
+	
 	@NotNull
 	private String phone;
+	
 	@NotNull
 	private String adress;
+	
 	@NotNull
 	private String cpf;
+	
 	@NotNull
 	private String nameComplete;
+	
 	@NotNull
 	private String sexo;
 	
-	public long getId() {
+	public User(@NotNull String username, @NotNull String password, @NotNull String email, @NotNull String phone,
+			@NotNull String adress, @NotNull String cpf, @NotNull String nameComplete, @NotNull String sexo) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.phone = phone;
+		this.adress = adress;
+		this.cpf = cpf;
+		this.nameComplete = nameComplete;
+		this.sexo = sexo;
+	}
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getUsername() {
@@ -94,7 +113,4 @@ public class User implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
 }
