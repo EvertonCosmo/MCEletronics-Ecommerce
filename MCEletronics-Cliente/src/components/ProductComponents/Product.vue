@@ -20,7 +20,17 @@
     </b-card-body>
     </b-card>
 
+    
+    <!-- <div class="cart text-center" >
+        <div class="card-img-top vue-logo"></div>
 
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text"> R$ {{product.price}} - Estoque: {{product.quantity}}</p>
+            <AddToCart :product="product"/>
+            
+        </div>
+    </div> -->
 </template>
 
 <script>
