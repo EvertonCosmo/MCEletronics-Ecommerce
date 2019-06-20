@@ -1,38 +1,32 @@
 <template>
-    <b-button variant="primary"
-    :disabled="!product.quantity" @click="addProductToCart(product)">
-       Adicionar ao carrinho 
-    </b-button>
-
+  <b-button
+    variant="primary"
+    :disabled="!product.quantity"
+    @click="addProductToCart(product)"
+  >Adicionar ao carrinho</b-button>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import { successToaster } from "../../services/ErrorHandler";
+/* eslint-disable */
 
-import {mapActions} from 'vuex'
-import { successToaster } from '../../services/ErrorHandler';
-/* eslint-disable */ 
 export default {
-    name:'AddToCart',
-    props:['product'],
-    
-    methods: {
-   		...mapActions([
-        	'addToCart'
-    ]),
+  name: "AddToCart",
+  props: ["product"],
 
-   	addProductToCart(product) {
-           this.addToCart(product)
-           successToaster(
-               "Produto adicionado ao carrinho com sucesso","Sucesso ao adicionar"
-           )
-           
-   	}
+  methods: {
+    ...mapActions(["addToCart"]),
 
-   },
-   
-
-
-}
+    addProductToCart(product) {
+      this.addToCart(product);
+      successToaster(
+        "Produto adicionado ao carrinho com sucesso",
+        "Sucesso ao adicionar"
+      );
+    }
+  }
+};
 </script>
 
 

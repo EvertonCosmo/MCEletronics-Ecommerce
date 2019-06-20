@@ -1,13 +1,126 @@
 <template>
   <div>
-    <main-bar :category="true"></main-bar>
+    <main-bar :category="false"></main-bar>
+
+    <div
+      style="background-color: #033076; height: 3rem; min-width: 90%; margin-left: 5%; margin-top: 3%"
+      class="container"
+    >
+      <div class="row">
+        <div class="col-sm">
+          <router-link
+            to="/"
+            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
+          >
+            <h5
+              style="color: #DEDEDE; margin-left: 15%; position:relative; margin-top: -5%"
+            >CATEGORIAS</h5>
+          </router-link>
+        </div>
+        <div class="col-sm">
+          <router-link
+            to="/"
+            style="color: #DEDEDE; margin-left: 15%; position:relative; text-decoration: none"
+          >
+            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">HOME</h5>
+          </router-link>
+        </div>
+        <div class="col-sm">
+          <router-link
+            to="/"
+            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
+          >
+            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">SOBRE</h5>
+          </router-link>
+        </div>
+        <div class="col-sm">
+          <router-link
+            to="/"
+            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
+          >
+            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">DUVIDAS</h5>
+          </router-link>
+        </div>
+      </div>
+    </div>
+
+    <ul style=" list-style:none; margin-left: 5%; height: 40px; width: 90.1%; margin-top: 1%">
+      <li class="categories" style="margin-top: -1.1%;">
+        <a style="margin-top: 1%;" class="categories-item" href>Celulares</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Notebooks</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Computadores</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Câmera</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Placas</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Som</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Jogos</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >Luminarias</a>
+      </li>
+      <li class="categories">
+        <a
+          class="categories-item"
+          href
+        >TV</a>
+      </li>
+      <li style=" height: 39px;" class="categories">
+        <a
+          class="categories-item"
+          href
+        >Outros</a>
+      </li>
+    </ul>
+
     <div class="container-fluid">
-      <swiper :options="swiperOption" class="swiper-box container" style="max-width:80%;">
+      <swiper
+        :options="swiperOption"
+        class="swiper-box container"
+        style="max-width:74%; max-height: 399px; margin-left: 22%; margin-top: -4.2%"
+      >
         <swiper-slide>
           <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img>
         </swiper-slide>
         <swiper-slide>
           <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/exemplo.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner10.jpg`)" fluid-grow></b-img>
         </swiper-slide>
         <swiper-slide>
           <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img>
@@ -16,9 +129,9 @@
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
-
-      <products></products>
     </div>
+
+    <products></products>
 
     <PageFooter></PageFooter>
   </div>
@@ -74,9 +187,7 @@ export default {
   },
   computed: {
     ...mapGetters(["getAllProducts"])
-    // ...mapState(['loggedUser']),
   },
-
   components: {
     MainBar,
     Products,
@@ -158,12 +269,21 @@ section:after {
   height: 240px;
 } */
 /* Create two columns/boxes that floats next to each other */
-#categories {
-  float: left;
-  width: 30%;
-  background: white;
-  padding: 1.7%;
-  font-size: 100%;
+.categories {
+  margin-bottom: 0em;
+  height: 40px;
+  width: 19.7%;
+  text-decoration: none;
+  background-color: #e9ecef;
+}
+
+.categories-item {
+  margin-left: 1%;
+  text-decoration: none;
+  margin-top: 0.5%;
+  position: absolute;
+  color:#033076;
+  font-size: 18px;
 }
 /* #mid {
   color: white;

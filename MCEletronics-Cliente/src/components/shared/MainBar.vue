@@ -19,9 +19,9 @@
                   <b-form-input
                     style="border-radius: 6px; z-index: 0"
                     maxlength="10"
-                    name="search"
                     placeholder="Buscar... "
                   />
+
                   <button style=" position:absolute; 
                             border: none; 
                             width: 5%; 
@@ -38,7 +38,6 @@
                       font-size:60%"
                   ></i>
                   </button>
-                  
                 </b-input-group>
               </b-form-group>
             </b-nav-form>
@@ -60,32 +59,6 @@
               </b-button>
             </router-link>
 
-            <!-- <ul>
-            <li class="nav-item dropdown" v-if="logged">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >{{this.loggedUser.username}}</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <router-link to="/" class="dropdown-item">Perfil</router-link>
-                
-                <router-link
-                  :to="{name:'/'}"
-                  class="dropdown-item text-danger"
-                  @click.native="logout"
-                >Logout</router-link>
-              </div>
-            </li>
-
-            -->
-
-            <!-- <i class="fas fa-user-circle "></i>Login  -->
-
             <router-link :to="{name:'login'}" v-if="!logged">
               <b-button id="button-user">
                 <!-- <i class="fas fa-user-circle"></i> -->
@@ -104,81 +77,32 @@
                 <span style="font-size: 90%;">Sair</span>
               </b-button>
             </router-link>
-
-            <!-- </ul> -->
-            <!-- <router-link :to="{name:'login'}">
-
-            
-              
-           
-            </b-button>
-            </router-link>-->
           </div>
         </b-collapse>
       </b-navbar>
     </header>
 
-    <!-- <div>
-      <b-navbar toggleable="lg" type="dark" variant="info">
-        
-
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-          
-          <b-navbar-nav class="ml-auto">
-            <b-navbar-brand style="margin-left: 0%" href="#">Home</b-navbar-brand>
-            <b-navbar-brand style="margin-left: 2%" href="#">Sobre</b-navbar-brand>
-            <b-navbar-brand style="margin-left: 0%" href="#">Contato</b-navbar-brand>
-            <b-navbar-brand style="margin-left: 0%" href="#">Quem somos?</b-navbar-brand>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div> -->
-
-    <div>
-  <b-navbar style="height: 60px; margin-top: 2%; margin-bottom: 2%" toggleable="sm" type="light" variant="light">
-    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-
-      <div v-show="category">
-          <b-dropdown
-            id="dropdown-header"
-            text="Categorias"
-            class="m-2"
-            variant="primary"
-            size="lg"
-          >
-            <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
-            <b-dropdown-group id="Placas" header="Placas">
-              <b-dropdown-item-button>Arduino</b-dropdown-item-button>
-              <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
-            </b-dropdown-group>
-            <b-dropdown-divider></b-dropdown-divider>
-            <b-dropdown-group id="dropdown-group-2" header="Shields">
-              <b-dropdown-header>Shields</b-dropdown-header>
-              <b-dropdown-item-button>Wifi</b-dropdown-item-button>
-              <b-dropdown-item-button>Bluetooth</b-dropdown-item-button>
-            </b-dropdown-group>
-            <b-dropdown-divider></b-dropdown-divider>
-            <b-dropdown-group id="dropdown-group-2" header="Computadores">
-              <b-dropdown-header>Computadores</b-dropdown-header>
-              <b-dropdown-item-button>Pessoal</b-dropdown-item-button>
-              <b-dropdown-item-button>Notebooks</b-dropdown-item-button>
-            </b-dropdown-group>
-          </b-dropdown>
-        </div>
-
-    
-
-    <b-collapse id="nav-text-collapse" is-nav>
-      <b-navbar-nav style="margin-left: 25%">
-        <b-nav-text style="margin-left: 50%" >Home</b-nav-text>
-        <b-nav-text style="margin-left: 50%" >Sobre</b-nav-text>
-        <b-nav-text style="margin-left: 50%" >Contato</b-nav-text>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
-</div>
+    <div v-show="category">
+      <b-dropdown id="dropdown-header" text="Categorias" class="m-2" variant="primary" size="lg">
+        <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
+        <b-dropdown-group id="Placas" header="Placas">
+          <b-dropdown-item-button>Arduino</b-dropdown-item-button>
+          <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
+        </b-dropdown-group>
+        <b-dropdown-divider></b-dropdown-divider>
+        <b-dropdown-group id="dropdown-group-2" header="Shields">
+          <b-dropdown-header>Shields</b-dropdown-header>
+          <b-dropdown-item-button>Wifi</b-dropdown-item-button>
+          <b-dropdown-item-button>Bluetooth</b-dropdown-item-button>
+        </b-dropdown-group>
+        <b-dropdown-divider></b-dropdown-divider>
+        <b-dropdown-group id="dropdown-group-2" header="Computadores">
+          <b-dropdown-header>Computadores</b-dropdown-header>
+          <b-dropdown-item-button>Pessoal</b-dropdown-item-button>
+          <b-dropdown-item-button>Notebooks</b-dropdown-item-button>
+        </b-dropdown-group>
+      </b-dropdown>
+    </div>
   </div>
 </template>
 
@@ -186,7 +110,6 @@
 /* eslint-disable */
 
 import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
-import { isLoggedIn, getLoggedInUser } from "../../services/authService";
 import api from "../../services/api";
 export default {
   name: "PageHome",
@@ -196,7 +119,7 @@ export default {
 
   data() {
     return {
-      titlePage: "MCEletronics",
+      titlePage: "MC Eletronics",
       logged: false,
       user: {}
     };
@@ -204,28 +127,14 @@ export default {
 
   computed: {
     ...mapGetters(["getProductsInCart"])
-    // ...mapState({
-    //     loggedUser: state => state.users.loggedUser
-    // })
   },
 
   methods: {
-    //  ... mapActions(['addLoggedUser']),
-
-    // ...mapMutations(["ADD_LOGGED_USER"]),
-
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
 
-    //  isLogged(){
-    //    return isLoggedIn()
-    //  },
-
     logout() {
-      // localStorage.removeItem("_auth")
-      // this.$router.push("/");
-      // location.reload();
       this.$session.destroy();
 
       this.logged = false; // not logged
@@ -233,16 +142,11 @@ export default {
     }
   },
   created() {
-    // const loggedUser = getLoggedInUser();
-    // this.ADD_LOGGED_USER(loggedUser);
-    // console.log(this.loggedUser)
     if (this.$session.exists()) {
       this.logged = true; // logged
       this.user = JSON.parse(this.$session.get("user"));
     }
   }
-
-  // computed: mapState(["cartProducts"]),
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav style="margin-top: 2%" aria-label="breadcrumb">
+    <nav style="margin-top: 2%; margin-right: 2%" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Recomendados</li>
         <li class="ml-auto" aria-current="page">
@@ -9,28 +9,24 @@
       </ol>
     </nav>
     <hr>
-    <!-- <b-row v-for="(row,index) in productRows" :key="index">
-            <div class="col-sm-3 mb-4 " v-for="product in row" :key="product.id">
-                <Product :product="product" track-id="id"/>
-            </div>
-    </b-row>-->
 
     <swiper
       :options="swiperOption"
-      v-for="(row,index) in productRows"
-      :key="index"
+      
+    
       class="swiper-box container"
       style="max-width:100%;"
     >
-      <swiper-slide v-for="(product,index) in row " :key="index">
-        <!-- {{product}} -->
+      <swiper-slide  style="margin: 2.5%" v-for="(product,index) in productRows" :key="index">
         <Product :product="product" track-id="id"/>
-      </swiper-slide>
-      <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+      </swiper-slide> 
+
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
+
+    
   </div>
 </template>
 
@@ -82,12 +78,12 @@ export default {
     Product
   },
   computed: mapState({
-    productRows: state => state.products.products
+    productRows: state => state.products.products  // get products from state(vuex) JUST ONLY TRUE
   }),
   methods: mapActions(["getProducts"]),
 
   created() {
-    this.getProducts();
+    this.getProducts(); // get all products 
   }
 };
 </script>

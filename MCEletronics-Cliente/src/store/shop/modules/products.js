@@ -3,8 +3,7 @@
 // export const namespaced = true
 
 const state ={
-    products:[],
-
+    products:[]
 }
 
 export const mutations = {
@@ -13,9 +12,6 @@ export const mutations = {
     },
   
 }
-
-
-
 
 export default {
     state,mutations

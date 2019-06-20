@@ -21,6 +21,11 @@
           <div style="width: 25%; float: left; margin-left: 2%">
             <h3>Fale conosco</h3>
             <h6>(88) 0 0000-0000</h6>
+            <br>
+            <i style="font-size: 28px" class="fab fa-facebook-square"></i>
+            <i style="font-size: 28px; margin-left: 15px" class="fab fa-twitter-square"></i>
+            <i style="font-size: 28px; margin-left: 15px" class="fab fa-instagram"></i>
+            <i style="font-size: 28px; margin-left: 15px" class="fab fa-google-plus-square"></i>
           </div>
 
           <div style="width: 30%; float: right;">

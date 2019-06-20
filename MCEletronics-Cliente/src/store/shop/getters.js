@@ -1,16 +1,12 @@
-// export const cartProducts = state => {
-//     return state.shoppingCart.added.map(({ id, quantity }) => {
-//         const product =
-//             state
-//                 .products.products
-//                 .find(product => product.id === id)
-
-//         return {
-//             ...product,
-//             quantity
-//         }
-//     })
-// }
+export const cartProducts = state => {
+    return state.shoppingCart.added.map(({ id, quantity }) => {
+        const product = state.products.products.find(product => product.id === id)
+        return {
+            ...product,
+            quantity
+        }
+    })
+}
 
 // export const itemsQuantity = state => {
 //   return cartProducts(state).reduce((quantity, item) => {
@@ -18,13 +14,15 @@
 //   }, 0)
 // }
 
-// export const subtotal = state => {
-//   const sum = cartProducts(state).reduce((subtotal, item) => {
-//     return subtotal + item.price * item.quantity
-//   }, 0)
 
-//   return sum
-// }
+  
+export const getsumtotal = (state) => {
+   const sum = cartProducts(state).reduce((subtotal, item) => {
+    return subtotal + item.price * item.quantity
+  }, 0.0)
+  
+  return sum
+}
 export const getAllProducts = state => state.products.products
 export const getProductsInCart = state => state.shoppingCart.added
-export const getLoggedUser = state =>  state.users.loggedUser
+// export const getLoggedUser = state =>  state.users.loggedUser
