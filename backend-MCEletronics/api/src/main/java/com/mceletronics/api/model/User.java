@@ -1,51 +1,80 @@
 package com.mceletronics.api.model;
 
-import java.io.Serializable;
 
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+//import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "users")
-public class User implements Serializable {
+import org.springframework.lang.Nullable;
 
-	private static final long serialVersionUID = 1L;
-	
+@Entity
+@Table(name ="users")
+public class User  {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Integer id;
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List <Role> roles; 
 	
 	@NotNull
 	private String username;
 	
+	
 	@NotNull
 	private String password;
 	
-	@NotNull
+	@Nullable
 	private String email;
 	
-	@NotNull
+	@Nullable
 	private String phone;
 	
-	@NotNull
+	@Nullable 
 	private String adress;
 	
-	@NotNull
+	@Nullable
 	private String cpf;
 	
-	@NotNull
+	@Nullable
 	private String nameComplete;
 	
-	@NotNull
+	@Nullable
 	private String sexo;
 	
-	public User(@NotNull String username, @NotNull String password, @NotNull String email, @NotNull String phone,
-			@NotNull String adress, @NotNull String cpf, @NotNull String nameComplete, @NotNull String sexo) {
-		super();
+	
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+   
+	
+	public User(@NotNull String username, @NotNull String password, List<Role> roles) {
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+	}
+
+	public User( @NotNull String username, @NotNull String password,  @Nullable String email, @Nullable String phone,
+			@Nullable String adress,  @Nullable String cpf,  @Nullable String nameComplete,  @Nullable String sexo, List<Role> roles) {
+	
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -54,14 +83,9 @@ public class User implements Serializable {
 		this.cpf = cpf;
 		this.nameComplete = nameComplete;
 		this.sexo = sexo;
+		this.roles = roles;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -110,7 +134,10 @@ public class User implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", roles=" + roles + ", username=" + username + ", password=" + password + ", email="
+				+ email + ", phone=" + phone + ", adress=" + adress + ", cpf=" + cpf + ", nameComplete=" + nameComplete
+				+ ", sexo=" + sexo + "]";
 	}
 }

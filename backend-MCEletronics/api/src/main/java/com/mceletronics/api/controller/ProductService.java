@@ -32,7 +32,6 @@ public class ProductService {
 
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getProducts() {
-
 		return new ResponseEntity<List<Product>>(productRepository.findAll(), HttpStatus.OK);
 	}
 
