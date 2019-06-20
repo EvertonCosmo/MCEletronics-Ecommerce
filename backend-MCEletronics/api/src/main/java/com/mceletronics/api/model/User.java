@@ -9,12 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "users")
-public class User implements Serializable {
 
+
+@Entity
+@Table(name = "users") 
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -25,27 +30,21 @@ public class User implements Serializable {
 	@NotNull
 	private String password;
 	
-	@NotNull
 	private String email;
 	
-	@NotNull
 	private String phone;
 	
-	@NotNull
 	private String adress;
 	
-	@NotNull
 	private String cpf;
 	
-	@NotNull
 	private String nameComplete;
 	
-	@NotNull
 	private String sexo;
 	
-	public User(@NotNull String username, @NotNull String password, @NotNull String email, @NotNull String phone,
-			@NotNull String adress, @NotNull String cpf, @NotNull String nameComplete, @NotNull String sexo) {
-		super();
+	public User() {}
+	public User( String username,  String password,  String email,  String phone,
+			 String adress,  String cpf,  String nameComplete,  String sexo) {
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -56,15 +55,7 @@ public class User implements Serializable {
 		this.sexo = sexo;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getUsername() {
-		return username;
-	}
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -110,7 +101,5 @@ public class User implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 }
