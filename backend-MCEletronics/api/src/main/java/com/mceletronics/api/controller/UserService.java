@@ -1,6 +1,7 @@
 package com.mceletronics.api.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,8 @@ public class UserService {
 
 		return new ResponseEntity<List<User>>(userRepository.findAll(), HttpStatus.OK);
 	}
+	
+	
 
 	@GetMapping("/users/{id}")
 	public ResponseEntity<User> getUser(@PathVariable(value = "id") Integer id) {
@@ -43,39 +46,48 @@ public class UserService {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	@PostMapping("/login")
+	public ResponseEntity<User> loginUser(User user){
+		User user1 = userRepository.findUser(user.getUsername(),user.getPassword());
+		System.out.println(user.getUsername());
+		System.out.println(user.getPassword());
+		
+		System.out.println(user1);
+		if(user != null) {
+			System.out.println(user);
+			return new ResponseEntity<User>(user,HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
 	@PostMapping("/user")
 	public ResponseEntity<User> saveUser(String username, String password, String email, String phone, String adress,
 			String cpf, String nameComplete, String sexo) {
 
-		if (username == null || password == null || email == null || phone == null || adress == null || cpf == null
-				|| nameComplete == null || sexo == null || username.equals("null") || password.equals("null")
-				|| email.equals("null") || phone.equals("null") || adress.equals("null") || cpf.equals("null")
-				|| nameComplete.equals("null") || sexo.equals("null")) {
+		if (username == null || password == null || username.equals("null") || password.equals("null")) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 
-		User user = new User(username, password, email, phone, adress, cpf, nameComplete, sexo);
+		User user = new User(username, password, null,null, null, null, null, null);
 		userRepository.save(user);
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 
 	}
 
-	@DeleteMapping("/user")
-	public ResponseEntity<?> deleteUser(@PathVariable(value = "id") Integer id) {
-
-		if (userRepository.existsById(id)) {
-
-			userRepository.deleteById(id);
-
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-		} else {
-
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
+//	@DeleteMapping("/user")
+//	public ResponseEntity<?> deleteUser(@PathVariable(value = "id") Integer id) {
+//
+//		if (userRepository.existsById(id)) {
+//
+//			userRepository.deleteById(id);
+//
+//			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//		} else {
+//
+//			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//		}
+//	}
 
 	@PutMapping("/user/{id}")
 	public ResponseEntity<User> updateUser(@PathVariable("id") Integer id, String username, String password,

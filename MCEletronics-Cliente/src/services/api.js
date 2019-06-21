@@ -19,10 +19,10 @@ export default {
     
     /* USERS */
     postUser :(user) => {
-        return http.post('api/users',user)
+        return http.post('api/user',user)
     },
     /* LOGIN */
     postLogin :(user) => {
-        return http.post('login',user)
+        return http.post('api/login',user)
     }
 }
