@@ -22,8 +22,9 @@
             <b-container>
               <b-row>
                 <div class="col-md-5">
+                  <!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
                   <img
-                    :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)"
+                    
                     width="100%"
                     height="70%"
                   >

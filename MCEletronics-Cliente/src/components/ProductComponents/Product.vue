@@ -1,8 +1,9 @@
 <template>
+<!-- :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
   <b-card
     style="max-width: 80%;border:none"
     img-top
-    :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)"
+    
   >
     <b-card-body>
       <b-card-title>
