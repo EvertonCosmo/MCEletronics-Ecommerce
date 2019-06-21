@@ -9,8 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity
+import org.springframework.lang.Nullable;
+
+
 @Table(name = "users")
+@Entity
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -25,26 +28,30 @@ public class User implements Serializable {
 	@NotNull
 	private String password;
 	
-	@NotNull
+	@Nullable
+	
 	private String email;
 	
-	@NotNull
-	private String phone;
-	
-	@NotNull
+	@Nullable
 	private String adress;
 	
-	@NotNull
+	@Nullable
+	private String phone;
+	
+	@Nullable
 	private String cpf;
 	
-	@NotNull
+	@Nullable
 	private String nameComplete;
 	
-	@NotNull
+	@Nullable
 	private String sexo;
 	
-	public User(@NotNull String username, @NotNull String password, @NotNull String email, @NotNull String phone,
-			@NotNull String adress, @NotNull String cpf, @NotNull String nameComplete, @NotNull String sexo) {
+	public User(){
+		super();
+	}
+	public User(@NotNull String username, @NotNull String password,  String email,  String phone,
+			 String adress,  String cpf,  String nameComplete,  String sexo) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -56,6 +63,12 @@ public class User implements Serializable {
 		this.sexo = sexo;
 	}
 	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", adress="
+				+ adress + ", phone=" + phone + ", cpf=" + cpf + ", nameComplete=" + nameComplete + ", sexo=" + sexo
+				+ "]";
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -110,7 +123,5 @@ public class User implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+
 }
