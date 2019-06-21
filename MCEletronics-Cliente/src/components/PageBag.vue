@@ -26,8 +26,8 @@
                       ></b-img>
                     </div>
 
-                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                      <h4 class="product-name">
+                    <div style="max-width: 35%" class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                      <h4 >
                         <strong>{{product.name}}</strong>
                       </h4>
                       <h4>
@@ -35,33 +35,74 @@
                       </h4>
                     </div>
 
-                    <div
-                      style="margin-top: 3%"
-                      class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row"
-                    >
-                      <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 10px">
-                        <h6>
-                          valor: {{product.price}}
-                          <span class="text-muted">x</span>
-                        </h6>
-                      </div>
+                    <div style="margin-top: 1%; width: 39%">
+                      
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm">
+                            
+                            <div style="width: 100%">
+                              <!-- <input type="text" class="inputQuantity"/>
+                              <div>
+                                <button class="plus">+</button>
+                                <button class="minus">-</button>
+                              </div> -->
+                              <!-- Example split danger button -->
+<!-- Example split danger button -->
+                              <div class="dropdown">
+                                <button class="dropbtn"><span style="margin-top: -3px; position: relative">{{product.quantity}}</span></button>
+                                <div class="dropdown-content">
+                                <a style="text-decoration: none" href="#">1</a>
+                                <a style="text-decoration: none" href="#">2</a>
+                                <a style="text-decoration: none" href="#">3</a>
+                                <a style="text-decoration: none" href="#">4</a>
+                                <a style="text-decoration: none" href="#">5</a>
+                                </div>
+                              </div>
+                            </div>
 
-                      <div class="col-2 col-sm-2 col-md-2 text-right">
-                        <button type="button" class="btn btn-outline-danger btn-xs">
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                      </div>
+                          </div>
+
+                          <div class="col-sm">
+                            
+                            <h6 style="margin-top: 10%">
+                               <span class="text-muted">R$</span>
+                              {{product.price}}
+                             
+                            </h6>
+
+                          </div>
+
+                          <div class="col-sm">
+                            
+                            <RemoveToCart @click="updatePrice()" :product="product"/>
+
+                          </div>
+                          
+                        </div>
+                      </div>                 
                     </div>
                   </div>
                   <hr>
                 </ul>
               </div>
 
-              <div class="card-footer">
-                <div>
-                  <label for="text-password">Calcular Frete</label>
-                  <b-input type="text" placeholder="00000-000"></b-input>
-                </div>
+              <div style="height:120px" class="card-footer">
+                <div id="simulator" class="col-md-7">
+                        <h4>Calcular frete e prazo:</h4>
+                        <b-input-group>
+                        <b-form-input
+                          type="tel"
+                          class="input-text cep-number"
+                          placeholder="00000-000"
+                          maxlength="9"
+                          id="zipcode"
+                          name="zipcode"
+                          value
+                        />
+                        <b-button primary="outline" class="button" type="submit">Ok</b-button>
+                        </b-input-group>
+                      </div>
               </div>
             </div>
           </div>
@@ -69,14 +110,14 @@
 
         <div class="purchase-information">
           <b-card-group>
-            <b-card style="max-width:25rem; background-color: rgb(213, 213, 213)" class="card-left">
+            <b-card style="max-width:25rem; min-width: 23rem; background-color: rgb(213, 213, 213)" class="card-left">
               <h5>Resumo da compra R$</h5>
               <h5>Subtotal (Qtd. Produtos)</h5>
               <h5>Frete</h5>
               <hr>
               <h4>TOTAL</h4>
-              <h5>R$ {{subTotal}} em 1x no Boleto Bancário</h5>
-              <h5>R$ {{subTotal}} em 1x no Boleto Bancário</h5>
+              <h5 style="font-size: 19px">R$ {{getsumtotal}} em 1x no Boleto Bancário</h5>
+              <h5 style="font-size: 19px">R$ {{getsumtotal}} em 1x no Boleto Bancário</h5>
             </b-card>
           </b-card-group>
 
@@ -111,6 +152,7 @@
 /eslint no-console: "error"/;
 /* eslint-disable */
 import MainBar from "../components/shared/MainBar";
+import RemoveToCart from "../components/ProductComponents/RemoveToCart";
 
 import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 export default {
@@ -145,12 +187,12 @@ export default {
   },
 
   components: {
-    MainBar
+    MainBar,
+    RemoveToCart
   },
 
   created() {
     this.products = this.getProductsInCart;
-    this.subTotal = this.getsumtotal;
   },
   computed: {
     ...mapGetters(["getProductsInCart", "getsumtotal"])
@@ -256,5 +298,68 @@ export default {
   padding: 5%;
   border-left: none;
   border-right: none;
+}
+.button {
+  border-color: #033076;
+  color: #fff;
+  background-color: #033076;
+  margin-left: 7px;
+  
+}
+.inputQuantity {
+  width: 40px;
+}
+.minus {
+  width: 20px;
+  background-color: #DADADA;
+  border-radius: 100%;
+  margin-left: 1px;
+}
+.plus {
+  width: 20px;
+  background-color: #DADADA;
+  border-radius: 100%; 
+  margin-left: 2px;
+}
+.dropbtn {
+  background-color: #033076;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 39px;
+  border-radius: 9%; 
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #033076;
 }
 </style>

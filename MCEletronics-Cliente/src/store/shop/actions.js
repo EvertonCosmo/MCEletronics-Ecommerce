@@ -13,7 +13,7 @@ export const getProducts =({ commit }) => { // fetch data in products.js
 export const addToCart = (context, product) => {
     if (product.quantity > 0) {
         context.commit('ADD_TO_CART', product)
-    }
+      }
 }
 
 export const removeFromCart = (context, product) => {

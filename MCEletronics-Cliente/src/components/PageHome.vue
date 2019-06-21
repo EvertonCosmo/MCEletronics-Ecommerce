@@ -3,7 +3,7 @@
     <main-bar :category="false"></main-bar>
 
     <div
-      style="background-color: #033076; height: 3rem; min-width: 90%; margin-left: 5%; margin-top: 3%"
+      style="background-color: #033076; height: 2.9rem; min-width: 90%; margin-left: 5%; margin-top: 3%"
       class="container"
     >
       <div class="row">
@@ -13,16 +13,13 @@
             style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
           >
             <h5
-              style="color: #DEDEDE; margin-left: 15%; position:relative; margin-top: -5%"
+              class="navigation-options "
             >CATEGORIAS</h5>
           </router-link>
         </div>
         <div class="col-sm">
-          <router-link
-            to="/"
-            style="color: #DEDEDE; margin-left: 15%; position:relative; text-decoration: none"
-          >
-            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">HOME</h5>
+          <router-link to="/" style=" margin-left: 15%; position:relative; text-decoration: none">
+            <h5 class="navigation-options ">HOME</h5>
           </router-link>
         </div>
         <div class="col-sm">
@@ -30,7 +27,7 @@
             to="/"
             style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
           >
-            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">SOBRE</h5>
+            <h5 class="navigation-options ">SOBRE</h5>
           </router-link>
         </div>
         <div class="col-sm">
@@ -38,7 +35,7 @@
             to="/"
             style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
           >
-            <h5 style="color: #ffff; margin-left: 15%; position:relative; margin-top: -5%">DUVIDAS</h5>
+            <h5 class="navigation-options">DUVIDAS</h5>
           </router-link>
         </div>
       </div>
@@ -49,58 +46,31 @@
         <a style="margin-top: 1%;" class="categories-item" href>Celulares</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Notebooks</a>
+        <a class="categories-item" href>Notebooks</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Computadores</a>
+        <a class="categories-item" href>Computadores</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Câmera</a>
+        <a class="categories-item" href>Câmera</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Placas</a>
+        <a class="categories-item" href>Placas</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Som</a>
+        <a class="categories-item" href>Som</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Jogos</a>
+        <a class="categories-item" href>Jogos</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >Luminarias</a>
+        <a class="categories-item" href>Luminarias</a>
       </li>
       <li class="categories">
-        <a
-          class="categories-item"
-          href
-        >TV</a>
+        <a class="categories-item" href>TV</a>
       </li>
-      <li style=" height: 39px;" class="categories">
-        <a
-          class="categories-item"
-          href
-        >Outros</a>
+      <li style=" height: 38px;" class="categories">
+        <a class="categories-item" href>Outros</a>
       </li>
     </ul>
 
@@ -108,23 +78,23 @@
       <swiper
         :options="swiperOption"
         class="swiper-box container"
-        style="max-width:74%; max-height: 399px; margin-left: 22%; margin-top: -4.2%"
+        style="max-width:74%; max-height: 399px; margin-left: 22%; margin-top: -4.3%"
       >
-        <swiper-slide>
+        <!-- <swiper-slide>
           <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img>
         </swiper-slide>
         <swiper-slide>
           <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
-        </swiper-slide>
+        </swiper-slide> -->
         <swiper-slide>
           <b-img :src="require(`@/assets/exemplo.jpg`)" fluid-grow></b-img>
         </swiper-slide>
-        <swiper-slide>
+        <!-- <swiper-slide>
           <b-img :src="require(`@/assets/banner10.jpg`)" fluid-grow></b-img>
-        </swiper-slide>
-        <swiper-slide>
+        </swiper-slide> -->
+        <!-- <swiper-slide>
           <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img>
-        </swiper-slide>
+        </swiper-slide> -->
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
@@ -282,12 +252,15 @@ section:after {
   text-decoration: none;
   margin-top: 0.5%;
   position: absolute;
-  color:#033076;
+  color: #033076;
   font-size: 18px;
 }
-/* #mid {
-  color: white;
-} */
+.navigation-options {
+  color: #DEDEDE;
+  margin-left: 15%;
+  position: relative;
+  margin-top: -5%;
+}
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

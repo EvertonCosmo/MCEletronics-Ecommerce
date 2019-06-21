@@ -14,7 +14,7 @@
           <div style="width: 15%; float: left; margin-left: 15%">
             <i
               style="font-size: 50px; color: #666; float: right"
-              class="fab fa-tencent-weibo"
+              class="fas fa-headset"
             ></i>
           </div>
 
