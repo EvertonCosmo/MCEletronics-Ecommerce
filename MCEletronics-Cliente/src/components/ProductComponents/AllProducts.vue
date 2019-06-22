@@ -1,8 +1,8 @@
 <template>
     <div>
         <main-bar></main-bar>
-         <div class="products">
-        <div class="row">
+         <div class="products" style="margin-top:10%">
+        <div class="row" style="max-width:100%">
         <div class="col-md-3 order-md-1 mb-4">
           <product-filter :categories="categories" />
         </div>

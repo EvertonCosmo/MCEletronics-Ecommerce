@@ -106,7 +106,7 @@ export default {
     login(event) {
       if (this.user.username == "" && this.user.password == "") {
         this.errorMessage.push("Necessário nome de usuário e senha");
-      }
+      }else{
 
       const user = {
         username: this.user.username,
@@ -139,6 +139,7 @@ export default {
           console.log(e);
           errorToaster("Não foi possivel realizar login");
         });
+      }
     },
 
     placeLogin() {
