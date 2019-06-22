@@ -104,15 +104,20 @@ export default {
     
 
     login(event) {
+      
+       
+
       if (this.user.username == "" && this.user.password == "") {
         this.errorMessage.push("Necessário nome de usuário e senha");
       }else{
-
-      const user = {
-        username: this.user.username,
-        password: this.user.password
+        let formData = new FormData();
+        formData.append("username",this.user.username)
+        formData.append("password",this.user.password)
+        const user = {
+          username: this.user.username,
+          password: this.user.password
       };
-      api.postLogin(user).then(Response => {
+       api.postLogin(formData).then(Response => {
           if (Response.status == 200) {
             this.loading = true;
 
@@ -120,8 +125,8 @@ export default {
 
             this.$session.set("user", 
               JSON.stringify({
-                username: this.user.username,
-                password: this.user.password
+                username: user.username,
+                password: user.password
               })
             ); // set user from session(JSON)
 
@@ -129,9 +134,6 @@ export default {
 
           }
 
-          if (Response.status == 208) {
-            errorToaster("Usuário já registrado ");
-          }
         
 
         })
