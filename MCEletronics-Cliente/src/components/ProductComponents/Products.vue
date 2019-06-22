@@ -1,10 +1,13 @@
 <template>
-  <div>
+<div>
+  <div v-if="list">
     <nav style="margin-top: 2%; margin-right: 2%" aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Recomendados</li>
         <li class="ml-auto" aria-current="page">
-          <router-link to="/">Mostrar todos</router-link>
+          <router-link  :to="{name:'all-products'}">
+            Mostrar todos
+        </router-link>
         </li>
       </ol>
     </nav>
@@ -12,12 +15,10 @@
 
     <swiper
       :options="swiperOption"
-      
-    
       class="swiper-box container"
       style="max-width:100%;"
     >
-      <swiper-slide  style="margin: 2.5%" v-for="(product,index) in productRows" :key="index">
+      <swiper-slide  style="margin: 2.5%" v-for="(product,index) in products" :key="index">
         <Product :product="product" track-id="id"/>
       </swiper-slide> 
 
@@ -28,17 +29,26 @@
 
     
   </div>
+  <div v-else>
+      <div>
+          <div class="row">
+              <div class="col-md-4" v-for="(product,index) in products" :key="index">
+                  <Product :product="product" />
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
 </template>
 
 <script>
-import Product from "./Product";
-import { mapActions, mapState } from "vuex";
+import Product from "./ProductCard";
 // import chunk from 'chunk'
 // Chunk converts arrays like [1,2,3,4,5] into arrays of arrays like [[1,2], [3,4], [5]].
 
 export default {
   name: "Products",
-
+  props:['products','list'],
   data() {
     return {
       swiperOption: {
@@ -77,14 +87,7 @@ export default {
   components: {
     Product
   },
-  computed: mapState({
-    productRows: state => state.products.products  // get products from state(vuex) JUST ONLY TRUE
-  }),
-  methods: mapActions(["getProducts"]),
-
-  created() {
-    this.getProducts(); // get all products 
-  }
+  
 };
 </script>
 

@@ -130,10 +130,10 @@
                   </h2>
                 </slot>
               </div>
-
+<!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
               <aside role="complementary" class="col-md-4">
                 <img
-                  :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)"
+                  
                   height="100%"
                   width="100%"
                 >

@@ -1,7 +1,7 @@
 <template>
   <div class="col-2 col-sm-2 col-md-2 text-right">
     <button
-      @click="removeProductToCart(product.id) "
+      @click="removeProductToCart(product) "
       alt="remover"
       type="button"
       class="btn btn-outline-danger btn-xs"

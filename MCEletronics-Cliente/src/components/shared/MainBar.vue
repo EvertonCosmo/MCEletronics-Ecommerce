@@ -7,10 +7,12 @@
         <b-navbar-toggle target="nav_collapse"/>
         <router-link to="/">
           <b-navbar-brand
-            style="font-size: 90%;color: white"
+            style="font-size: 100%;color: white"
             class="logo"
           >{{titlePage}}</b-navbar-brand>
+
         </router-link>
+
         <b-collapse e is-nav style="width: 100%" id="nav_collapse">
           <div class="navigation">
             <b-nav-form>
@@ -20,16 +22,18 @@
                     style="border-radius: 6px; z-index: 0"
                     maxlength="10"
                     placeholder="Buscar... "
+                    v-model="search.text"
+                    @input="search_text()"
                   />
 
                 
-                    <i class="fas fa-search sm"
+                    <i class="fas fa-search"
                     style=" 
                       position:absolute;
                       right:1%;
-                      top: 12%;
+                      top: 15%;
                       color: #033076;
-                      font-size:85%;
+                      font-size:75%;
                       cursor:pointer"
                   ></i>
                  
@@ -47,9 +51,9 @@
             <router-link :to="{name:'bag'}">
           
                 <i id="button-bag" class="fas fa-shopping-cart">
-                  <span class="ml-1" v-if="hasProduct()">
-                    <b-badge variant="primary">{{ getProductsInCart.length }}</b-badge>
-                  </span>
+                 
+                    <b-badge v-if="hasProduct()" variant="primary">{{ getProductsInCart.length }}</b-badge>
+                  
                 </i>
             
             </router-link>
@@ -89,28 +93,6 @@
         </b-collapse>
       </b-navbar>
     </header>
-
-    <div v-show="category">
-      <b-dropdown id="dropdown-header" text="Categorias" class="m-2" variant="primary" size="lg">
-        <b-dropdown-header id="dropdown-header-1">Placas</b-dropdown-header>
-        <b-dropdown-group id="Placas" header="Placas">
-          <b-dropdown-item-button>Arduino</b-dropdown-item-button>
-          <b-dropdown-item-button>Raspberry</b-dropdown-item-button>
-        </b-dropdown-group>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-group id="dropdown-group-2" header="Shields">
-          <b-dropdown-header>Shields</b-dropdown-header>
-          <b-dropdown-item-button>Wifi</b-dropdown-item-button>
-          <b-dropdown-item-button>Bluetooth</b-dropdown-item-button>
-        </b-dropdown-group>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-group id="dropdown-group-2" header="Computadores">
-          <b-dropdown-header>Computadores</b-dropdown-header>
-          <b-dropdown-item-button>Pessoal</b-dropdown-item-button>
-          <b-dropdown-item-button>Notebooks</b-dropdown-item-button>
-        </b-dropdown-group>
-      </b-dropdown>
-    </div>
   </div>
 </template>
 
@@ -121,23 +103,29 @@ import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
 import api from "../../services/api";
 export default {
   name: "PageHome",
-  props: {
-    category: Boolean
-  },
+
 
   data() {
     return {
       titlePage: "MC Eletronics",
       logged: false,
-      user: {}
+      user: {},
+      search:{
+        text:''
+      }
     };
   },
 
   computed: {
-    ...mapGetters(["getProductsInCart"])
+    ...mapGetters(["getProductsInCart"]),
+    ...mapState({ products: state => state.products.products})
   },
 
   methods: {
+    search_text(){
+      console.log(this.search.text)
+
+    },
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
@@ -216,13 +204,10 @@ section:after {
 
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 2%
+  margin-top: 2%;
+  
 }
-/*ver {
-  background-color: #033076;
-  border-radius: 8px;
-  color: white;
-}*/
+
 .card-list {
   margin-top: auto;
   margin-left: auto;
@@ -335,7 +320,7 @@ article {
   color:#fff;
   width: 10%;
   height: 70%;
-  font-size: 55%;
+  font-size: 54%;
   border: 0px;
   margin-left: 8%;
 }

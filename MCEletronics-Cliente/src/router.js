@@ -8,6 +8,7 @@ import PageHomeComponent from './components/PageHome.vue'
 import ProductViewComponent from './components/ProductComponents/ProductView.vue'
 import BagComponent from '../src/components/PageBag.vue'
 import DashBoardComponent from './components/LoginComponents/PageLogin.vue'
+import AllProductsComponent from './components/ProductComponents/AllProducts.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,12 @@ export default new Router({
             path:'/dashboard',
             name:'dashboard',
             component:DashBoardComponent,
+            props:true
+        },
+        {
+            path:'./allproducts',
+            name:'all-products',
+            component:AllProductsComponent,
             props:true
         }
     ]

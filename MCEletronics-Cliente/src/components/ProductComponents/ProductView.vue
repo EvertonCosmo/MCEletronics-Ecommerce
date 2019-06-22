@@ -14,14 +14,14 @@
         </span>
         {{product.name}}
       </nav>
-    </b-container>
+   
     <div id="content">
       <div>
         <div class="shopify-section">
           <div class="single-product-area mt-80 mb-80">
-            <b-container>
-              <b-row>
-                <div class="col-md-5">
+            <div>
+              <b-row style="height:40em">
+                <div class="col-md-5" style="height:40em">
                   <!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
                   <img
                     
@@ -33,7 +33,7 @@
 
                 <!-- END COL -->
 
-                <b-card tag="article" class="col-sm-7 product-actions" style="max-width:100%;">
+                <b-card tag="article" class="col-sm-6 product-actions" style="max-width:100%; height:40em">
                   <div class="availability">
                     Disponibilidade:
                     <span>
@@ -55,10 +55,10 @@
                         <input type="button" value="-" class="minus">
                         <label for="quantity">Quantidade</label>
                         <input
-                          style="width:100%"
+ 
                           type="number"
                           id="quantity"
-                          class="input-text qty text"
+                          class="input-text qty text "
                           step="1"
                           min="1"
                           max="50"
@@ -73,11 +73,11 @@
                         <input type="button" value="+" class="plus">
                       </div>
 
-                      <span></span>
+                      
 
                       <br>
                       <b-button
-                        style="height:20%;width:70%;"
+                        style="height:20%;width:100%;"
                         primary="outline"
                         type="submit"
                         name="add-to-cart"
@@ -88,9 +88,13 @@
                       </b-button>
 
                       <hr>
-                      <div id="simulator" class="col-md-7">
-                        <h3>Calcular frete e prazo:</h3>
-                        <input
+
+                      <div style="height:120px" class="">
+                        
+                      <div class="col-md-7" style="max-width:100%">
+                        <h4>Calcular frete e prazo:</h4>
+                       <b-input-group>
+                        <b-form-input
                           type="tel"
                           class="input-text cep-number"
                           placeholder="00000-000"
@@ -98,9 +102,12 @@
                           id="zipcode"
                           name="zipcode"
                           value
-                        >
-                        <b-button primary="outline" class="button btn" type="submit">Ok</b-button>
+                        />
 
+                        <b-button primary="outline"  type="submit" style="border-radius:0px">Ok</b-button>
+                    </b-input-group>
+                    
+                      </div>
                         <div id="result" style="visibility:hidden;">
                           <table class="table_f">
                             <thead>
@@ -115,6 +122,9 @@
                           </table>
                         </div>
                       </div>
+                      
+                       
+                      
                     </b-form>
                     <div class="button-actions">
                       <div></div>
@@ -123,11 +133,12 @@
                   </b-card-body>
                 </b-card>
               </b-row>
-            </b-container>
+            </div>
           </div>
         </div>
       </div>
     </div>
+     </b-container>
   </div>
 </template>
 
@@ -231,7 +242,7 @@ textarea {
   outline: 0;
   border: 0;
   -webkit-appearance: none;
-  border-radius: 1.571em;
+  /* border-radius: 1.571em; */
   box-sizing: border-box;
   border-width: 1px;
   border-style: solid;
@@ -375,7 +386,7 @@ thead {
 }
 .product-actions {
   border: 2px solid #ddd;
-  border-radius: 1.214em;
+  /* border-radius: 1.214em; */
   padding: 0em 0em 0em 0.5em;
 }
 .product-actions div.availability {

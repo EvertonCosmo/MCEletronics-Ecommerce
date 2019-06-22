@@ -34,7 +34,7 @@
               <i class="fas fa-shopping-basket float-right card-list"></i>
             </b-list-group-item>
             <b-list-group-item href="#">
-              Endereço
+              Endereços
               <i class="fas fa-home float-right card-list"></i>
             </b-list-group-item>
             <b-list-group-item href="#">

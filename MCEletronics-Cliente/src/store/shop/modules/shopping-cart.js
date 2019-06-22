@@ -21,8 +21,9 @@ const mutations = {
       record.quantity++
     }
     },
-    REMOVE_FROM_CART(state, item) {
-        const index = state.added.findIndex(added => added.id === item.id)
+    REMOVE_FROM_CART(state, product) {
+    
+        const index = state.added.findIndex(added => added.id === product.id)
         state.added.splice(index, 1)
     },
 }

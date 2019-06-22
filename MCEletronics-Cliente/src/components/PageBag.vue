@@ -4,8 +4,7 @@
     <div v-if="hasProduct()">
       <div style="width: 50%; height: 50px;">
         <b-navbar-brand style="font-size: 250%" class="my-basket">
-          Minha Cesta
-          <i class="fas fa-shopping-basket" style="margin-left: 5%"></i>
+          Minha Cesta<i class="fas fa-shopping-basket" style="margin-left: 5%"></i>
         </b-navbar-brand>
       </div>
 
@@ -29,7 +28,9 @@
 
                     <div style="max-width: 35%" class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                       <h4 >
-                        <strong>{{product.name}}</strong>
+                          <router-link :to="{ name:'product-view', params: {id: product.id,product:product}}" style="text-decoration:none; color:black">
+                                <strong>{{product.name}}</strong>
+                          </router-link>
                       </h4>
                       <h4>
                         <small>{{product.category}}</small>
@@ -67,9 +68,9 @@
                           <div class="col-sm">
                             
                             <h6 style="margin-top: 10%">
-                               <span class="text-muted">R$</span>
+                               <strong>R$
                               {{product.price}}
-                             
+                             </strong>
                             </h6>
 
                           </div>
@@ -134,16 +135,17 @@
       </section>
     </div>
 
-    <div v-else style="color: #C0C0C0; font-style: italic ">
+    <div v-else style="color: #C0C0C0; font-style: italic; max-width:100%">
       <router-link to="/">
-        <b-navbar-brand style="color: #C0C0C0; margin-top: 12%; margin-left: 20%; font-size: 500%">
+        <h2 style="color: #C0C0C0;margin-top:18%; min-width:100%; text-align:center; font-size:4em" >
           Vamos as compras...
           <i
             class="fas fa-wind fa-flip-horizontal fa-flip-vertical"
-            style="font-size: 75%; color: #eaeaea; margin-left: 0.1%; margin-right: 0.6%"
+            style=" color: #eaeaea;"
           ></i>
+
           <i class="fas fa-running"></i>
-        </b-navbar-brand>
+        </h2>
       </router-link>
     </div>
   </div>
@@ -161,7 +163,7 @@ export default {
 
   data() {
     return {
-      products: Object,
+      products: [],
       value: "",
       subTotal: 0
     };
@@ -222,6 +224,7 @@ export default {
   float: right;
   margin-top: 3.5%;
   margin-right: 5%;
+
 }
 
 .quantity {

@@ -1,7 +1,7 @@
 <template>
   <div >
-    <main-bar :category="false"></main-bar>
-
+    <main-bar ></main-bar>
+   
     <div
       style="background-color: #033076; height:4.1em; min-width: 90%; margin-left: 5%; margin-top: 2%"
       class="container"
@@ -111,7 +111,7 @@
 
     
 
-    <products></products>
+    <products :products="productRows" :list ="true"></products>
 
     <PageFooter></PageFooter>
   </div>
@@ -122,7 +122,7 @@ import MainBar from "../components/shared/MainBar";
 import Products from "./ProductComponents/Products";
 import PageFooter from "../components/PageFooter";
 
-import { mapGetters } from "vuex";
+import { mapGetters,mapState,mapActions } from "vuex";
 
 export default {
   name: "PageHome",
@@ -165,8 +165,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getAllProducts"])
+    ...mapGetters(["getAllProducts"]),
+    ...mapState({productRows: state => state.products.products})},
+
+  methods: mapActions(["getProducts"]),
+
+  created() {
+    this.getProducts(); // get all products 
   },
+
   components: {
     MainBar,
     Products,
