@@ -18,10 +18,6 @@ import com.mceletronics.api.model.User;
 
 public class CustomUserDetails  implements UserDetails{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 
 	private Collection<? extends GrantedAuthority> authorities;
@@ -83,7 +79,7 @@ public class CustomUserDetails  implements UserDetails{
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override

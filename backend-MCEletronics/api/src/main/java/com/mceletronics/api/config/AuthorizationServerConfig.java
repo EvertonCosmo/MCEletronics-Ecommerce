@@ -1,5 +1,7 @@
 package com.mceletronics.api.config;
 
+import javax.websocket.ClientEndpoint;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +27,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 	
-		@Qualifier("authenticationManagerBean")
+//		@Qualifier("authenticationManagerBean")
 		@Autowired
 	    private AuthenticationManager authenticationManager;
 
@@ -71,7 +73,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 	        security.checkTokenAccess("isAuthenticated()");
 	    }
-    
+   
   
     
 }
