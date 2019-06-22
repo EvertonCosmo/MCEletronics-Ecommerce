@@ -22,22 +22,23 @@
                     placeholder="Buscar... "
                   />
 
-                  <button style=" position:absolute; 
+                  <!-- <button style=" position:absolute; 
                             border: none; 
                             width: 5%; 
                             margin-top: 1.3%; 
                             right:2%; 
                             background: #fff; 
-                            z-index: 1;">
-                    <i class="fas fa-search"
+                            z-index: 1;"> -->
+                    <i class="fas fa-search sm"
                     style=" 
                       position:absolute;
-                      right:2.0%;
-                      top: 25%;
-                      color: #033076; 
-                      font-size:60%"
+                      right:1%;
+                      top: 12%;
+                      color: #033076;
+                      font-size:85%;
+                      cursor:pointer"
                   ></i>
-                  </button>
+                  <!-- </button> -->
                 </b-input-group>
               </b-form-group>
             </b-nav-form>

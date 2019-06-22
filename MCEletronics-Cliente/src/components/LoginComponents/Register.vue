@@ -49,7 +49,6 @@
             class="required-field"
           >
             <b-form-input
-              class="input"
               type="password"
               maxlength="10"
               name="password2"
