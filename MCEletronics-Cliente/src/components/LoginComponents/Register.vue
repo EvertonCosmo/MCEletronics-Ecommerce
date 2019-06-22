@@ -48,7 +48,7 @@
             label-for="password2"
             class="required-field"
           >
-            <b-form-input
+            <b-form-input 
               type="password"
               maxlength="10"
               name="password2"

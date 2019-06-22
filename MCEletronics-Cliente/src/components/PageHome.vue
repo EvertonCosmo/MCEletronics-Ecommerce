@@ -1,84 +1,89 @@
 <template>
-  <div>
+  <div >
     <main-bar :category="false"></main-bar>
 
     <div
-      style="background-color: #033076; height: 2.9rem; min-width: 90%; margin-left: 5%; margin-top: 3%"
+      style="background-color: #033076; height:4.1em; min-width: 90%; margin-left: 5%; margin-top: 2%"
       class="container"
     >
-      <div class="row">
+      <div class="row" >
+        <div class="col-sm-3" style="background-color:#dedede; height:4.1rem; border:1px solid #cecece">
+          
+            <h5  class="navigation-options" style="margin-left:2%;margin-top:8%;color:#000;  text-shadow:1px 1px  #fff ;">
+                <i class="far fa-list-alt"></i>
+              CATEGORIAS
+            </h5>
+          
+        </div>
+
+        <div class="col-sm" >
+          <router-link to="/" style=" margin-left: 15%;text-decoration:none">
+            <h5 class="navigation-options ">Novidades</h5>
+          </router-link>
+        
+        </div>
+        <div class="col-sm ">
+          <router-link
+            to="/"
+            style="color: #ffff; margin-left: 15%; text-decoration: none"
+          >
+            <h5 class="navigation-options ">Ofertas</h5>
+          </router-link>
+        </div>
+
         <div class="col-sm">
           <router-link
             to="/"
-            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
+            style="color: #ffff; margin-left: 15%; text-decoration: none"
           >
-            <h5
-              class="navigation-options "
-            >CATEGORIAS</h5>
+            <h5 class="navigation-options">Sobre</h5>
           </router-link>
         </div>
-        <div class="col-sm">
-          <router-link to="/" style=" margin-left: 15%; position:relative; text-decoration: none">
-            <h5 class="navigation-options ">HOME</h5>
-          </router-link>
-        </div>
-        <div class="col-sm">
-          <router-link
-            to="/"
-            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
-          >
-            <h5 class="navigation-options ">SOBRE</h5>
-          </router-link>
-        </div>
-        <div class="col-sm">
-          <router-link
-            to="/"
-            style="color: #ffff; margin-left: 15%; position:relative; text-decoration: none"
-          >
-            <h5 class="navigation-options">DUVIDAS</h5>
-          </router-link>
-        </div>
+
       </div>
+
+
     </div>
-
-    <ul style=" list-style:none; margin-left: 5%; height: 40px; width: 90.1%; margin-top: 1%">
-      <li class="categories" style="margin-top: -1.1%;">
-        <a style="margin-top: 1%;" class="categories-item" href>Celulares</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Notebooks</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Computadores</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Câmera</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Placas</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Som</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Jogos</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>Luminarias</a>
-      </li>
-      <li class="categories">
-        <a class="categories-item" href>TV</a>
-      </li>
-      <li style=" height: 38px;" class="categories">
-        <a class="categories-item" href>Outros</a>
-      </li>
-    </ul>
-
-    <div class="container-fluid">
+  <div style="width:90%; margin-left:5%; height:25em; background-color: #033076">
+    <div class="row" style="height:100%">
+     <div class="col-sm-2"  style="height:100%">
+        <ul style=" list-style:none; margin-left: 6%; padding:2%;height: 5%; width: 100%; margin-top: 1%">
+          <li  >
+            <a href>Celulares</a>
+          </li>
+          <li >
+            <a  href>Notebooks</a>
+          </li>
+          <li >
+            <a href>Computadores</a>
+          </li>
+          <li >
+            <a href>Câmera</a>
+          </li>
+          <li >
+            <a href>Placas</a>
+          </li>
+          <li >
+            <a href>Som</a>
+          </li>
+          <li>
+            <a  href>Jogos</a>
+          </li>
+          <li>
+            <a  href>Luminarias</a>
+          </li>
+          <li >
+            <a href="#">TV</a>
+          </li>
+          
+        </ul>
+     </div>
+     <div class="col-sm-10" style="height:100%" >
       <swiper
         :options="swiperOption"
-        class="swiper-box container"
-        style="max-width:74%; max-height: 399px; margin-left: 22%; margin-top: -4.3%"
+        class="swiper-box "
+        style="width:90.4%; margin-left:9.6%"
+       
       >
         <!-- <swiper-slide>
           <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img>
@@ -86,7 +91,7 @@
         <swiper-slide>
           <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
         </swiper-slide> -->
-        <swiper-slide>
+        <swiper-slide >
           <b-img :src="require(`@/assets/exemplo.jpg`)" fluid-grow></b-img>
         </swiper-slide>
         <!-- <swiper-slide>
@@ -100,6 +105,11 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
     </div>
+    </div>
+    
+    </div>
+
+    
 
     <products></products>
 
@@ -109,12 +119,11 @@
 
 <script>
 import MainBar from "../components/shared/MainBar";
-// import Carousel from './Carousel.vue'
 import Products from "./ProductComponents/Products";
 import PageFooter from "../components/PageFooter";
 
 import { mapGetters } from "vuex";
-// import {isLoggedIn,getLoggedInUser} from "../services/authService"
+
 export default {
   name: "PageHome",
   data() {
@@ -239,27 +248,29 @@ section:after {
   height: 240px;
 } */
 /* Create two columns/boxes that floats next to each other */
-.categories {
+li  {
   margin-bottom: 0em;
   height: 40px;
   width: 19.7%;
   text-decoration: none;
-  background-color: #e9ecef;
+ 
 }
 
-.categories-item {
+li a  {
   margin-left: 1%;
   text-decoration: none;
   margin-top: 0.5%;
-  position: absolute;
-  color: #033076;
-  font-size: 18px;
+  color: #fff;
+  font-size: 22px;
 }
 .navigation-options {
-  color: #DEDEDE;
+  color: #FFF;
   margin-left: 15%;
-  position: relative;
-  margin-top: -5%;
+  text-shadow:1px 1px  #000 ;
+  margin-top:0%;
+}
+.line-right {
+    border-right:0.1px solid #fff
 }
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

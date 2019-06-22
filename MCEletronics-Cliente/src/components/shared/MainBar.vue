@@ -7,7 +7,7 @@
         <b-navbar-toggle target="nav_collapse"/>
         <router-link to="/">
           <b-navbar-brand
-            style="font-size: 90%; position: relative; color: white"
+            style="font-size: 90%;color: white"
             class="logo"
           >{{titlePage}}</b-navbar-brand>
         </router-link>
@@ -22,13 +22,7 @@
                     placeholder="Buscar... "
                   />
 
-                  <!-- <button style=" position:absolute; 
-                            border: none; 
-                            width: 5%; 
-                            margin-top: 1.3%; 
-                            right:2%; 
-                            background: #fff; 
-                            z-index: 1;"> -->
+                
                     <i class="fas fa-search sm"
                     style=" 
                       position:absolute;
@@ -38,7 +32,7 @@
                       font-size:85%;
                       cursor:pointer"
                   ></i>
-                  <!-- </button> -->
+                 
                 </b-input-group>
               </b-form-group>
             </b-nav-form>
@@ -46,38 +40,51 @@
 
           <div style="max-width: 25rem; width: 100%; display: block">
             <router-link :to="{path:'/'}">
-              <b-button id="button-favorites">
-                <i class="far fa-heart"></i>
-              </b-button>
+            
+                <i id="button-favorites" class="far fa-heart"></i>
+              
             </router-link>
             <router-link :to="{name:'bag'}">
-              <b-button id="button-bag">
-                <i class="fas fa-shopping-cart">
+          
+                <i id="button-bag" class="fas fa-shopping-cart">
                   <span class="ml-1" v-if="hasProduct()">
                     <b-badge variant="primary">{{ getProductsInCart.length }}</b-badge>
                   </span>
                 </i>
-              </b-button>
+            
             </router-link>
 
             <router-link :to="{name:'login'}" v-if="!logged">
               <b-button id="button-user">
-                <!-- <i class="fas fa-user-circle"></i> -->
                 Entrar
               </b-button>
             </router-link>
+           
+       
+      <div id="navbarDropdownMenuLinkParent" v-if="logged" >
+  <b-dropdown id="dropdown-buttons" :text=user.username class="m-2"  no-caret >
+    <b-dropdown-item-button >
+       <router-link :to="{name:'dashboard'}" >
+               <i class="fa fa-user-circle"></i> 
+               Perfil
+            </router-link>
+      
+      </b-dropdown-item-button>
 
+    <b-dropdown-item-button ><i class="fas fa-cog"></i> Configurações </b-dropdown-item-button>
+     <b-dropdown-item-button ><i class="fas fa-sign-out-alt"></i> Logout</b-dropdown-item-button>
+  </b-dropdown>
+</div>
+            
+<!-- 
             <router-link :to="{name:'dashboard'}" v-if="logged">
-              <b-button id="button-user">
                 <i class="fas fa-user-circle" style="margin-right: : 40%">
                   <span style="font-size: 60%">{{user.username}}</span>
                 </i>
-              </b-button>
-
-              <b-button id="button-user" v-if="logged" @click="logout">
-                <span style="font-size: 90%;">Sair</span>
-              </b-button>
             </router-link>
+              <b-button id="button-user-logout"  v-if="logged" @click="logout">
+                 Sair
+              </b-button> -->
           </div>
         </b-collapse>
       </b-navbar>
@@ -152,6 +159,16 @@ export default {
 </script>
 
 <style scoped>
+#navbarDropdownMenuLinkParent{ 
+  float:right; 
+  color:#fff;
+  width:50%;
+  font-size: 70%;
+  margin-right: 0%;
+  margin-left:-12%;
+  margin-top:1%;
+  font-size:65%
+}
 img {
   width: 50%;
 }
@@ -199,6 +216,7 @@ section:after {
 
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 2%
 }
 /*ver {
   background-color: #033076;
@@ -224,11 +242,11 @@ section:after {
   color: white;
 }
 nav {
-  line-height: 1.5;
+  line-height: 1.2;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.87);
+  /* color: rgba(0, 0, 0, 0.87); */
 }
 nav .brand-logo {
   position: absolute;
@@ -300,13 +318,13 @@ article {
 
 #form-search {
   width: 100%;
-  margin-top: 1.7%;
+  margin-top: 2.7%;
 }
 
 #button-favorites {
   background-color: #033076;
+  color:#fff;
   width: 10%;
-  height: 70%;
   font-size: 55%;
   border: 0px;
   margin-left: 8%;
@@ -314,29 +332,37 @@ article {
 }
 #button-bag {
   background-color: #033076;
+  color:#fff;
   width: 10%;
   height: 70%;
   font-size: 55%;
   border: 0px;
   margin-left: 8%;
 }
-#purchase-value {
-  color: white;
-  font-size: 55%;
-  margin-left: 10%;
-}
+
 .navigation {
   width: 100%;
   margin-top: -0.5%;
 }
 #button-user {
-  background-color: #033076;
-  width: 20%;
-  height: 70%;
+  background-color: #ffff;
+  color:#033076;
+  width: 50%;
+  /* height: 10%; */
   font-size: 70%;
-  border: 0px;
+  /* border:2%; */
   margin-left: 10%;
-  border-radius: 8%;
+  border-radius: 25px ;
+}
+#button-user-logout{
+  background-color: #ffff;
+  color:#033076;
+  width: 20%;
+  /* height: 10%; */
+  font-size: 70%;
+  /* border:2%; */
+  margin-left: 10%;
+  border-radius: 25px ;
 }
 
 .box-search {
