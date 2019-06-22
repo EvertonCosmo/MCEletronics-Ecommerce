@@ -43,11 +43,11 @@
           </div>
 
           <div style="max-width: 25rem; width: 100%; display: block">
-            <router-link :to="{path:'/'}">
+            <!-- <router-link :to="{path:'/'}">
             
                 <i id="button-favorites" class="far fa-heart"></i>
               
-            </router-link>
+            </router-link> -->
             <router-link :to="{name:'bag'}">
           
                 <i id="button-bag" class="fas fa-shopping-cart">
