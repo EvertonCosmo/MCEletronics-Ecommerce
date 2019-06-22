@@ -129,9 +129,10 @@ export default {
 
           }
 
-          if (Response.status == 401) {
+          if (Response.status == 208) {
             errorToaster("Usuário já registrado ");
           }
+        
 
         })
         .catch(e => {

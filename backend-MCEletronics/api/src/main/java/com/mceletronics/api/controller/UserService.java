@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mceletronics.api.model.User;
 import com.mceletronics.api.repository.UserRepository;
 
+import ch.qos.logback.core.status.Status;
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/MCEletronics/api")
@@ -66,11 +68,20 @@ public class UserService {
 		if (username == null || password == null || username.equals("null") || password.equals("null")) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-
+		Optional<User> userAux = userRepository.findByUsername(username);
+		System.out.println("aux:" + userAux);
+		if(userAux.isPresent()) {
+			System.out.println("equals");
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED); // 401	
+		}
+		
 		User user = new User(username, password, null,null, null, null, null, null);
 		userRepository.save(user);
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
+		
+
+		
 
 	}
 

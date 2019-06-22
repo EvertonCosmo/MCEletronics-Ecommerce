@@ -23,7 +23,7 @@
           </b-form-group>
 
           <b-form-group id="senha" label="Senha" label-for="password" class="required-field">
-            <b-input-group>
+           
               <b-form-input
                 :type="passwordFieldType"
                 class="input"
@@ -31,15 +31,15 @@
                 v-model="user.password"
                 name="password"
                 placeholder="******* "
-              />
-              <b-input-group-btn>
+             />
+              
+             
                 <i
-                  class="fas fa-eye-slash"
-                  style="position:absolute;right:3px;top:12px;visibility:visible;"
+                  :class="{'fas fa-eye':open,'fas fa-eye-slash':close }"
+                  style="position:absolute;right:5%;top:46%;visibility:visible,cursor:pointer"
                   @click="switchVisibility"
                 ></i>
-              </b-input-group-btn>
-            </b-input-group>
+       
           </b-form-group>
 
           <b-form-group
@@ -89,6 +89,8 @@ export default {
   data() {
     return {
       passwordFieldType: "password",
+      open:true,
+      close:false,
       user: {
         username: "",
         password: ""
@@ -103,8 +105,18 @@ export default {
   },
   methods: {
     switchVisibility() {
-      this.passwordFieldType =
-        this.passwordFieldType === "password" ? "text" : "password";
+      this.passwordFieldType =this.passwordFieldType === "password" ? "text" : "password";
+      if(this.open == true){
+        this.open = false;
+        this.close = true;
+      }
+     else if(this.open==false){
+        this.open = true;
+        this.close = false;
+      }
+      
+      
+      
     },
 
     checkForm() {
@@ -145,7 +157,7 @@ export default {
           })
           .catch(e => {
             console.log(e);
-            if (e.response.status == 400) {
+            if (e.response.status == 401) {
               errorToaster("Usuário já cadastrado", "Já cadastrado");
             } else {
               errorToaster("Falha no cadastro", "Tente novamente mais tarde");

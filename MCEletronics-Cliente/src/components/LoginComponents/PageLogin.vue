@@ -41,7 +41,7 @@
               Detalhes da conta
               <i class="fas fa-info float-right card-list"></i>
             </b-list-group-item>
-            <b-list-group-item href="/Login" @click="logout">
+            <b-list-group-item style="cursor:pointer" @click="logout">
               Sair
               <i class="fas fa-sign-out-alt float-right card-list"></i>
             </b-list-group-item>
@@ -78,7 +78,9 @@ export default {
   },
   methods: {
     logout() {
-        
+      this.$session.destroy();
+      this.logged = false;
+      location.reload();
     }
   }
 };
