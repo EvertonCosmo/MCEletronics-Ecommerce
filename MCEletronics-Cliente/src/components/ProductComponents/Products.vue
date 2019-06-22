@@ -19,7 +19,7 @@
       style="max-width:100%;"
     >
       <swiper-slide  style="margin: 2.5%" v-for="(product,index) in products" :key="index">
-        <Product :product="product" track-id="id"/>
+        <Product :product="product" :shadow="false" track-id="id"/>
       </swiper-slide> 
 
       <div class="swiper-pagination" slot="pagination"></div>
@@ -33,7 +33,7 @@
       <div>
           <div class="row">
               <div class="col-md-4" v-for="(product,index) in products" :key="index">
-                  <Product :product="product" />
+                  <Product :product="product" :shadow="true"/>
               </div>
           </div>
       </div>

@@ -3,7 +3,7 @@
     variant="primary"
     :disabled="!product.quantity"
     @click="addProductToCart(product)"
-  >Adicionar ao carrinho</b-button>
+  ><i class="fas fa-shopping-cart"></i> adicionar</b-button>
 </template>
 
 <script>

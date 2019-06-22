@@ -6,11 +6,7 @@
       <b-navbar toggleable="lg" type="dark" class="box-search">
         <b-navbar-toggle target="nav_collapse"/>
         <router-link to="/">
-          <b-navbar-brand
-            style="font-size: 100%;color: white"
-            class="logo"
-          >{{titlePage}}</b-navbar-brand>
-
+          <b-navbar-brand style="font-size: 100%;color: white" class="logo">{{titlePage}}</b-navbar-brand>
         </router-link>
 
         <b-collapse e is-nav style="width: 100%" id="nav_collapse">
@@ -26,8 +22,8 @@
                     @input="search_text()"
                   />
 
-                
-                    <i class="fas fa-search"
+                  <i
+                    class="fas fa-search"
                     style=" 
                       position:absolute;
                       right:1%;
@@ -36,7 +32,6 @@
                       font-size:75%;
                       cursor:pointer"
                   ></i>
-                 
                 </b-input-group>
               </b-form-group>
             </b-nav-form>
@@ -44,51 +39,35 @@
 
           <div style="max-width: 25rem; width: 100%; display: block">
             <router-link :to="{path:'/'}">
-            
-                <i id="button-favorites" class="far fa-heart"></i>
-              
+              <i id="button-favorites" class="far fa-heart"></i>
             </router-link>
             <router-link :to="{name:'bag'}">
-          
-                <i id="button-bag" class="fas fa-shopping-cart">
-                 
-                    <b-badge v-if="hasProduct()" variant="primary">{{ getProductsInCart.length }}</b-badge>
-                  
-                </i>
-            
+              <i id="button-bag" class="fas fa-shopping-cart">
+                <b-badge v-if="hasProduct()" variant="primary">{{ getProductsInCart.length }}</b-badge>
+              </i>
             </router-link>
 
             <router-link :to="{name:'login'}" v-if="!logged">
-              <b-button id="button-user">
-                Entrar
-              </b-button>
+              <b-button id="button-user">Entrar</b-button>
             </router-link>
-           
-       
-      <div id="navbarDropdownMenuLinkParent" v-if="logged" >
-  <b-dropdown id="dropdown-buttons" :text=user.username class="m-2"  no-caret >
-    <b-dropdown-item-button >
-       <router-link :to="{name:'dashboard'}" >
-               <i class="fa fa-user-circle"></i> 
-               Perfil
-            </router-link>
-      
-      </b-dropdown-item-button>
 
-    <b-dropdown-item-button ><i class="fas fa-cog"></i> Configurações </b-dropdown-item-button>
-     <b-dropdown-item-button ><i class="fas fa-sign-out-alt"></i> Logout</b-dropdown-item-button>
-  </b-dropdown>
-</div>
-            
-<!-- 
-            <router-link :to="{name:'dashboard'}" v-if="logged">
-                <i class="fas fa-user-circle" style="margin-right: : 40%">
-                  <span style="font-size: 60%">{{user.username}}</span>
-                </i>
-            </router-link>
-              <b-button id="button-user-logout"  v-if="logged" @click="logout">
-                 Sair
-              </b-button> -->
+            <div id="navbarDropdownMenuLinkParent"  v-if="logged">
+              <b-dropdown id="dropdown-buttons" :text="user.username" class="m-2" no-caret>
+                <b-dropdown-item-button>
+                  <router-link :to="{name:'dashboard'}">
+                    <i class="fa fa-user-circle"></i>
+                    Perfil
+                  </router-link>
+                </b-dropdown-item-button>
+
+                <b-dropdown-item-button>
+                  <i class="fas fa-cog"></i> Configurações
+                </b-dropdown-item-button>
+                <b-dropdown-item-button  @click="logout">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </b-dropdown-item-button>
+              </b-dropdown>
+            </div>
           </div>
         </b-collapse>
       </b-navbar>
@@ -104,36 +83,33 @@ import api from "../../services/api";
 export default {
   name: "PageHome",
 
-
   data() {
     return {
       titlePage: "MC Eletronics",
       logged: false,
       user: {},
-      search:{
-        text:''
+      search: {
+        text: ""
       }
     };
   },
 
   computed: {
     ...mapGetters(["getProductsInCart"]),
-    ...mapState({ products: state => state.products.products})
+    ...mapState({ products: state => state.products.products })
   },
 
   methods: {
-    search_text(){
-      console.log(this.search.text)
-
+    search_text() {
+      console.log(this.search.text);
     },
     hasProduct() {
       return this.getProductsInCart.length > 0;
     },
 
-    logout() {
+     logout() {
       this.$session.destroy();
-
-      this.logged = false; // not logged
+      this.logged = false;
       location.reload();
     }
   },
@@ -147,15 +123,15 @@ export default {
 </script>
 
 <style scoped>
-#navbarDropdownMenuLinkParent{ 
-  float:right; 
-  color:#fff;
-  width:50%;
+#navbarDropdownMenuLinkParent {
+  float: right;
+  color: #fff;
+  width: 50%;
   font-size: 70%;
   margin-right: 0%;
-  margin-left:-12%;
-  margin-top:1%;
-  font-size:65%
+  margin-left: -12%;
+  margin-top: 1%;
+  font-size: 65%;
 }
 img {
   width: 50%;
@@ -205,7 +181,6 @@ section:after {
 .logo {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 2%;
-  
 }
 
 .card-list {
@@ -308,7 +283,7 @@ article {
 
 #button-favorites {
   background-color: #033076;
-  color:#fff;
+  color: #fff;
   width: 10%;
   font-size: 55%;
   border: 0px;
@@ -317,7 +292,7 @@ article {
 }
 #button-bag {
   background-color: #033076;
-  color:#fff;
+  color: #fff;
   width: 10%;
   height: 70%;
   font-size: 54%;
@@ -331,23 +306,23 @@ article {
 }
 #button-user {
   background-color: #ffff;
-  color:#033076;
+  color: #033076;
   width: 50%;
   /* height: 10%; */
   font-size: 70%;
   /* border:2%; */
   margin-left: 10%;
-  border-radius: 25px ;
+  border-radius: 25px;
 }
-#button-user-logout{
+#button-user-logout {
   background-color: #ffff;
-  color:#033076;
+  color: #033076;
   width: 20%;
   /* height: 10%; */
   font-size: 70%;
   /* border:2%; */
   margin-left: 10%;
-  border-radius: 25px ;
+  border-radius: 25px;
 }
 
 .box-search {

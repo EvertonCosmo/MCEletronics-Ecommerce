@@ -3,10 +3,10 @@
     <main-bar ></main-bar>
    
     <div
-      style="background-color: #033076; height:4.1em; min-width: 90%; margin-left: 5%; margin-top: 2%"
+      style="background-color: #033076; height:4.1em; min-width: 90%; margin-left: 5%; margin-top: 6%;"
       class="container"
     >
-      <div class="row" >
+      <div class="row">
         <div class="col-sm-3" style="background-color:#dedede; height:4.1rem; border:1px solid #cecece">
           
             <h5  class="navigation-options" style="margin-left:2%;margin-top:8%;color:#000;  text-shadow:1px 1px  #fff ;">
