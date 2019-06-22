@@ -55,7 +55,7 @@ public class UserService {
 		System.out.println(user.getPassword());
 		
 		System.out.println(user1);
-		if(user != null) {
+		if(user1 != null) {
 			System.out.println(user);
 			return new ResponseEntity<User>(user,HttpStatus.OK);
 		}
