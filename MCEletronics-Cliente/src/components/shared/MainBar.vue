@@ -130,8 +130,8 @@ export default {
   color: #fff;
   width: 50%;
   font-size: 70%;
-  margin-right: 0%;
-  margin-left: -12%;
+  margin-right: 5%;
+  /* margin-left: -12%; */
   margin-top: 1%;
   font-size: 65%;
 }
@@ -293,13 +293,15 @@ article {
   border-radius: 5%;
 }
 #button-bag {
-  background-color: #033076;
+  /* background-color: #033076; */
   color: #fff;
-  width: 10%;
-  height: 70%;
+  /* width: 20%; */
+  /* height: 70%; */
   font-size: 54%;
-  border: 0px;
-  margin-left: 8%;
+  /* border: 0px; */
+  margin-right: 0%;
+  margin-left: 14%;
+  margin-top:6%
 }
 
 .navigation {
