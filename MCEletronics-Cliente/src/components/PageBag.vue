@@ -147,7 +147,10 @@
           <i class="fas fa-running"></i>
         </h2>
       </router-link>
+      
     </div>
+     
+   
   </div>
 </template>
 
@@ -191,7 +194,8 @@ export default {
 
   components: {
     MainBar,
-    RemoveToCart
+    RemoveToCart,
+ 
   },
 
   created() {

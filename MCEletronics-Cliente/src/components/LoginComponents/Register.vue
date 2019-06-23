@@ -24,21 +24,24 @@
 
           <b-form-group id="senha" label="Senha" label-for="password" class="required-field">
            
-              <b-form-input
+              <input
                 :type="passwordFieldType"
                 class="input"
                 maxlength="10"
                 v-model="user.password"
                 name="password"
                 placeholder="******* "
-             />
+             >
               
-             
+               
                 <i
-                  :class="{'fas fa-eye':open,'fas fa-eye-slash':close }"
-                  style="position:absolute;right:5%;top:46%;visibility:visible,cursor:pointer"
+                  :class="{'fas fa-eye':open,'fas fa-eye-slash':close } "
+                  style="position:absolute; width:100%;padding:10px; left:90%;visibility:visible,cursor:pointer"
                   @click="switchVisibility"
                 ></i>
+              
+                
+                
        
           </b-form-group>
 
