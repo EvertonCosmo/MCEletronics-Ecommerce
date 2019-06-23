@@ -6,7 +6,7 @@
           style="font-size: 200%; position: relative; color: #033076; margin-left: 6%"
           class="logo"
           href="PageHome"
-        >MCEletronics</b-navbar-brand>
+        >MC Eletronics</b-navbar-brand>
       </div>
 
       <div style="width: 100%; margin-top: 0.3%; color: #666">

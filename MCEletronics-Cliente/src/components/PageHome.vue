@@ -85,21 +85,24 @@
         style="width:90.4%; margin-left:9.6%"
        
       >
-        <!-- <swiper-slide>
+       <swiper-slide>
           <b-img :src="require(`@/assets/banner1.jpg`)" fluid-grow></b-img>
         </swiper-slide>
-        <swiper-slide>
-          <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
-        </swiper-slide> -->
         <swiper-slide >
-          <b-img :src="require(`@/assets/exemplo.jpg`)" fluid-grow></b-img>
+          <b-img :src="require(`@/assets/banner2.jpg`)" fluid-grow></b-img>
         </swiper-slide>
-        <!-- <swiper-slide>
-          <b-img :src="require(`@/assets/banner10.jpg`)" fluid-grow></b-img>
-        </swiper-slide> -->
-        <!-- <swiper-slide>
+        <swiper-slide>
           <b-img :src="require(`@/assets/banner3.jpg`)" fluid-grow></b-img>
-        </swiper-slide> -->
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner4.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner5.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
+        <swiper-slide>
+          <b-img :src="require(`@/assets/banner6.jpg`)" fluid-grow></b-img>
+        </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>

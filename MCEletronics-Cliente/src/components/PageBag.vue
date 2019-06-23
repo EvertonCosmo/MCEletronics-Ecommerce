@@ -136,7 +136,7 @@
     </div>
 
     <div v-else style="color: #C0C0C0; font-style: italic; max-width:100%">
-      <router-link to="/">
+      <router-link style="text-decoration: none;" to="/">
         <h2 style="color: #C0C0C0;margin-top:18%; min-width:100%; text-align:center; font-size:4em" >
           Vamos as compras...
           <i
