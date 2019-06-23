@@ -9,7 +9,7 @@ const mutations = {
     if (!record) {
       state.added.push({
           category: productId.category,
-          descripition: productId.descripition,
+          description: productId.description,
           id: productId.id,
           name: productId.name,
           price: productId.price,

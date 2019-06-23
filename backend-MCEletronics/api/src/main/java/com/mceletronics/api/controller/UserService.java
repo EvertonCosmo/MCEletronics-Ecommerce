@@ -51,13 +51,13 @@ public class UserService {
 	@PostMapping("/login")
 	public ResponseEntity<User> loginUser(User user){
 		User user1 = userRepository.findUser(user.getUsername(),user.getPassword());
-		System.out.println(user.getUsername());
-		System.out.println(user.getPassword());
+//		System.out.println(user.getUsername());
+//		System.out.println(user.getPassword());
 		
 		System.out.println(user1);
 		if(user1 != null) {
 			System.out.println(user);
-			return new ResponseEntity<User>(user,HttpStatus.OK);
+			return new ResponseEntity<User>(user1,HttpStatus.OK);
 		}
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}

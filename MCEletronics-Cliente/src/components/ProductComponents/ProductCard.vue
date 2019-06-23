@@ -11,12 +11,12 @@
     <b-card-body>
       <b-card-title>
 
-        <router-link :to="{ name:'product-view', params: {id: this.product.id,product:product}}" style="">
+        <router-link :to="{ name:'product-view', params: {name: this.product.name,product:product}}" style="">
           {{product.name}}
         </router-link>
       </b-card-title>
       <b-card-text>
-        <p>{{product.description}}</p>
+        <p>{{product.name}}</p>
       </b-card-text>
       <b-card-text>
         <strong>R$ {{product.price}}</strong><br>
@@ -35,7 +35,7 @@
   >
     <b-card-body>
       <b-card-title>
-        <router-link :to="{ name:'product-view', params: {id: this.product.id,product:product}} ">
+        <router-link :to="{ name:'product-view', params: {name: this.product.name,product:product}} ">
           {{product.name}}
         </router-link>
       </b-card-title>

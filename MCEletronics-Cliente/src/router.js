@@ -35,7 +35,7 @@ export default new Router({
             component:RegisterComponent
         },
         {
-            path:'/product-view/:id',
+            path:'/product-view/:name',
             name:'product-view',
             component:ProductViewComponent,
             props:true

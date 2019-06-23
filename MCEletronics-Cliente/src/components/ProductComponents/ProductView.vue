@@ -4,7 +4,7 @@
 
     <b-container>
       <nav class="breadcrumb">
-        <a href="#">Início</a>
+        <a href="/">Início</a>
         <span class="delimiter">
           <i class="fa fa-angle-right"></i>
         </span>
@@ -20,8 +20,8 @@
         <div class="shopify-section">
           <div class="single-product-area mt-80 mb-80">
             <div>
-              <b-row style="height:40em">
-                <div class="col-md-5" style="height:40em">
+              <b-row style="height:35em">
+                <div class="col-md-5" style="height:35em">
                   <!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
                   <img
                     
@@ -33,7 +33,7 @@
 
                 <!-- END COL -->
 
-                <b-card tag="article" class="col-sm-6 product-actions" style="max-width:100%; height:40em">
+                <b-card tag="article" class="col-sm-6 product-actions" style="max-width:100%; height:32em">
                   <div class="availability">
                     Disponibilidade:
                     <span>
@@ -134,18 +134,45 @@
                 </b-card>
               </b-row>
             </div>
+     
           </div>
         </div>
+          <hr>
+          <div class="description"> 
+              <h2> Descrição </h2>
+              <div> 
+                <p> {{product.description}} </p>
+                <p>
+                <strong>Especificações:</strong>
+                <br/> – Datalogger Shield para Arduino Nano
+                <br/> – Slot para cartão micro SD
+                <br/> – Tensão de entrada: entre 7 V e 9 V (através do shield)
+                <br /> – Funciona com SD formatado como FAT16 ou FAT32
+                <br /> – Relógio de Tempo Real RTC DS1307 integrado
+                <br /> – Regulador de tensão 3.3V
+                <br /> – Suporte para Bateria CR1220 3V (Bateria não inclusa)
+                <br /> – Dimensões: 95 mm x 26 mm x 20 mm
+                </p>
+                 
+              </div>
+          </div>
+          <div class="relational"> 
+              <h2> Relacionados</h2>
+          </div>
       </div>
+    
     </div>
+    
      </b-container>
+       <PageFooter/>
   </div>
+ 
 </template>
 
 
 <script>
 import MainBar from "../shared/MainBar";
-
+import PageFooter from "../PageFooter";
 export default {
   props: ["product"],
   data() {
@@ -154,7 +181,10 @@ export default {
     };
   },
   components: {
-    MainBar
+    MainBar,PageFooter
+  },
+  created() { 
+    console.log(this.product)
   }
 };
 </script>
@@ -162,6 +192,10 @@ export default {
 
 
 <style scoped>
+.description { 
+  padding: 2%;
+  text-align: justify
+}
 body,
 button,
 input,

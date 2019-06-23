@@ -8,7 +8,7 @@
           <span class="delimiter">
             <i class="fa fa-angle-right"></i>
           </span>
-          <a href="#">Minha Conta</a>
+          <a href="/dashboard">Minha Conta</a>
         </nav>
       </b-container>
 
@@ -16,21 +16,21 @@
       <div class="text-center">
         <p>Olá {{user.username}}</p>
       </div>
-
+    <hr>
       <div class="row" style="width:100%; padding:2%">
         <div class="col-sm-3">
         <b-card-group>
           <b-card style="max-width: 25rem" class="card">
             <b-list-group class="item">
-              <b-list-group-item style="cursor:pointer" >
+              <b-list-group-item @click="showPanel" style="cursor:pointer" >
                 Painel
                 <b-badge variant="primary" pill>14</b-badge>
                 <i class="fas fa-tachometer-alt float-right card-list"></i>
               </b-list-group-item >
-              <b-list-group-item style="cursor:pointer">
+              <!-- <b-list-group-item style="cursor:pointer">
                 Meu Perfil
                 <i class="far fa-user float-right card-list"></i>
-              </b-list-group-item >
+              </b-list-group-item > -->
               <b-list-group-item @click="showOrdered" style="cursor:pointer">
                 Pedidos
                 <i class="fas fa-shopping-basket float-right card-list"></i>
@@ -43,7 +43,7 @@
                 Detalhes da conta
                 <i class="fas fa-info float-right card-list"></i>
               </b-list-group-item> 
-              <b-list-group-item style="cursor:pointer" @Click="logout">
+              <b-list-group-item style="cursor:pointer" @click="logout">
                 Sair
                 <i class="fas fa-sign-out-alt float-right card-list"></i>
               </b-list-group-item>
@@ -52,7 +52,9 @@
         </b-card-group>
         </div>
         <aside class="col-sm-8" style="margin-top:2%">
-            <account-details v-show="accountview" style="margin-left:5%" /> 
+            <account-details v-show="accountview" :user="user" style="margin-left:5%" /> 
+            <panel v-show="panelview" />
+            <Order v-show="orderView"/>
         </aside>
 
       </div>
@@ -65,18 +67,22 @@
 <script>
 import MainBar from "../shared/MainBar.vue";
 import AccountDetails from '../DashboardComponents/AccountDetails'
+import Panel from '../DashboardComponents/Panel'
 import PageFooter from "../PageFooter"
+import Order from '../DashboardComponents/Order'
 export default {
   name: "PageLogin",
 
   components: {
-    MainBar,AccountDetails,PageFooter
+    MainBar,AccountDetails,PageFooter,Panel,Order
   },
 
   data() {
     return {
       user: {},
       accountview : false,
+      panelview : false,
+      orderView: false
     };
   },
 
@@ -96,8 +102,19 @@ export default {
     },
     showAccountDetails() {
       this.accountview = true
+      this.panelview = false
+      this.orderView = false
     },
-    showOrdered() {}
+    showOrdered() {
+      this.orderView = true,
+      this.accountview = false,
+      this.panelview = false
+    },
+    showPanel(){
+      this.panelview = true
+      this.accountview = false
+      this.orderView = false 
+    }
   }
 };
 </script>

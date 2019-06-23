@@ -72,7 +72,7 @@
                   <br>
                   <b-textarea
                     v-model="product.description"
-                    maxlength="150"
+                    maxlength="1200"
                     :value="product.description"
                     placeholder="descrição do produto"
                   ></b-textarea>

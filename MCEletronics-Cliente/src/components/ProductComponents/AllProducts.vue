@@ -1,6 +1,24 @@
 <template>
-    <div>
-        <main-bar></main-bar>
+<div>
+  <main-bar></main-bar>
+<div v-if="search">
+   
+   <div class="products" style="margin-top:10%">
+        <div class="row" style="max-width:100%">
+        <div >
+        </div>
+        
+          <div class="col-md-9 order-md-2">
+            <loader-effect :time=10 v-if="loading"/>
+            <products :products="Products" :list="false" />
+        </div>
+
+      </div>
+    </div>
+</div>
+
+    <div v-else>
+        
          <div class="products" style="margin-top:10%">
         <div class="row" style="max-width:100%">
         <div class="col-md-3 order-md-1 mb-4">
@@ -16,6 +34,7 @@
     </div>
     </div>
 
+</div>
 </template>
 
 <script>
@@ -28,6 +47,7 @@ import api from '../../services/api'
 import _ from 'lodash'
 export default {
     name:'AllProducts',
+    props:['search','Products'],
     components: {MainBar,ProductFilter,LoaderEffect,Products},   
     data(){
         return{

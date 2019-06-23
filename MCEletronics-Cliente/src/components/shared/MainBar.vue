@@ -11,17 +11,16 @@
 
         <b-collapse e is-nav style="width: 100%" id="nav_collapse">
           <div class="navigation">
-            <b-nav-form>
-              <b-form-group id="form-search">
+            <b-nav-form @submit.prevent="search">
+              <b-form-group id="form-search"  >
                 <b-input-group>
                   <b-form-input
                     style="border-radius: 6px; z-index: 0"
                     maxlength="10"
                     placeholder="Buscar... "
-                    v-model="search.text"
-                    @input="search_text()"
+                    v-model="searchItem.text"
                   />
-
+                  <b-input-group-btn>
                   <i
                     class="fas fa-search"
                     style=" 
@@ -31,7 +30,9 @@
                       color: #033076;
                       font-size:75%;
                       cursor:pointer"
+                      
                   ></i>
+                  </b-input-group-btn>
                 </b-input-group>
               </b-form-group>
             </b-nav-form>
@@ -81,6 +82,7 @@
 /* eslint-disable */
 
 import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+import { successToaster, errorToaster } from "../../services/ErrorHandler.js";
 import api from "../../services/api";
 export default {
   name: "PageHome",
@@ -89,8 +91,9 @@ export default {
     return {
       titlePage: "MC Eletronics",
       logged: false,
+      productsList: [],
       user: {},
-      search: {
+      searchItem: {
         text: ""
       }
     };
@@ -113,6 +116,22 @@ export default {
       this.$session.destroy();
       this.logged = false;
       location.reload();
+    },
+    search(){
+      api.search(this.searchItem.text).then(Response => {
+      
+        this.productsList = Response.data
+          console.log(this.productsList)
+          console.log(this.searchItem.text)
+
+          if(this.productsList.length > 0){
+              this.$router.push({ name:'all-products', params: {Products:this.productsList,search:true}})
+          }else { 
+             errorToaster("Produto não Encontrado", ":( ");
+          }
+      }).catch(e => { 
+        console.log(e)
+      })
     }
   },
   created() {

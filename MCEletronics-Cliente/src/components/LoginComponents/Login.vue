@@ -104,9 +104,7 @@ export default {
     
 
     login(event) {
-      
-       
-
+      let UserLogin={}
       if (this.user.username == "" && this.user.password == "") {
         this.errorMessage.push("Necessário nome de usuário e senha");
       }else{
@@ -120,16 +118,12 @@ export default {
        api.postLogin(formData).then(Response => {
           if (Response.status == 200) {
             this.loading = true;
-
+            UserLogin = Response.data
+            console.log(UserLogin)
             this.$session.start(); // start session 
-
             this.$session.set("user", 
-              JSON.stringify({
-                username: user.username,
-                password: user.password
-              })
+              JSON.stringify(UserLogin)
             ); // set user from session(JSON)
-
             setTimeout(this.placeLogin, 1200); // wait 1.2 sec and go login page
 
           }

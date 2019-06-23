@@ -35,7 +35,18 @@ public class ProductService {
 
 		return new ResponseEntity<List<Product>>(productRepository.findAll(), HttpStatus.OK);
 	}
-
+	@GetMapping("/search/{name}") 
+	public ResponseEntity <List<Product>> search(@PathVariable(value = "name") String name){
+		System.out.println("name: "+name);
+		List<Product> products = productRepository.findByProductNameStartingWith(name);
+//		System.out.println(products);
+//		products.forEach(product -> System.out.println(product.getName()));
+		for (Product product2 : products) {
+			System.out.println(product2);
+		}
+		
+		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
+	}
 	@GetMapping("/products/{id}")
 	public ResponseEntity<Product> getProduct(@PathVariable(value = "id") Integer id) {
 

@@ -3,6 +3,7 @@ package com.mceletronics.api.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +34,7 @@ public class Product implements Serializable{
 	private BigDecimal quantity;
 	
 	@NotNull
+	@Column(columnDefinition="TEXT")
 	private String description;
 	
 	public Product() {

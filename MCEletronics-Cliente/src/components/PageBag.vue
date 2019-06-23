@@ -28,7 +28,7 @@
 
                     <div style="max-width: 35%" class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                       <h4 >
-                          <router-link :to="{ name:'product-view', params: {id: product.id,product:product}}" style="text-decoration:none; color:black">
+                          <router-link :to="{ name:'product-view', params: {name: product.name,product:product}}" style="text-decoration:none; color:black">
                                 <strong>{{product.name}}</strong>
                           </router-link>
                       </h4>

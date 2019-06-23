@@ -24,5 +24,12 @@ export default {
     /* LOGIN */
     postLogin :(user) => {
         return http.post('api/login',user)
+    },
+    /* UPDATE USER DATA  */
+    updateUser : (user,id) => { 
+        return http.put('api/user/' + id,user)
+    },
+    search : (name) => { 
+        return http.get('api/search/' + name);
     }
 }

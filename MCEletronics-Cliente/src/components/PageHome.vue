@@ -111,9 +111,9 @@
 
     
 
-    <products :products="productRows" :list ="true"></products>
+    <products :products="productRows" :list ="true" ></products>
 
-    <PageFooter></PageFooter>
+    <PageFooter/>
   </div>
 </template>
 

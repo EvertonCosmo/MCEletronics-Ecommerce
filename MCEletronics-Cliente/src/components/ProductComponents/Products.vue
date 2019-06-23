@@ -5,7 +5,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Recomendados</li>
         <li class="ml-auto" aria-current="page">
-          <router-link  :to="{name:'all-products'}">
+          <router-link  :to="{name:'all-products',params:{Products:null,search:false}}">
             Mostrar todos
         </router-link>
         </li>
