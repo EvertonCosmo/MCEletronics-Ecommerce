@@ -22,9 +22,9 @@
             <div>
               <b-row style="height:35em">
                 <div class="col-md-5" style="height:35em">
-                  <!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
+                 
                   <img
-                    
+                   :src="require(`/home/everton/MCELETRONICS/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" 
                     width="100%"
                     height="70%"
                   >
@@ -33,7 +33,7 @@
 
                 <!-- END COL -->
 
-                <b-card tag="article" class="col-sm-6 product-actions" style="max-width:100%; height:32em">
+                <b-card tag="article" class="col-sm-6 product-actions" style="max-width:100%; height:35em">
                   <div class="availability">
                     Disponibilidade:
                     <span>
@@ -171,6 +171,7 @@
 
 
 <script>
+/* eslint-disable */ 
 import MainBar from "../shared/MainBar";
 import PageFooter from "../PageFooter";
 export default {

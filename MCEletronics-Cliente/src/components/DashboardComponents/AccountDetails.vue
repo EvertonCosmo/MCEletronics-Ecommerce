@@ -11,7 +11,6 @@
             class="form-control"
             id="validationServer01"
             :placeholder="user.nameComplete"
-            value="Mark"
             required
             :disabled="edit"
             v-model="user.nameComplete"
@@ -24,7 +23,6 @@
             class="form-control"
             id="validationServer02"
             :placeholder="user.username"
-            value="Mark"
             required
             :disabled="edit"
             v-model="user.username"

@@ -5,7 +5,7 @@
         <b-navbar-brand
           style="font-size: 200%; position: relative; color: #033076; margin-left: 6%"
           class="logo"
-          href="PageHome"
+          href="/"
         >MC Eletronics</b-navbar-brand>
       </div>
 

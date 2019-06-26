@@ -1,12 +1,12 @@
 <template>
-<!-- :img-src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" -->
+
 <div v-if="shadow"> 
 
 
   <b-card
-    style="max-width:80%;border:1px solid rgba(0,0,0,0.1); margin-top:6%;box-shadow:1px 1px 6px 2px  #888888;"
-    img-top
-    
+    style="max-width:100%;border:1px solid rgba(0,0,0,0.1); margin-top:1%;box-shadow:1px 1px 6px 2px  #888888;"
+    :img-src="require(`/home/everton/MCELETRONICS/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" 
+    img-top    
   >
     <b-card-body>
       <b-card-title>
@@ -18,18 +18,25 @@
       <b-card-text>
         <p>{{product.name}}</p>
       </b-card-text>
+        <b-card-text>
+          <strong>R$ {{product.price}}</strong>
+        </b-card-text>
       <b-card-text>
-        <strong>R$ {{product.price}}</strong><br>
-        <AddToCart :product="product"/>
+        
+            <AddToCart :product="product"/>
+       
+        
       </b-card-text>
 
     </b-card-body>
+    
   </b-card>
   </div>
 
   <div v-else>
     <b-card
-    style="max-width: 80%;border:none"
+    style="max-width: 50%;border:none;"
+    :img-src="require(`/home/everton/MCELETRONICS/MCEletronics/MCEletronics-ADM/src/assets/${this.product.id}.jpg`)" 
     img-top
     
   >
@@ -66,6 +73,12 @@ export default {
 </script>
 
 <style scoped>
+img{
+  width: 50%;
+  height: 100%;
+  margin-left: 20%
+ 
+}
 </style>
 
 

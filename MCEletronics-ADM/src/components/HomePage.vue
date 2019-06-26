@@ -192,11 +192,16 @@ export default {
       },
 
       options: [
-        { value: "Eletronico", text: "Eletrônico" },
+        { value: "Arduino", text: "Arduino" },
         { value: "Placa", text: "Placa" },
         { value: "Iniciante", text: "Iniciante" },
         { value: "Som", text: "Som" },
-        { value: "Música", text: "Musica" }
+        { value: "Música", text: "Música" },
+        {value:'Resistor',text:'Resistor'},
+        {value:'Raspberry',text:'Raspberry'},
+        {value:'Robótica',text:'Robótica'},
+        {value:'Sensores',text:'Sensores'},
+        {value:'Componentes',text:'Componentes eletrônicos'}
       ]
     };
   },

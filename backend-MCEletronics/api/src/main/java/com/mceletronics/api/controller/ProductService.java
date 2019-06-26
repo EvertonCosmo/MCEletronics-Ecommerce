@@ -40,11 +40,7 @@ public class ProductService {
 		System.out.println("name: "+name);
 		List<Product> products = productRepository.findByProductNameStartingWith(name);
 //		System.out.println(products);
-//		products.forEach(product -> System.out.println(product.getName()));
-		for (Product product2 : products) {
-			System.out.println(product2);
-		}
-		
+//		products.forEach(product -> System.out.println(product.getName()));	
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 	}
 	@GetMapping("/products/{id}")
@@ -103,7 +99,7 @@ public class ProductService {
 			BigDecimal price, BigDecimal quantity, String description, MultipartFile image) {
 
 		if (name == null || category == null || price == null || quantity == null || description == null
-				|| image == null || name.equals("null") || category.equals("null") || description.equals("null")) {
+				|| category.equals("null") || description.equals("null")) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 

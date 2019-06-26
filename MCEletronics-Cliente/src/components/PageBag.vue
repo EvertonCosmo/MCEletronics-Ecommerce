@@ -13,7 +13,7 @@
           class="selection-box"
           style="max-width: 55rem; width: 100%; display: block; margin-bottom: 5%"
         >
-         <!-- :src="require(`/home/emanoel/Documentos/MCEletronics/MCEletronics-ADM/src/assets/${product.id}.jpg`)" -->
+         
           <div class="container">
             <div class="card shopping-cart">
               <div class="card-body">
@@ -21,7 +21,7 @@
                   <div class="row">
                     <div class="col-12 col-sm-12 col-md-2 text-center">
                       <b-img
-                       
+                        :src="require(`/home/everton/MCELETRONICS/MCEletronics/MCEletronics-ADM/src/assets/${product.id}.jpg`)"
                         fluid-grow
                       ></b-img>
                     </div>
